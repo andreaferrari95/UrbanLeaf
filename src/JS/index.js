@@ -1,5 +1,14 @@
 import axios from "axios";
 import _ from "lodash";
+import "../assets/styles/styles.scss";
+import logo from "../assets/img/UrbanLeaf-Logo.png";
+import icon from "../assets/img/planet-earth.ico";
+
+const logoImg = document.getElementById("logo");
+logoImg.src = logo;
+
+const iconImg = document.getElementById("icon");
+iconImg = icon;
 
 document.getElementById("search-button").addEventListener("click", () => {
   const searchInput = document.getElementById("search-input").value;
