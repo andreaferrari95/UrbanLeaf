@@ -4,6 +4,7 @@ import "../assets/styles/styles.scss";
 import logo from "../assets/img/UrbanLeaf-Logo.png";
 import icon from "../assets/img/planet-earth.ico";
 import teleportAPI from "./API/teleport";
+import getAirAndWeatherData from "./API/iqair";
 
 const logoImg = document.getElementById("logo");
 logoImg.src = logo;
@@ -30,3 +31,5 @@ document.getElementById("search-button").addEventListener("click", () => {
 });
 
 console.log(teleportAPI());
+const cityToSearch = "Rome";
+getAirAndWeatherData(cityToSearch);

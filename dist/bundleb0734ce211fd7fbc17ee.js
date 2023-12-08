@@ -17719,6 +17719,73 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
+/***/ "./src/JS/API/iqair.js":
+/*!*****************************!*\
+  !*** ./src/JS/API/iqair.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
+
+
+// Function to fetch air pollution and weather data for a city
+async function getAirAndWeatherData(city) {
+  const apiKey = "b37a3d1a-7dd2-4644-8a2f-3970bae2d424";
+  // Replace with your IQair API key
+
+  // Construct the API endpoint URL
+  const apiUrl = `https://api.airvisual.com/v2/city?city=${encodeURIComponent(
+    city
+  )}&state=California&country=USA&key=${apiKey}`;
+
+  try {
+    // Make an HTTP GET request to the API endpoint using Axios
+    const response = await axios__WEBPACK_IMPORTED_MODULE_0__["default"].get(apiUrl);
+    const data = response.data;
+
+    // Extract air pollution and weather data from the response
+    const airQuality = data.data.current.pollution.aqius;
+    const mainPollutant = data.data.current.pollution.mainus;
+
+    // Extract weather data from the response
+    const temperature = data.data.current.weather.tp;
+    const pressure = data.data.current.weather.pr;
+    const humidity = data.data.current.weather.hu;
+    const windSpeed = data.data.current.weather.ws;
+    const windDirection = data.data.current.weather.wd;
+    const weatherIcon = data.data.current.weather.ic;
+
+    // Update the HTML div with the data
+    const pollutionContainer = document.getElementById("pollutionContainer");
+    pollutionContainer.innerHTML = `
+        <p>Air Quality Index (AQI) in ${city}: ${airQuality}</p>
+        <p>The Main Pollutant is: ${mainPollutant}</p>`;
+
+    // Update the HTML div with the data
+    const dataContainer = document.getElementById("dataContainer");
+    weatherContainer.innerHTML = `
+      <p>Temperature in ${city}: ${temperature}°C</p>
+      <p>Pressure: ${pressure} hPa</p>
+      <p>Humidity: ${humidity}%</p>
+      <p>Wind Speed: ${windSpeed} m/s</p>
+      <p>Wind Direction: ${windDirection}°</p>
+      <img src="${weatherIcon}.png" alt="Weather Icon">
+    `;
+  } catch (error) {
+    console.error("Error retrieving data:", error);
+  }
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getAirAndWeatherData);
+
+
+/***/ }),
+
 /***/ "./src/JS/API/teleport.js":
 /*!********************************!*\
   !*** ./src/JS/API/teleport.js ***!
@@ -22034,13 +22101,15 @@ var __webpack_exports__ = {};
   !*** ./src/JS/index.js ***!
   \*************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _assets_styles_styles_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../assets/styles/styles.scss */ "./src/assets/styles/styles.scss");
 /* harmony import */ var _assets_img_UrbanLeaf_Logo_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/img/UrbanLeaf-Logo.png */ "./src/assets/img/UrbanLeaf-Logo.png");
 /* harmony import */ var _assets_img_planet_earth_ico__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../assets/img/planet-earth.ico */ "./src/assets/img/planet-earth.ico");
 /* harmony import */ var _API_teleport__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./API/teleport */ "./src/JS/API/teleport.js");
+/* harmony import */ var _API_iqair__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./API/iqair */ "./src/JS/API/iqair.js");
+
 
 
 
@@ -22057,7 +22126,7 @@ iconImg.href = _assets_img_planet_earth_ico__WEBPACK_IMPORTED_MODULE_3__;
 document.getElementById("search-button").addEventListener("click", () => {
   const searchInput = document.getElementById("search-input").value;
 
-  axios__WEBPACK_IMPORTED_MODULE_5__["default"]
+  axios__WEBPACK_IMPORTED_MODULE_6__["default"]
     .get(`https://api.unsplash.com/search/photos?query=${searchInput}`)
     .then((response) => {
       const resultContainer = document.getElementById("search-results");
@@ -22073,9 +22142,11 @@ document.getElementById("search-button").addEventListener("click", () => {
 });
 
 console.log((0,_API_teleport__WEBPACK_IMPORTED_MODULE_4__["default"])());
+const cityToSearch = "Sacramento";
+(0,_API_iqair__WEBPACK_IMPORTED_MODULE_5__["default"])(cityToSearch);
 
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle7e1b93a165ffb725fef2.js.map
+//# sourceMappingURL=bundleb0734ce211fd7fbc17ee.js.map
