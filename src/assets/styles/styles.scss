@@ -21,13 +21,13 @@ input[type="text"] {
   background-color: rgb(102, 212, 109);
 }
 
-#search-input::-webkit-search-cancel-button {
+#searchInput::-webkit-search-cancel-button {
   -webkit-appearance: none;
   appearance: none;
   display: none;
 }
 
-#search-input:focus {
+#searchInput:focus {
   border-color: rgba(95, 158, 209, 0.8);
   box-shadow: 0 0 0 1px rgba(95, 158, 209, 0.8);
 }

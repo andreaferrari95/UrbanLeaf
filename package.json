@@ -23,6 +23,7 @@
     "lodash": "^4.17.21",
     "node-sass": "^9.0.0",
     "sass-loader": "^13.3.2",
-    "style-loader": "^3.3.3"
+    "style-loader": "^3.3.3",
+    "typeahead.js": "^0.11.1"
   }
 }
