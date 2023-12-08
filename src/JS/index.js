@@ -1,14 +1,15 @@
 import axios from "axios";
-import _ from "lodash";
+import _, { head } from "lodash";
 import "../assets/styles/styles.scss";
 import logo from "../assets/img/UrbanLeaf-Logo.png";
 import icon from "../assets/img/planet-earth.ico";
+import teleportAPI from "./API/teleport";
 
 const logoImg = document.getElementById("logo");
 logoImg.src = logo;
 
 const iconImg = document.getElementById("icon");
-iconImg = icon;
+iconImg.href = icon;
 
 document.getElementById("search-button").addEventListener("click", () => {
   const searchInput = document.getElementById("search-input").value;
@@ -27,3 +28,5 @@ document.getElementById("search-button").addEventListener("click", () => {
     })
     .catch((error) => console.log(error));
 });
+
+console.log(teleportAPI());

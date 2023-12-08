@@ -21,7 +21,10 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `.container {
+___CSS_LOADER_EXPORT___.push([module.id, `body {
+  background-color: #dfe1e5; }
+
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,13 +33,25 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.container {
 
 input[type="text"] {
   margin-bottom: 10px;
-  border-radius: 25px; }
+  padding: 10px;
+  width: 400px;
+  border: 1px solid #f4f4f4;
+  border-radius: 24px;
+  outline: none;
+  font-size: 16px;
+  background-color: #66d46d; }
 
-#search-results {
-  margin-top: 20px; }
+#search-input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none; }
+
+#search-input:focus {
+  border-color: rgba(95, 158, 209, 0.8);
+  box-shadow: 0 0 0 1px rgba(95, 158, 209, 0.8); }
 
 /* Add any additional styles you want */
-`, "",{"version":3,"sources":["webpack://./src/assets/styles/styles.scss"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,sBAAsB;EACtB,mBAAmB;EACnB,uBAAuB;EACvB,aAAa,EAAA;;AAGf;EACE,mBAAmB;EACnB,mBAAmB,EAAA;;AAGrB;EACE,gBAAgB,EAAA;;AAGlB,uCAAA","sourcesContent":[".container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n  height: 100vh;\r\n}\r\n\r\ninput[type=\"text\"] {\r\n  margin-bottom: 10px;\r\n  border-radius: 25px;\r\n}\r\n\r\n#search-results {\r\n  margin-top: 20px;\r\n}\r\n\r\n/* Add any additional styles you want */\r\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/assets/styles/styles.scss"],"names":[],"mappings":"AAAA;EACE,yBAAyB,EAAA;;AAG3B;EACE,aAAa;EACb,sBAAsB;EACtB,mBAAmB;EACnB,uBAAuB;EACvB,aAAa,EAAA;;AAGf;EACE,mBAAmB;EACnB,aAAa;EACb,YAAY;EACZ,yBAAyB;EACzB,mBAAmB;EACnB,aAAa;EACb,eAAe;EACf,yBAAoC,EAAA;;AAGtC;EACE,wBAAwB;EACxB,gBAAgB;EAChB,aAAa,EAAA;;AAGf;EACE,qCAAqC;EACrC,6CAA6C,EAAA;;AAE/C,uCAAA","sourcesContent":["body {\r\n  background-color: #dfe1e5;\r\n}\r\n\r\n.container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n  height: 100vh;\r\n}\r\n\r\ninput[type=\"text\"] {\r\n  margin-bottom: 10px;\r\n  padding: 10px;\r\n  width: 400px;\r\n  border: 1px solid #f4f4f4;\r\n  border-radius: 24px;\r\n  outline: none;\r\n  font-size: 16px;\r\n  background-color: rgb(102, 212, 109);\r\n}\r\n\r\n#search-input::-webkit-search-cancel-button {\r\n  -webkit-appearance: none;\r\n  appearance: none;\r\n  display: none;\r\n}\r\n\r\n#search-input:focus {\r\n  border-color: rgba(95, 158, 209, 0.8);\r\n  box-shadow: 0 0 0 1px rgba(95, 158, 209, 0.8);\r\n}\r\n/* Add any additional styles you want */\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -17704,6 +17719,39 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
+/***/ "./src/JS/API/teleport.js":
+/*!********************************!*\
+  !*** ./src/JS/API/teleport.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
+
+
+function teleportAPI() {
+  axios__WEBPACK_IMPORTED_MODULE_0__["default"]
+    .get("https://api.teleport.org/api/")
+    .then((response) => {
+      console.log(response.data);
+    })
+    .catch((error) => console.log(error));
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (teleportAPI);
+// Searching for Cities by Name
+
+// Basic information about a city
+
+// Life quality Data for Urban Area
+
+
+/***/ }),
+
 /***/ "./src/assets/img/UrbanLeaf-Logo.png":
 /*!*******************************************!*\
   !*** ./src/assets/img/UrbanLeaf-Logo.png ***!
@@ -21986,12 +22034,14 @@ var __webpack_exports__ = {};
   !*** ./src/JS/index.js ***!
   \*************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _assets_styles_styles_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../assets/styles/styles.scss */ "./src/assets/styles/styles.scss");
 /* harmony import */ var _assets_img_UrbanLeaf_Logo_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/img/UrbanLeaf-Logo.png */ "./src/assets/img/UrbanLeaf-Logo.png");
 /* harmony import */ var _assets_img_planet_earth_ico__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../assets/img/planet-earth.ico */ "./src/assets/img/planet-earth.ico");
+/* harmony import */ var _API_teleport__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./API/teleport */ "./src/JS/API/teleport.js");
+
 
 
 
@@ -22002,12 +22052,12 @@ const logoImg = document.getElementById("logo");
 logoImg.src = _assets_img_UrbanLeaf_Logo_png__WEBPACK_IMPORTED_MODULE_2__;
 
 const iconImg = document.getElementById("icon");
-iconImg = _assets_img_planet_earth_ico__WEBPACK_IMPORTED_MODULE_3__;
+iconImg.href = _assets_img_planet_earth_ico__WEBPACK_IMPORTED_MODULE_3__;
 
 document.getElementById("search-button").addEventListener("click", () => {
   const searchInput = document.getElementById("search-input").value;
 
-  axios__WEBPACK_IMPORTED_MODULE_4__["default"]
+  axios__WEBPACK_IMPORTED_MODULE_5__["default"]
     .get(`https://api.unsplash.com/search/photos?query=${searchInput}`)
     .then((response) => {
       const resultContainer = document.getElementById("search-results");
@@ -22022,8 +22072,10 @@ document.getElementById("search-button").addEventListener("click", () => {
     .catch((error) => console.log(error));
 });
 
+console.log((0,_API_teleport__WEBPACK_IMPORTED_MODULE_4__["default"])());
+
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle7829736b66ff1aab7602.js.map
+//# sourceMappingURL=bundle7e1b93a165ffb725fef2.js.map
