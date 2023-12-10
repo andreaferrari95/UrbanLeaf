@@ -1,15 +1,15 @@
 import axios from "axios";
 import _, { head } from "lodash";
 import Bloodhound from "typeahead.js/dist/bloodhound.min";
-import autocomplete from "typeahead.js/dist/typeahead.jquery.min";
+import typeahead from "typeahead.js";
 // Searching for Cities by Name
 
-const searchInput = document.getElementById("searchInput");
 const searchButton = document.getElementById("searchButton");
+const searchInput = document.getElementById("searchInput");
 
-function handleSearch() {
-  const city = searchInput.value;
-  openCityPage(city);
+/*sfunction handleSearch() {
+const city = searchInput.value;
+openCityPage(city);
 }
 
 searchInput.addEventListener("keydown", (e) => {
@@ -18,22 +18,34 @@ searchInput.addEventListener("keydown", (e) => {
   }
 });
 
-searchButton.addEventListener("click", handleSearch);
+searchButton.addEventListener("click", handleSearch);*/
 
-const city = new Bloodhound({
-  datumTokenizer: Bloodhound.tokenizers.obj.whitespace("name"),
-  queryTokenizer: Bloodhound.tokenizers.whitespace,
-  remote: {
-    url: "https://api.teleport.org/api/cities/?search=%QUERY",
-    wildcard: "%QUERY",
-  },
-});
+document.addEventListener("DOMContentLoaded", () => {
+  const city = new Bloodhound({
+    datumTokenizer: Bloodhound.tokenizers.obj.whitespace("name"),
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    remote: {
+      url: "https://api.teleport.org/api/cities/?search=%QUERY",
+      wildcard: "%QUERY",
+    },
+  });
 
-$("#searchInput").typeahead(null, {
-  name: "city",
-  display: "name",
-  source: city,
-  limit: 10,
+  const searchInput = document.getElementById("searchInput");
+
+  typeahead(
+    searchInput,
+    {
+      hint: true,
+      highlight: true,
+      minLength: 1,
+    },
+    {
+      name: "city",
+      display: "name",
+      source: city,
+      limit: 10,
+    }
+  );
 });
 
 /*function openCityPage(city) {
