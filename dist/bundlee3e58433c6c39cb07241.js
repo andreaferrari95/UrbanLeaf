@@ -17910,8 +17910,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 //import city from "./API/teleport.js";
 //import getAirAndWeatherData from "./API/iqair.js";
+
+console.log("MISSING_ENV_VAR".GOOGLE_API_KEY);
 
 const logoImg = document.getElementById("logo");
 logoImg.src = _assets_img_UrbanLeaf_Logo_png__WEBPACK_IMPORTED_MODULE_2__;
@@ -17926,4 +17929,4 @@ iconImg.href = _assets_img_planet_earth_ico__WEBPACK_IMPORTED_MODULE_3__;
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle978478c57481faa9b27d.js.map
+//# sourceMappingURL=bundlee3e58433c6c39cb07241.js.map

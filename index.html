@@ -49,19 +49,10 @@
     </div>
     </div>
   </div>
-  <h3>Result history:</h3>
-  <div class="results"></div>
       <div id="search-results"></div>
     </div>
     <div id="weatherContainer"></div>
     <div id="pollutionContainer"></div>
 
-    <script>
-      var $results = document.querySelector('.results');
-      var appendToResult = $results.insertAdjacentHTML.bind($results, 'afterend');
-
-      TeleportAutocomplete.init('.my-input').on('change', function(value) {
-        appendToResult('<pre>' + JSON.stringify(value, null, 2) + '</pre>');
-      });</script>
   </body>
 </html>
