@@ -27,15 +27,41 @@
       content="https://andreaferrari95.github.io/Portfolio/assets/img/project-portfolio.png"
     />
     <link rel="stylesheet" type="text/css" href="dist/style.css" />
-  <script defer src="bundle665b91ac7a00208eabdd.js"></script><script defer src="teleportecd8af97d264a4690031.js"></script><script defer src="iqair1205dee7856d9e9121f2.js"></script></head>
+    <script src="https://kit.fontawesome.com/6b71f57b8e.js" crossorigin="anonymous"></script>
+  <script defer src="bundle978478c57481faa9b27d.js"></script><script defer src="teleport500249b684bd24766535.js"></script><script defer src="iqairc2a217263d42b31f81b1.js"></script></head>
   <body>
     <div class="container">
       <img id="logo" alt="UrbanLeaf Logo" />
-      <input type="text" id="searchInput" placeholder="Enter a city" />
-      <button id="searchButton">Search</button>
+      <div class="search-box"> 
+        <div class="row">
+      <input
+        type="text"
+        class="my-input"
+        name="field"
+        tabindex="1"
+        id="searchInput"
+        placeholder="Enter a city"
+        autocomplete="off"
+      />
+      <button id="searchButton"><i class="fa-solid fa-magnifying-glass-location"></i></button>
+    </div>
+    <div class="result-box">
+    </div>
+    </div>
+  </div>
+  <h3>Result history:</h3>
+  <div class="results"></div>
       <div id="search-results"></div>
     </div>
     <div id="weatherContainer"></div>
     <div id="pollutionContainer"></div>
+
+    <script>
+      var $results = document.querySelector('.results');
+      var appendToResult = $results.insertAdjacentHTML.bind($results, 'afterend');
+
+      TeleportAutocomplete.init('.my-input').on('change', function(value) {
+        appendToResult('<pre>' + JSON.stringify(value, null, 2) + '</pre>');
+      });</script>
   </body>
 </html>
