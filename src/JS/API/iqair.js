@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Function to fetch air pollution and weather data for a city
-async function getAirAndWeatherData(city) {
+/*async function getAirAndWeatherData(city) {
   const apiKey = "b37a3d1a-7dd2-4644-8a2f-3970bae2d424";
   // Replace with your IQair API key
 
@@ -47,4 +47,4 @@ async function getAirAndWeatherData(city) {
   }
 }
 
-export default getAirAndWeatherData;
+export default getAirAndWeatherData;*/
