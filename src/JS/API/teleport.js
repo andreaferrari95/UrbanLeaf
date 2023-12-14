@@ -40,21 +40,23 @@ function searchCity() {
             const urbanAreaData = response.data;
 
             const scores = _.get(urbanAreaData, "_links['ua:scores'].href");
-            const categories = _.get(scores, "categories:[]");
-            console.log(scores);
-            console.log(categories);
-          });
+            const summary = _.get(scores, "summary");
+            console.log("urban area data:", urbanAreaData);
 
-          const content = `<h1>${fullName}</h1>
+            const content = `<h1>${fullName}</h1>
           <p>Latitude: ${lat}</p>
           <p>Longitude: ${lon}</p>
-          <p>Population: ${population}</p>`;
+          <p>Population: ${population}</p>;
+           ${summary};`;
 
-          const result = document.getElementById("search-results");
-          result.innerHTML = content;
+            const result = document.getElementById("search-results");
+            result.innerHTML = content;
+          });
 
-          console.log(cityData);
-          console.log(urbanArea);
+          console.log("city data:", cityData);
+          console.log("urban area:", urbanArea);
+
+          console.log(summary);
         })
         .catch((error) => {
           console.error(error);

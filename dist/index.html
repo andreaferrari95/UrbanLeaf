@@ -28,7 +28,7 @@
     />
     <link rel="stylesheet" type="text/css" href="dist/style.css" />
     <script src="https://kit.fontawesome.com/6b71f57b8e.js" crossorigin="anonymous"></script>
-  <script defer src="bundlee3e58433c6c39cb07241.js"></script><script defer src="teleport500249b684bd24766535.js"></script><script defer src="iqairc2a217263d42b31f81b1.js"></script></head>
+  <script defer src="bundle8050f74fea8f0169340e.js"></script><script defer src="teleportf98237e5d364d29277c8.js"></script><script defer src="iqairc2a217263d42b31f81b1.js"></script></head>
   <body>
     <div class="container">
       <img id="logo" alt="UrbanLeaf Logo" />
@@ -49,19 +49,10 @@
     </div>
     </div>
   </div>
-  <h3>Result history:</h3>
-  <div class="results"></div>
       <div id="search-results"></div>
     </div>
     <div id="weatherContainer"></div>
     <div id="pollutionContainer"></div>
 
-    <script>
-      var $results = document.querySelector('.results');
-      var appendToResult = $results.insertAdjacentHTML.bind($results, 'afterend');
-
-      TeleportAutocomplete.init('.my-input').on('change', function(value) {
-        appendToResult('<pre>' + JSON.stringify(value, null, 2) + '</pre>');
-      });</script>
   </body>
 </html>
