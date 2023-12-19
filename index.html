@@ -30,6 +30,17 @@
     <script src="https://kit.fontawesome.com/6b71f57b8e.js" crossorigin="anonymous"></script>
   </head>
   <body>
+    <header class="header time-date degree-switch">
+      <div class="date-time">
+        <div class="date">Dec. 15th 2023</div>
+        <div class="time">21:00 pm</div>
+      </div>
+      <div class="celsius-switch">
+        <div class="overlap-group"><div class="ellipse"></div></div>
+        <div class="text-wrapper">°C</div>
+        <div class="text-wrapper-2">°F</div>
+      </div>
+    </header>
     <div class="container">
       <img id="logo" alt="UrbanLeaf Logo" />
       <div class="search-box"> 
@@ -40,7 +51,7 @@
         name="field"
         tabindex="1"
         id="searchInput"
-        placeholder="Enter a city"
+        placeholder="Search Location"
         autocomplete="off"
       />
       <button id="searchButton"><i class="fa-solid fa-magnifying-glass-location"></i></button>

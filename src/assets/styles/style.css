@@ -308,7 +308,7 @@ body {
     left: 350px;
 }
 
-.desktop .text-wrapper-9 {
+.text-wrapper-9 {
     position: absolute;
     width: 173px;
     top: -1px;
@@ -474,8 +474,34 @@ body {
     position: absolute;
     width: 86px;
     height: 55px;
-    top: 13px;
+    top: 5px;
     left: 206px;
+}
+
+.visibility-2 {
+    position: absolute;
+    width: 101px;
+    top: -1px;
+    left: 0;
+    font-family: "Poppins", Helvetica;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.text-wrapper-20 {
+    position: absolute;
+    width: 48px;
+    top: 38px;
+    left: 26px;
+    font-family: "Poppins", Helvetica;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 22px;
+    letter-spacing: 0;
+    line-height: normal;
 }
 
 .air-pressure {
@@ -614,12 +640,12 @@ body {
     font-family: "Poppins", Helvetica;
     font-weight: 500;
     color: #ffffff;
-    font-size: 96px;
+    font-size: 85px;
     letter-spacing: 0;
 }
 
 .text-wrapper-19 {
-    font-size: 85px;
+    font-size: 75px;
 }
 
 .city-name-score {

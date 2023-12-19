@@ -21490,21 +21490,23 @@ function searchCity() {
             const urbanAreaData = response.data;
 
             const scores = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(urbanAreaData, "_links['ua:scores'].href");
-            const categories = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(scores, "categories:[]");
-            console.log(scores);
-            console.log(categories);
-          });
+            const summary = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(scores, "summary");
+            console.log("urban area data:", urbanAreaData);
 
-          const content = `<h1>${fullName}</h1>
+            const content = `<h1>${fullName}</h1>
           <p>Latitude: ${lat}</p>
           <p>Longitude: ${lon}</p>
-          <p>Population: ${population}</p>`;
+          <p>Population: ${population}</p>;
+           ${summary};`;
 
-          const result = document.getElementById("search-results");
-          result.innerHTML = content;
+            const result = document.getElementById("search-results");
+            result.innerHTML = content;
+          });
 
-          console.log(cityData);
-          console.log(urbanArea);
+          console.log("city data:", cityData);
+          console.log("urban area:", urbanArea);
+
+          console.log(summary);
         })
         .catch((error) => {
           console.error(error);
@@ -21519,4 +21521,4 @@ function searchCity() {
 
 /******/ })()
 ;
-//# sourceMappingURL=teleportf98237e5d364d29277c8.js.map
+//# sourceMappingURL=teleport8d6c53d20fbe87e2ef2c.js.map
