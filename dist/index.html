@@ -27,43 +27,70 @@
       content="https://andreaferrari95.github.io/Portfolio/assets/img/project-portfolio.png"
     />
     <link rel="stylesheet" type="text/css" href="dist/style.css" />
-    <script src="https://kit.fontawesome.com/6b71f57b8e.js" crossorigin="anonymous"></script>
-  <script defer src="bundle8050f74fea8f0169340e.js"></script><script defer src="teleport8d6c53d20fbe87e2ef2c.js"></script><script defer src="iqairc2a217263d42b31f81b1.js"></script></head>
+    <script
+      src="https://kit.fontawesome.com/6b71f57b8e.js"
+      crossorigin="anonymous"
+    ></script>
+  <script defer src="bundlef7659af5d1985fc068e5.js"></script><script defer src="teleport8d6c53d20fbe87e2ef2c.js"></script><script defer src="iqairc2a217263d42b31f81b1.js"></script></head>
   <body>
     <header class="header time-date degree-switch">
       <div class="date-time">
-        <div class="text-wrapper-3">21:00 pm</div>
-        <div class="text-wrapper-4">Dec. 15th 2023</div>
+        <div class="date">Dec. 15th 2023</div>
+        <div class="time">21:00 pm</div>
       </div>
       <div class="celsius-switch">
-        <div class="overlap-group"><div class="ellipse"></div></div>
         <div class="text-wrapper">°C</div>
+        <div class="switch-icon"><div class="ellipse"></div></div>
         <div class="text-wrapper-2">°F</div>
       </div>
     </header>
-    <div class="container">
+    <div class="container-logo-search">
       <img id="logo" alt="UrbanLeaf Logo" />
-      <div class="search-box"> 
+      <div class="search-box">
         <div class="row">
-      <input
-        type="text"
-        class="my-input"
-        name="field"
-        tabindex="1"
-        id="searchInput"
-        placeholder="Search Location"
-        autocomplete="off"
-      />
-      <button id="searchButton"><i class="fa-solid fa-magnifying-glass-location"></i></button>
+          <input
+            type="text"
+            class="my-input"
+            name="field"
+            tabindex="1"
+            id="searchInput"
+            placeholder="Search Location..."
+            autocomplete="off"
+          />
+          <button id="searchButton">
+            <i class="fa-solid fa-magnifying-glass-location"></i>
+          </button>
+        </div>
+      </div>
     </div>
-    <div class="result-box">
-    </div>
-    </div>
-  </div>
-      <div id="search-results"></div>
-    </div>
-    <div id="weatherContainer"></div>
-    <div id="pollutionContainer"></div>
-
+    <section class="city-details-container">
+      <div class="city-temp">
+        <div class="city-details">
+          <div class="row-top">
+            <div class="location">
+              <i class="fa-solid fa-location-dot icon-location"></i>
+              <h3 id="city">Rome, Latium, Italy</h3>
+            </div>
+            <div class="temp-weather">
+              <h3 id="temperature">27°C</h3>
+              <img
+                src="https://www.airvisual.com/images/01d.png"
+                alt="weather icon"
+                id="weather-icon"
+              />
+            </div>
+          </div>
+          <p id="city-description">
+            Rome, <br />the Eternal City, is a historic marvel with great travel
+            connections mild Mediterranean climate and intense urban energy.
+            Its outgoing society is known for its style, fondness for football
+            and the world-famous restaurants and cafes that can be sampled on
+            every corner. Rome also hosts an independent country—Vatican
+            City—within its borders. Its long history and modern achievements
+            make Rome one of the most visited cities in the world.
+          </p>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

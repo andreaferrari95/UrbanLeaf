@@ -20,25 +20,81 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Poppins:300,500,400,600);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `body {
-  background-color: #dfe1e5;
-  color: #333; }
+___CSS_LOADER_EXPORT___.push([module.id, `* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 300;
+  color: #f5f5f5; }
 
-.container {
+a {
+  text-decoration: none; }
+
+body {
+  background-color: #252222;
+  width: 100%; }
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: large;
+  margin: 20px 20px 0px 20px;
+  flex-direction: row-reverse; }
+
+.date {
+  margin-bottom: 10px; }
+
+.date,
+.time,
+.text-wrapper,
+.text-wrapper-2 {
+  font-weight: bold; }
+
+.celsius-switch {
+  display: flex;
+  align-items: center;
+  padding: 10px; }
+
+.switch-icon {
+  margin-top: 10px;
+  position: relative;
+  width: 100px;
+  height: 30px;
+  border-radius: 25px;
+  background: linear-gradient(90deg, #33e017 0%, rgba(149, 241, 134, 0) 100%);
+  margin: 0 10px 0 10px; }
+
+.ellipse {
+  position: relative;
+  width: 1.6rem;
+  height: 1.6rem;
+  top: 3px;
+  background-color: #181515;
+  border-radius: 25px;
+  cursor: pointer; }
+
+.container-logo-search {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100vh; }
+  justify-content: flex-start; }
+
+#logo {
+  margin-top: 10px;
+  width: 25%; }
 
 .search-box {
-  margin: 50px auto 0;
+  margin: 20px 0;
   width: 600px;
   border: 1px solid #f4f4f4;
   border-radius: 25px;
   font-size: 16px;
-  background-color: #66d46d; }
+  background-color: rgba(144, 234, 150, 0.836); }
 
 .row {
   display: flex;
@@ -51,6 +107,7 @@ input {
   border: none;
   outline: none;
   font-size: 22px;
+  font-weight: bold;
   color: #333;
   background-color: transparent; }
 
@@ -68,21 +125,103 @@ button .fa-solid {
 ::placeholder {
   color: #555; }
 
-.result-box ul {
-  border-top: 1px solid #999;
-  padding: 15px 10px; }
+.date-time {
+  position: absolute;
+  width: 174px;
+  height: 104px;
+  top: 25px;
+  left: 27px; }
 
-.result-box ul li {
-  list-style: none;
-  border-radius: 3px;
-  padding: 15px 10px;
-  cursor: pointer; }
+.text-wrapper-3 {
+  position: absolute;
+  width: 174px;
+  top: 46px;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal; }
 
-.result-box ul li:hover {
-  background-color: #94e0a5; }
+.text-wrapper-4 {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal; }
+
+.search-bar {
+  position: absolute;
+  width: 614px;
+  height: 57px;
+  top: 160px;
+  left: 413px;
+  background-color: #d9d9d9;
+  border-radius: 25px; }
+
+.icon-search {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  top: 9px;
+  left: 558px; }
+
+.city-details-container {
+  display: flex;
+  justify-content: center;
+  color: #f5f5f5;
+  font-size: 2rem; }
+
+.city-temp {
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(160deg, rgba(138, 240, 55, 0.7) 0%, rgba(136, 158, 119, 0.54) 100%);
+  border-radius: 32px;
+  box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940, 0px 4px 4px #fcf5f540;
+  margin: 10px 20px; }
+
+.city-details {
+  display: flex;
+  flex-direction: column; }
+
+.icon-location {
+  width: 50px;
+  height: 50px;
+  color: #f5f5f5; }
+
+.row-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 3rem; }
+
+.location,
+.temp-weather {
+  display: flex;
+  align-items: center;
+  margin: 1.2rem; }
+
+.temp-weather {
+  justify-content: flex-end; }
+
+#weather-icon {
+  width: 40%; }
+
+#temperature {
+  margin-right: 1.5rem;
+  font-size: 1.5em; }
+
+#city-description {
+  line-height: 1.2;
+  margin: 20px; }
 
 /* Add any additional styles you want */
-`, "",{"version":3,"sources":["webpack://./src/assets/styles/main.scss"],"names":[],"mappings":"AAAA;EACE,yBAAyB;EACzB,WAAW,EAAA;;AAGb;EACE,aAAa;EACb,sBAAsB;EACtB,mBAAmB;EACnB,uBAAuB;EACvB,aAAa,EAAA;;AAGf;EACE,mBAAmB;EACnB,YAAY;EACZ,yBAAyB;EACzB,mBAAmB;EACnB,eAAe;EACf,yBAAoC,EAAA;;AAGtC;EACE,aAAa;EACb,mBAAmB;EACnB,kBAAkB,EAAA;;AAGpB;EACE,OAAO;EACP,YAAY;EACZ,YAAY;EACZ,aAAa;EACb,eAAe;EACf,WAAW;EACX,6BAA6B,EAAA;;AAE/B;EACE,uBAAuB;EACvB,YAAY;EACZ,aAAa,EAAA;;AAGf;EACE,WAAW;EACX,WAAW;EACX,eAAe;EACf,eAAe,EAAA;;AAGjB;EACE,WAAW,EAAA;;AAEb;EACE,0BAA0B;EAC1B,kBAAkB,EAAA;;AAGpB;EACE,gBAAgB;EAChB,kBAAkB;EAClB,kBAAkB;EAClB,eAAe,EAAA;;AAGjB;EACE,yBAAyB,EAAA;;AAE3B,uCAAA","sourcesContent":["body {\r\n  background-color: #dfe1e5;\r\n  color: #333;\r\n}\r\n\r\n.container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n  height: 100vh;\r\n}\r\n\r\n.search-box {\r\n  margin: 50px auto 0;\r\n  width: 600px;\r\n  border: 1px solid #f4f4f4;\r\n  border-radius: 25px;\r\n  font-size: 16px;\r\n  background-color: rgb(102, 212, 109);\r\n}\r\n\r\n.row {\r\n  display: flex;\r\n  align-items: center;\r\n  padding: 10px 20px;\r\n}\r\n\r\ninput {\r\n  flex: 1;\r\n  height: 50px;\r\n  border: none;\r\n  outline: none;\r\n  font-size: 22px;\r\n  color: #333;\r\n  background-color: transparent;\r\n}\r\nbutton {\r\n  background: transparent;\r\n  border: none;\r\n  outline: none;\r\n}\r\n\r\nbutton .fa-solid {\r\n  width: 40px;\r\n  color: #555;\r\n  font-size: 30px;\r\n  cursor: pointer;\r\n}\r\n\r\n::placeholder {\r\n  color: #555;\r\n}\r\n.result-box ul {\r\n  border-top: 1px solid #999;\r\n  padding: 15px 10px;\r\n}\r\n\r\n.result-box ul li {\r\n  list-style: none;\r\n  border-radius: 3px;\r\n  padding: 15px 10px;\r\n  cursor: pointer;\r\n}\r\n\r\n.result-box ul li:hover {\r\n  background-color: #94e0a5;\r\n}\r\n/* Add any additional styles you want */\r\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/assets/styles/main.scss"],"names":[],"mappings":"AAEA;EACE,mCAAmC;EACnC,sBAAsB;EACtB,WAAW;EACX,YAAY;EACZ,iCAAiC;EACjC,gBAAgB;EAChB,cAAc,EAAA;;AAGhB;EACE,qBAAqB,EAAA;;AAGvB;EACE,yBAAyB;EACzB,WAAW,EAAA;;AAEb;EACE,aAAa;EACb,mBAAmB;EACnB,8BAA8B;EAC9B,gBAAgB;EAChB,0BAA0B;EAC1B,2BAA2B,EAAA;;AAE7B;EACE,mBAAmB,EAAA;;AAErB;;;;EAIE,iBAAiB,EAAA;;AAEnB;EACE,aAAa;EACb,mBAAmB;EACnB,aAAa,EAAA;;AAEf;EACE,gBAAgB;EAChB,kBAAkB;EAClB,YAAY;EACZ,YAAY;EACZ,mBAAmB;EACnB,2EAIC;EACD,qBAAqB,EAAA;;AAEvB;EACE,kBAAkB;EAClB,aAAa;EACb,cAAc;EACd,QAAQ;EACR,yBAAyB;EACzB,mBAAmB;EACnB,eAAe,EAAA;;AAEjB;EACE,aAAa;EACb,sBAAsB;EACtB,mBAAmB;EACnB,2BAA2B,EAAA;;AAE7B;EACE,gBAAgB;EAChB,UAAU,EAAA;;AAGZ;EACE,cAAc;EACd,YAAY;EACZ,yBAAyB;EACzB,mBAAmB;EACnB,eAAe;EACf,4CAA4C,EAAA;;AAG9C;EACE,aAAa;EACb,mBAAmB;EACnB,kBAAkB,EAAA;;AAGpB;EACE,OAAO;EACP,YAAY;EACZ,YAAY;EACZ,aAAa;EACb,eAAe;EACf,iBAAiB;EACjB,WAAW;EACX,6BAA6B,EAAA;;AAE/B;EACE,uBAAuB;EACvB,YAAY;EACZ,aAAa,EAAA;;AAGf;EACE,WAAW;EACX,WAAW;EACX,eAAe;EACf,eAAe,EAAA;;AAGjB;EACE,WAAW,EAAA;;AAEb;EACE,kBAAkB;EAClB,YAAY;EACZ,aAAa;EACb,SAAS;EACT,UAAU,EAAA;;AAGZ;EACE,kBAAkB;EAClB,YAAY;EACZ,SAAS;EACT,OAAO;EACP,iCAAiC;EACjC,gBAAgB;EAChB,cAAc;EACd,eAAe;EACf,iBAAiB;EACjB,mBAAmB,EAAA;;AAGrB;EACE,kBAAkB;EAClB,SAAS;EACT,OAAO;EACP,iCAAiC;EACjC,gBAAgB;EAChB,cAAc;EACd,eAAe;EACf,iBAAiB;EACjB,mBAAmB,EAAA;;AAGrB;EACE,kBAAkB;EAClB,YAAY;EACZ,YAAY;EACZ,UAAU;EACV,WAAW;EACX,yBAAyB;EACzB,mBAAmB,EAAA;;AAGrB;EACE,kBAAkB;EAClB,WAAW;EACX,YAAY;EACZ,QAAQ;EACR,WAAW,EAAA;;AAGb;EACE,aAAa;EACb,uBAAuB;EACvB,cAAc;EACd,eAAe,EAAA;;AAGjB;EACE,WAAW;EACX,aAAa;EACb,+FAIC;EACD,mBAAmB;EACnB,gFACuB;EACvB,iBAAiB,EAAA;;AAGnB;EACE,aAAa;EACb,sBAAsB,EAAA;;AAGxB;EACE,WAAW;EACX,YAAY;EACZ,cAAc,EAAA;;AAGhB;EACE,aAAa;EACb,mBAAmB;EACnB,8BAA8B;EAC9B,eAAe,EAAA;;AAGjB;;EAEE,aAAa;EACb,mBAAmB;EACnB,cAAc,EAAA;;AAGhB;EACE,yBAAyB,EAAA;;AAG3B;EACE,UAAU,EAAA;;AAGZ;EACE,oBAAoB;EACpB,gBAAgB,EAAA;;AAGlB;EACE,gBAAgB;EAChB,YAAY,EAAA;;AAEd,uCAAA","sourcesContent":["@import url(\"https://fonts.googleapis.com/css?family=Poppins:300,500,400,600\");\r\n\r\n* {\r\n  -webkit-font-smoothing: antialiased;\r\n  box-sizing: border-box;\r\n  margin: 0px;\r\n  padding: 0px;\r\n  font-family: \"Poppins\", Helvetica;\r\n  font-weight: 300;\r\n  color: #f5f5f5;\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n}\r\n\r\nbody {\r\n  background-color: #252222;\r\n  width: 100%;\r\n}\r\n.header {\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: space-between;\r\n  font-size: large;\r\n  margin: 20px 20px 0px 20px;\r\n  flex-direction: row-reverse;\r\n}\r\n.date {\r\n  margin-bottom: 10px;\r\n}\r\n.date,\r\n.time,\r\n.text-wrapper,\r\n.text-wrapper-2 {\r\n  font-weight: bold;\r\n}\r\n.celsius-switch {\r\n  display: flex;\r\n  align-items: center;\r\n  padding: 10px;\r\n}\r\n.switch-icon {\r\n  margin-top: 10px;\r\n  position: relative;\r\n  width: 100px;\r\n  height: 30px;\r\n  border-radius: 25px;\r\n  background: linear-gradient(\r\n    90deg,\r\n    rgb(51.47, 224.19, 23.35) 0%,\r\n    rgba(148.71, 241.19, 133.66, 0) 100%\r\n  );\r\n  margin: 0 10px 0 10px;\r\n}\r\n.ellipse {\r\n  position: relative;\r\n  width: 1.6rem;\r\n  height: 1.6rem;\r\n  top: 3px;\r\n  background-color: #181515;\r\n  border-radius: 25px;\r\n  cursor: pointer;\r\n}\r\n.container-logo-search {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: flex-start;\r\n}\r\n#logo {\r\n  margin-top: 10px;\r\n  width: 25%;\r\n}\r\n\r\n.search-box {\r\n  margin: 20px 0;\r\n  width: 600px;\r\n  border: 1px solid #f4f4f4;\r\n  border-radius: 25px;\r\n  font-size: 16px;\r\n  background-color: rgba(144, 234, 150, 0.836);\r\n}\r\n\r\n.row {\r\n  display: flex;\r\n  align-items: center;\r\n  padding: 10px 20px;\r\n}\r\n\r\ninput {\r\n  flex: 1;\r\n  height: 50px;\r\n  border: none;\r\n  outline: none;\r\n  font-size: 22px;\r\n  font-weight: bold;\r\n  color: #333;\r\n  background-color: transparent;\r\n}\r\nbutton {\r\n  background: transparent;\r\n  border: none;\r\n  outline: none;\r\n}\r\n\r\nbutton .fa-solid {\r\n  width: 40px;\r\n  color: #555;\r\n  font-size: 30px;\r\n  cursor: pointer;\r\n}\r\n\r\n::placeholder {\r\n  color: #555;\r\n}\r\n.date-time {\r\n  position: absolute;\r\n  width: 174px;\r\n  height: 104px;\r\n  top: 25px;\r\n  left: 27px;\r\n}\r\n\r\n.text-wrapper-3 {\r\n  position: absolute;\r\n  width: 174px;\r\n  top: 46px;\r\n  left: 0;\r\n  font-family: \"Poppins\", Helvetica;\r\n  font-weight: 600;\r\n  color: #ffffff;\r\n  font-size: 24px;\r\n  letter-spacing: 0;\r\n  line-height: normal;\r\n}\r\n\r\n.text-wrapper-4 {\r\n  position: absolute;\r\n  top: -1px;\r\n  left: 0;\r\n  font-family: \"Poppins\", Helvetica;\r\n  font-weight: 600;\r\n  color: #ffffff;\r\n  font-size: 24px;\r\n  letter-spacing: 0;\r\n  line-height: normal;\r\n}\r\n\r\n.search-bar {\r\n  position: absolute;\r\n  width: 614px;\r\n  height: 57px;\r\n  top: 160px;\r\n  left: 413px;\r\n  background-color: #d9d9d9;\r\n  border-radius: 25px;\r\n}\r\n\r\n.icon-search {\r\n  position: absolute;\r\n  width: 38px;\r\n  height: 38px;\r\n  top: 9px;\r\n  left: 558px;\r\n}\r\n\r\n.city-details-container {\r\n  display: flex;\r\n  justify-content: center;\r\n  color: #f5f5f5;\r\n  font-size: 2rem;\r\n}\r\n\r\n.city-temp {\r\n  width: 100%;\r\n  height: 500px;\r\n  background: linear-gradient(\r\n    160deg,\r\n    rgba(138, 240, 55, 0.7) 0%,\r\n    rgba(136, 158, 119, 0.54) 100%\r\n  );\r\n  border-radius: 32px;\r\n  box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940,\r\n    0px 4px 4px #fcf5f540;\r\n  margin: 10px 20px;\r\n}\r\n\r\n.city-details {\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.icon-location {\r\n  width: 50px;\r\n  height: 50px;\r\n  color: #f5f5f5;\r\n}\r\n\r\n.row-top {\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: space-between;\r\n  font-size: 3rem;\r\n}\r\n\r\n.location,\r\n.temp-weather {\r\n  display: flex;\r\n  align-items: center;\r\n  margin: 1.2rem;\r\n}\r\n\r\n.temp-weather {\r\n  justify-content: flex-end;\r\n}\r\n\r\n#weather-icon {\r\n  width: 40%;\r\n}\r\n\r\n#temperature {\r\n  margin-right: 1.5rem;\r\n  font-size: 1.5em;\r\n}\r\n\r\n#city-description {\r\n  line-height: 1.2;\r\n  margin: 20px;\r\n}\r\n/* Add any additional styles you want */\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -17928,4 +18067,4 @@ iconImg.href = _assets_img_planet_earth_ico__WEBPACK_IMPORTED_MODULE_3__;
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle8050f74fea8f0169340e.js.map
+//# sourceMappingURL=bundlef7659af5d1985fc068e5.js.map
