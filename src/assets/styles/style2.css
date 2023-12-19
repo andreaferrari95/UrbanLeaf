@@ -30,9 +30,12 @@ body {
 
 .city-details-container {
     display: grid;
-    justify-content: center;
+    padding-block: 2rem;
+    gap: 1.5rem;
+    width: min(100%, 115rem);
     color: #f5f5f5;
     font-size: 2rem;
+
 }
 
 .city-temp {
@@ -43,7 +46,6 @@ body {
     border-radius: 32px;
     box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940,
         0px 4px 4px #fcf5f540;
-    margin: 1rem 2rem;
 }
 
 .city-details {
@@ -96,7 +98,6 @@ body {
     border-radius: 32px;
     box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940, 0px 4px 4px #fcf5f540;
     background: linear-gradient(180deg, rgba(138, 240, 55, 0.81) 0%, rgba(136, 158, 119, 0.54) 100%);
-    margin: 1rem 2rem;
 }
 
 .overlap-3 {
