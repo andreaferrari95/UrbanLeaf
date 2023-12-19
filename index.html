@@ -27,7 +27,10 @@
       content="https://andreaferrari95.github.io/Portfolio/assets/img/project-portfolio.png"
     />
     <link rel="stylesheet" type="text/css" href="dist/style.css" />
-    <script src="https://kit.fontawesome.com/6b71f57b8e.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/6b71f57b8e.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <header class="header time-date degree-switch">
@@ -36,34 +39,65 @@
         <div class="time">21:00 pm</div>
       </div>
       <div class="celsius-switch">
-        <div class="overlap-group"><div class="ellipse"></div></div>
         <div class="text-wrapper">°C</div>
+        <div class="switch-icon"><div class="ellipse"></div></div>
         <div class="text-wrapper-2">°F</div>
       </div>
     </header>
-    <div class="container">
+    <div class="container-logo-search">
       <img id="logo" alt="UrbanLeaf Logo" />
-      <div class="search-box"> 
+      <div class="search-box">
         <div class="row">
-      <input
-        type="text"
-        class="my-input"
-        name="field"
-        tabindex="1"
-        id="searchInput"
-        placeholder="Search Location"
-        autocomplete="off"
-      />
-      <button id="searchButton"><i class="fa-solid fa-magnifying-glass-location"></i></button>
+          <input
+            type="text"
+            class="my-input"
+            name="field"
+            tabindex="1"
+            id="searchInput"
+            placeholder="Search Location..."
+            autocomplete="off"
+          />
+          <button id="searchButton">
+            <i class="fa-solid fa-magnifying-glass-location"></i>
+          </button>
+        </div>
+      </div>
     </div>
-    <div class="result-box">
-    </div>
-    </div>
-  </div>
-      <div id="search-results"></div>
-    </div>
-    <div id="weatherContainer"></div>
-    <div id="pollutionContainer"></div>
-
+    <section class="city-details-container">
+      <div class="city-temp">
+        <div class="overlap">
+          <div class="overlap-2">
+            <p class="rome-the-eternal">
+              <span class="span"
+                >Rome, <br />the Eternal City, is a historic marvel with
+              </span>
+              <span class="text-wrapper-6">great travel connections</span>
+              <span class="span">
+                mild Mediterranean climate and intense urban energy.<br />Its outgoing
+                society is known for its style, fondness for football and the
+                world-famous restaurants and cafes that can be sampled on every
+                corner. Rome also hosts an independent country—Vatican
+                City—within its borders.<br />Its long history and modern
+                achievements make Rome one of the most visited cities in the
+                world.</span
+              >
+            </p>
+            <div class="text-wrapper-7">27°C</div>
+          </div>
+          <div class="group">
+            <div class="overlap-group-2">
+              <div class="cloud">
+                <img class="union" src="img/union.svg" />
+              </div>
+              <div class="union-wrapper">
+                <img class="img" src="img/union-1.svg" />
+              </div>
+            </div>
+          </div>
+          <div class="text-wrapper-8">Rome, Latium, Italy</div>
+          <img class="icon-location" src="img/icon-location.png" />
+        </div>
+      </div>
+    </section>
   </body>
 </html>
