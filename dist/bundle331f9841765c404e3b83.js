@@ -22,7 +22,13 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Poppins:300,500,400,600);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `* {
+___CSS_LOADER_EXPORT___.push([module.id, `html {
+  /* For Firefox */
+  overflow-y: scroll;
+  scrollbar-color: var(--hover-color) var(--secon-bg-color);
+  scrollbar-width: thin; }
+
+* {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   margin: 0px;
@@ -31,12 +37,37 @@ ___CSS_LOADER_EXPORT___.push([module.id, `* {
   font-weight: 300;
   color: #f5f5f5; }
 
+:root {
+  --text-color: #f5f5f5;
+  --hover-color: #8af037b3;
+  --bg-color: #050115;
+  --big-font: 2.5rem;
+  --normal-font: 2rem;
+  --neon-box-shadow: 0 0 0.5rem #00c896;
+  --h2-font: 3rem;
+  --font-neon-text-shadow: 0 0 10px rgba(0, 200, 150, 0.3),
+    0 0 20px rgba(70, 200, 150, 0.3), 0 0 30px rgba(0, 200, 150, 0.3),
+    0 0 40px rgba(0, 200, 150, 0.3), 0 0 70px rgba(0, 200, 150, 0.3),
+    0 0 80px rgba(0, 200, 150, 0.3), 0 0 100px rgba(0, 200, 150, 0.3),
+    0 0 150px rgba(0, 200, 150, 0.3);
+  --bar-color: #e54d26;
+  --neon-box-shadow-bar: 0 0 0.5rem #e54d26;
+  --secon-bg-color: linear-gradient(
+    160deg,
+    rgba(138, 240, 55, 0.7) 0%,
+    rgba(136, 158, 119, 0.54) 100%
+  ); }
+
 a {
   text-decoration: none; }
 
 body {
   background-color: #252222;
-  width: 100%; }
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
 
 .header {
   display: flex;
@@ -172,18 +203,20 @@ button .fa-solid {
   left: 558px; }
 
 .city-details-container {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-block: 2rem;
+  gap: 1.5rem;
+  /* width: min(100%, 115rem); */
   color: #f5f5f5;
   font-size: 2rem; }
 
 .city-temp {
-  width: 100%;
-  height: 500px;
-  background: linear-gradient(160deg, rgba(138, 240, 55, 0.7) 0%, rgba(136, 158, 119, 0.54) 100%);
+  height: fit-content;
+  background: var(--secon-bg-color);
   border-radius: 32px;
   box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940, 0px 4px 4px #fcf5f540;
-  margin: 10px 20px; }
+  grid-column: span 3; }
 
 .city-details {
   display: flex;
@@ -220,8 +253,304 @@ button .fa-solid {
   line-height: 1.2;
   margin: 20px; }
 
-/* Add any additional styles you want */
-`, "",{"version":3,"sources":["webpack://./src/assets/styles/main.scss"],"names":[],"mappings":"AAEA;EACE,mCAAmC;EACnC,sBAAsB;EACtB,WAAW;EACX,YAAY;EACZ,iCAAiC;EACjC,gBAAgB;EAChB,cAAc,EAAA;;AAGhB;EACE,qBAAqB,EAAA;;AAGvB;EACE,yBAAyB;EACzB,WAAW,EAAA;;AAEb;EACE,aAAa;EACb,mBAAmB;EACnB,8BAA8B;EAC9B,gBAAgB;EAChB,0BAA0B;EAC1B,2BAA2B,EAAA;;AAE7B;EACE,mBAAmB,EAAA;;AAErB;;;;EAIE,iBAAiB,EAAA;;AAEnB;EACE,aAAa;EACb,mBAAmB;EACnB,aAAa,EAAA;;AAEf;EACE,gBAAgB;EAChB,kBAAkB;EAClB,YAAY;EACZ,YAAY;EACZ,mBAAmB;EACnB,2EAIC;EACD,qBAAqB,EAAA;;AAEvB;EACE,kBAAkB;EAClB,aAAa;EACb,cAAc;EACd,QAAQ;EACR,yBAAyB;EACzB,mBAAmB;EACnB,eAAe,EAAA;;AAEjB;EACE,aAAa;EACb,sBAAsB;EACtB,mBAAmB;EACnB,2BAA2B,EAAA;;AAE7B;EACE,gBAAgB;EAChB,UAAU,EAAA;;AAGZ;EACE,cAAc;EACd,YAAY;EACZ,yBAAyB;EACzB,mBAAmB;EACnB,eAAe;EACf,4CAA4C,EAAA;;AAG9C;EACE,aAAa;EACb,mBAAmB;EACnB,kBAAkB,EAAA;;AAGpB;EACE,OAAO;EACP,YAAY;EACZ,YAAY;EACZ,aAAa;EACb,eAAe;EACf,iBAAiB;EACjB,WAAW;EACX,6BAA6B,EAAA;;AAE/B;EACE,uBAAuB;EACvB,YAAY;EACZ,aAAa,EAAA;;AAGf;EACE,WAAW;EACX,WAAW;EACX,eAAe;EACf,eAAe,EAAA;;AAGjB;EACE,WAAW,EAAA;;AAEb;EACE,kBAAkB;EAClB,YAAY;EACZ,aAAa;EACb,SAAS;EACT,UAAU,EAAA;;AAGZ;EACE,kBAAkB;EAClB,YAAY;EACZ,SAAS;EACT,OAAO;EACP,iCAAiC;EACjC,gBAAgB;EAChB,cAAc;EACd,eAAe;EACf,iBAAiB;EACjB,mBAAmB,EAAA;;AAGrB;EACE,kBAAkB;EAClB,SAAS;EACT,OAAO;EACP,iCAAiC;EACjC,gBAAgB;EAChB,cAAc;EACd,eAAe;EACf,iBAAiB;EACjB,mBAAmB,EAAA;;AAGrB;EACE,kBAAkB;EAClB,YAAY;EACZ,YAAY;EACZ,UAAU;EACV,WAAW;EACX,yBAAyB;EACzB,mBAAmB,EAAA;;AAGrB;EACE,kBAAkB;EAClB,WAAW;EACX,YAAY;EACZ,QAAQ;EACR,WAAW,EAAA;;AAGb;EACE,aAAa;EACb,uBAAuB;EACvB,cAAc;EACd,eAAe,EAAA;;AAGjB;EACE,WAAW;EACX,aAAa;EACb,+FAIC;EACD,mBAAmB;EACnB,gFACuB;EACvB,iBAAiB,EAAA;;AAGnB;EACE,aAAa;EACb,sBAAsB,EAAA;;AAGxB;EACE,WAAW;EACX,YAAY;EACZ,cAAc,EAAA;;AAGhB;EACE,aAAa;EACb,mBAAmB;EACnB,8BAA8B;EAC9B,eAAe,EAAA;;AAGjB;;EAEE,aAAa;EACb,mBAAmB;EACnB,cAAc,EAAA;;AAGhB;EACE,yBAAyB,EAAA;;AAG3B;EACE,UAAU,EAAA;;AAGZ;EACE,oBAAoB;EACpB,gBAAgB,EAAA;;AAGlB;EACE,gBAAgB;EAChB,YAAY,EAAA;;AAEd,uCAAA","sourcesContent":["@import url(\"https://fonts.googleapis.com/css?family=Poppins:300,500,400,600\");\r\n\r\n* {\r\n  -webkit-font-smoothing: antialiased;\r\n  box-sizing: border-box;\r\n  margin: 0px;\r\n  padding: 0px;\r\n  font-family: \"Poppins\", Helvetica;\r\n  font-weight: 300;\r\n  color: #f5f5f5;\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n}\r\n\r\nbody {\r\n  background-color: #252222;\r\n  width: 100%;\r\n}\r\n.header {\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: space-between;\r\n  font-size: large;\r\n  margin: 20px 20px 0px 20px;\r\n  flex-direction: row-reverse;\r\n}\r\n.date {\r\n  margin-bottom: 10px;\r\n}\r\n.date,\r\n.time,\r\n.text-wrapper,\r\n.text-wrapper-2 {\r\n  font-weight: bold;\r\n}\r\n.celsius-switch {\r\n  display: flex;\r\n  align-items: center;\r\n  padding: 10px;\r\n}\r\n.switch-icon {\r\n  margin-top: 10px;\r\n  position: relative;\r\n  width: 100px;\r\n  height: 30px;\r\n  border-radius: 25px;\r\n  background: linear-gradient(\r\n    90deg,\r\n    rgb(51.47, 224.19, 23.35) 0%,\r\n    rgba(148.71, 241.19, 133.66, 0) 100%\r\n  );\r\n  margin: 0 10px 0 10px;\r\n}\r\n.ellipse {\r\n  position: relative;\r\n  width: 1.6rem;\r\n  height: 1.6rem;\r\n  top: 3px;\r\n  background-color: #181515;\r\n  border-radius: 25px;\r\n  cursor: pointer;\r\n}\r\n.container-logo-search {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: flex-start;\r\n}\r\n#logo {\r\n  margin-top: 10px;\r\n  width: 25%;\r\n}\r\n\r\n.search-box {\r\n  margin: 20px 0;\r\n  width: 600px;\r\n  border: 1px solid #f4f4f4;\r\n  border-radius: 25px;\r\n  font-size: 16px;\r\n  background-color: rgba(144, 234, 150, 0.836);\r\n}\r\n\r\n.row {\r\n  display: flex;\r\n  align-items: center;\r\n  padding: 10px 20px;\r\n}\r\n\r\ninput {\r\n  flex: 1;\r\n  height: 50px;\r\n  border: none;\r\n  outline: none;\r\n  font-size: 22px;\r\n  font-weight: bold;\r\n  color: #333;\r\n  background-color: transparent;\r\n}\r\nbutton {\r\n  background: transparent;\r\n  border: none;\r\n  outline: none;\r\n}\r\n\r\nbutton .fa-solid {\r\n  width: 40px;\r\n  color: #555;\r\n  font-size: 30px;\r\n  cursor: pointer;\r\n}\r\n\r\n::placeholder {\r\n  color: #555;\r\n}\r\n.date-time {\r\n  position: absolute;\r\n  width: 174px;\r\n  height: 104px;\r\n  top: 25px;\r\n  left: 27px;\r\n}\r\n\r\n.text-wrapper-3 {\r\n  position: absolute;\r\n  width: 174px;\r\n  top: 46px;\r\n  left: 0;\r\n  font-family: \"Poppins\", Helvetica;\r\n  font-weight: 600;\r\n  color: #ffffff;\r\n  font-size: 24px;\r\n  letter-spacing: 0;\r\n  line-height: normal;\r\n}\r\n\r\n.text-wrapper-4 {\r\n  position: absolute;\r\n  top: -1px;\r\n  left: 0;\r\n  font-family: \"Poppins\", Helvetica;\r\n  font-weight: 600;\r\n  color: #ffffff;\r\n  font-size: 24px;\r\n  letter-spacing: 0;\r\n  line-height: normal;\r\n}\r\n\r\n.search-bar {\r\n  position: absolute;\r\n  width: 614px;\r\n  height: 57px;\r\n  top: 160px;\r\n  left: 413px;\r\n  background-color: #d9d9d9;\r\n  border-radius: 25px;\r\n}\r\n\r\n.icon-search {\r\n  position: absolute;\r\n  width: 38px;\r\n  height: 38px;\r\n  top: 9px;\r\n  left: 558px;\r\n}\r\n\r\n.city-details-container {\r\n  display: flex;\r\n  justify-content: center;\r\n  color: #f5f5f5;\r\n  font-size: 2rem;\r\n}\r\n\r\n.city-temp {\r\n  width: 100%;\r\n  height: 500px;\r\n  background: linear-gradient(\r\n    160deg,\r\n    rgba(138, 240, 55, 0.7) 0%,\r\n    rgba(136, 158, 119, 0.54) 100%\r\n  );\r\n  border-radius: 32px;\r\n  box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940,\r\n    0px 4px 4px #fcf5f540;\r\n  margin: 10px 20px;\r\n}\r\n\r\n.city-details {\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.icon-location {\r\n  width: 50px;\r\n  height: 50px;\r\n  color: #f5f5f5;\r\n}\r\n\r\n.row-top {\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: space-between;\r\n  font-size: 3rem;\r\n}\r\n\r\n.location,\r\n.temp-weather {\r\n  display: flex;\r\n  align-items: center;\r\n  margin: 1.2rem;\r\n}\r\n\r\n.temp-weather {\r\n  justify-content: flex-end;\r\n}\r\n\r\n#weather-icon {\r\n  width: 40%;\r\n}\r\n\r\n#temperature {\r\n  margin-right: 1.5rem;\r\n  font-size: 1.5em;\r\n}\r\n\r\n#city-description {\r\n  line-height: 1.2;\r\n  margin: 20px;\r\n}\r\n/* Add any additional styles you want */\r\n"],"sourceRoot":""}]);
+/* -----------------------------*/
+.weather-details {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  padding-block: 1.5rem;
+  justify-items: center;
+  border-radius: 32px;
+  box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940, 0px 4px 4px #fcf5f540;
+  background: var(--secon-bg-color);
+  grid-column: span 2; }
+
+.city-score {
+  background: var(--secon-bg-color);
+  border-radius: 32px;
+  box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940, 0px 4px 4px #fcf5f540;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  justify-items: center; }
+
+#city-score-name {
+  font-size: 1.5em; }
+
+.score-container {
+  font-size: 2em; }
+
+.scores-category-container {
+  background: var(--secon-bg-color);
+  border-radius: 32px;
+  box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940, 0px 4px 4px #fcf5f540;
+  grid-column: span 3; }
+
+.humidity-container,
+.visibility-container,
+.air-quality-container,
+.wind-speed-container,
+.air-pressure-container,
+.pollen-container,
+.pollutant-container,
+.wind-direction-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.humidity,
+.visibility,
+.air-quality,
+.wind-speed,
+.air-pressure,
+.pollen,
+.pollutant,
+.wind-direction {
+  margin-bottom: 1rem; }
+
+/* category Section ---------*/
+.category-title {
+  display: flex;
+  justify-content: flex-start; }
+
+#category-city {
+  display: flex;
+  justify-content: flex-end; }
+
+.category-main {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: var(--secon-bg-color);
+  grid-column: span 3;
+  gap: 1.5rem;
+  border-radius: 32px; }
+
+.category-left,
+.category-right {
+  padding: 1.5rem; }
+
+.category-left {
+  margin: 1rem 0 1rem 1.5rem; }
+
+.category-right {
+  margin: 1rem 1.5rem 1rem 0; }
+
+.category-bar {
+  margin-bottom: 2.3rem; }
+
+.category-title,
+#category-city {
+  margin-bottom: 2rem;
+  font-size: var(--normal-font);
+  text-align: center; }
+
+.category-left .category-bar-left .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px; }
+
+.category-left .category-bar-left .bar {
+  width: 100%;
+  height: 10px;
+  background-color: var(--bg-color);
+  border-radius: 25px;
+  margin-top: 10px;
+  position: relative; }
+
+.category-bar-left .bar span {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  border-radius: 25px; }
+
+.category-bar-left .bar .housing-bar {
+  width: 80%;
+  background: var(--bar-color);
+  box-shadow: var(--neon-box-shadow-bar);
+  animation: html 2.5s; }
+
+.category-bar-left .bar .safety-bar {
+  width: 70%;
+  background: var(--bar-color);
+  box-shadow: var(--neon-box-shadow-bar);
+  animation: css 2s; }
+
+.category-bar-left .bar .healtcare-bar {
+  width: 60%;
+  background: var(--bar-color);
+  box-shadow: var(--neon-box-shadow-bar);
+  animation: javascript 2s; }
+
+.category-bar-left .bar .environmental-quality-bar {
+  width: 70%;
+  background: var(--bar-color);
+  box-shadow: var(--neon-box-shadow-bar);
+  animation: premierepro 3.5s; }
+
+.category-bar-left .bar .taxation-bar {
+  width: 80%;
+  background: var(--bar-color);
+  box-shadow: var(--neon-box-shadow-bar);
+  animation: lightroom 4s; }
+
+.category-bar-left .bar .leisure-and-culture-bar {
+  width: 80%;
+  background: var(--bar-color);
+  box-shadow: var(--neon-box-shadow-bar);
+  animation: lightroom 4s; }
+
+.category-bar-left .bar .startups-bar {
+  width: 80%;
+  background: var(--bar-color);
+  box-shadow: var(--neon-box-shadow-bar);
+  animation: lightroom 4s; }
+
+/* Skills Right Section ---------*/
+.category-bar-right,
+.category-bar-left {
+  margin-bottom: 2.3rem; }
+
+.category-right .category-bar-right .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px; }
+
+.category-right .category-bar-right .bar {
+  width: 100%;
+  height: 10px;
+  background-color: var(--bg-color);
+  border-radius: 25px;
+  margin-top: 10px;
+  position: relative; }
+
+.category-bar-right .bar span {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  border-radius: 25px; }
+
+.category-bar-right .bar .cost-of-living-bar {
+  width: 80%;
+  background: var(--bar-color);
+  box-shadow: var(--neon-box-shadow-bar);
+  animation: team-work 2.5s; }
+
+.category-bar-right .bar .travel-connectivity-bar {
+  width: 75%;
+  background: var(--bar-color);
+  box-shadow: var(--neon-box-shadow-bar);
+  animation: communication 3s; }
+
+.category-bar-right .bar .education-bar {
+  width: 85%;
+  background: var(--bar-color);
+  box-shadow: var(--neon-box-shadow-bar);
+  animation: motivation 3.5s; }
+
+.category-bar-right .bar .economy-bar {
+  width: 80%;
+  background: var(--bar-color);
+  box-shadow: var(--neon-box-shadow-bar);
+  animation: resilience 3s; }
+
+.category-bar-right .bar .internet-access-bar {
+  width: 75%;
+  background: var(--bar-color);
+  box-shadow: var(--neon-box-shadow-bar);
+  animation: creativity 3s; }
+
+.category-bar-right .bar .outdoors-bar {
+  width: 75%;
+  background: var(--bar-color);
+  box-shadow: var(--neon-box-shadow-bar);
+  animation: creativity 3s; }
+
+.category-bar-right .bar .business-freedom-bar {
+  width: 75%;
+  background: var(--bar-color);
+  box-shadow: var(--neon-box-shadow-bar);
+  animation: creativity 3s; }
+
+/*scrollbar */
+::-webkit-scrollbar {
+  height: 0;
+  width: 0.5rem; }
+
+::-webkit-scrollbar-track {
+  background: #252222; }
+
+::-webkit-scrollbar-thumb {
+  background: var(--hover-color);
+  border-radius: 5rem; }
+
+/* Animation Keyframes-------------*/
+/* Left panel*/
+@keyframes html {
+  0% {
+    width: 0%; }
+  100% {
+    width: 80%; } }
+
+@keyframes css {
+  0% {
+    width: 0%; }
+  100% {
+    width: 70%; } }
+
+@keyframes javascript {
+  0% {
+    width: 0%; }
+  100% {
+    width: 60%; } }
+
+@keyframes premierepro {
+  0% {
+    width: 0%; }
+  100% {
+    width: 70%; } }
+
+@keyframes lightroom {
+  0% {
+    width: 0%; }
+  100% {
+    width: 80%; } }
+
+/*right panel*/
+@keyframes team-work {
+  0% {
+    width: 0%; }
+  100% {
+    width: 80%; } }
+
+@keyframes communication {
+  0% {
+    width: 0%; }
+  100% {
+    width: 75%; } }
+
+@keyframes motivation {
+  0% {
+    width: 0%; }
+  100% {
+    width: 85%; } }
+
+@keyframes resilience {
+  0% {
+    width: 0%; }
+  100% {
+    width: 80%; } }
+
+@keyframes creativity {
+  0% {
+    width: 0%; }
+  100% {
+    width: 75%; } }
+`, "",{"version":3,"sources":["webpack://./src/assets/styles/main.scss"],"names":[],"mappings":"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","sourcesContent":["@import url(\"https://fonts.googleapis.com/css?family=Poppins:300,500,400,600\");\r\n\r\nhtml {\r\n  /* For Firefox */\r\n  overflow-y: scroll;\r\n  scrollbar-color: var(--hover-color) var(--secon-bg-color);\r\n  scrollbar-width: thin;\r\n}\r\n\r\n* {\r\n  -webkit-font-smoothing: antialiased;\r\n  box-sizing: border-box;\r\n  margin: 0px;\r\n  padding: 0px;\r\n  font-family: \"Poppins\", Helvetica;\r\n  font-weight: 300;\r\n  color: #f5f5f5;\r\n}\r\n\r\n:root {\r\n  --text-color: #f5f5f5;\r\n  --hover-color: #8af037b3;\r\n  --bg-color: #050115;\r\n  --big-font: 2.5rem;\r\n  --normal-font: 2rem;\r\n  --neon-box-shadow: 0 0 0.5rem #00c896;\r\n  --h2-font: 3rem;\r\n  --font-neon-text-shadow: 0 0 10px rgba(0, 200, 150, 0.3),\r\n    0 0 20px rgba(70, 200, 150, 0.3), 0 0 30px rgba(0, 200, 150, 0.3),\r\n    0 0 40px rgba(0, 200, 150, 0.3), 0 0 70px rgba(0, 200, 150, 0.3),\r\n    0 0 80px rgba(0, 200, 150, 0.3), 0 0 100px rgba(0, 200, 150, 0.3),\r\n    0 0 150px rgba(0, 200, 150, 0.3);\r\n\r\n  --bar-color: #e54d26;\r\n  --neon-box-shadow-bar: 0 0 0.5rem #e54d26;\r\n\r\n  --secon-bg-color: linear-gradient(\r\n    160deg,\r\n    rgba(138, 240, 55, 0.7) 0%,\r\n    rgba(136, 158, 119, 0.54) 100%\r\n  );\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n}\r\n\r\nbody {\r\n  background-color: #252222;\r\n  width: 100%;\r\n\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n.header {\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: space-between;\r\n  font-size: large;\r\n  margin: 20px 20px 0px 20px;\r\n  flex-direction: row-reverse;\r\n}\r\n.date {\r\n  margin-bottom: 10px;\r\n}\r\n.date,\r\n.time,\r\n.text-wrapper,\r\n.text-wrapper-2 {\r\n  font-weight: bold;\r\n}\r\n.celsius-switch {\r\n  display: flex;\r\n  align-items: center;\r\n  padding: 10px;\r\n}\r\n.switch-icon {\r\n  margin-top: 10px;\r\n  position: relative;\r\n  width: 100px;\r\n  height: 30px;\r\n  border-radius: 25px;\r\n  background: linear-gradient(\r\n    90deg,\r\n    rgb(51.47, 224.19, 23.35) 0%,\r\n    rgba(148.71, 241.19, 133.66, 0) 100%\r\n  );\r\n  margin: 0 10px 0 10px;\r\n}\r\n.ellipse {\r\n  position: relative;\r\n  width: 1.6rem;\r\n  height: 1.6rem;\r\n  top: 3px;\r\n  background-color: #181515;\r\n  border-radius: 25px;\r\n  cursor: pointer;\r\n}\r\n.container-logo-search {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: flex-start;\r\n}\r\n#logo {\r\n  margin-top: 10px;\r\n  width: 25%;\r\n}\r\n\r\n.search-box {\r\n  margin: 20px 0;\r\n  width: 600px;\r\n  border: 1px solid #f4f4f4;\r\n  border-radius: 25px;\r\n  font-size: 16px;\r\n  background-color: rgba(144, 234, 150, 0.836);\r\n}\r\n\r\n.row {\r\n  display: flex;\r\n  align-items: center;\r\n  padding: 10px 20px;\r\n}\r\n\r\ninput {\r\n  flex: 1;\r\n  height: 50px;\r\n  border: none;\r\n  outline: none;\r\n  font-size: 22px;\r\n  font-weight: bold;\r\n  color: #333;\r\n  background-color: transparent;\r\n}\r\nbutton {\r\n  background: transparent;\r\n  border: none;\r\n  outline: none;\r\n}\r\n\r\nbutton .fa-solid {\r\n  width: 40px;\r\n  color: #555;\r\n  font-size: 30px;\r\n  cursor: pointer;\r\n}\r\n\r\n::placeholder {\r\n  color: #555;\r\n}\r\n.date-time {\r\n  position: absolute;\r\n  width: 174px;\r\n  height: 104px;\r\n  top: 25px;\r\n  left: 27px;\r\n}\r\n\r\n.text-wrapper-3 {\r\n  position: absolute;\r\n  width: 174px;\r\n  top: 46px;\r\n  left: 0;\r\n  font-family: \"Poppins\", Helvetica;\r\n  font-weight: 600;\r\n  color: #ffffff;\r\n  font-size: 24px;\r\n  letter-spacing: 0;\r\n  line-height: normal;\r\n}\r\n\r\n.text-wrapper-4 {\r\n  position: absolute;\r\n  top: -1px;\r\n  left: 0;\r\n  font-family: \"Poppins\", Helvetica;\r\n  font-weight: 600;\r\n  color: #ffffff;\r\n  font-size: 24px;\r\n  letter-spacing: 0;\r\n  line-height: normal;\r\n}\r\n\r\n.search-bar {\r\n  position: absolute;\r\n  width: 614px;\r\n  height: 57px;\r\n  top: 160px;\r\n  left: 413px;\r\n  background-color: #d9d9d9;\r\n  border-radius: 25px;\r\n}\r\n\r\n.icon-search {\r\n  position: absolute;\r\n  width: 38px;\r\n  height: 38px;\r\n  top: 9px;\r\n  left: 558px;\r\n}\r\n\r\n.city-details-container {\r\n  display: grid;\r\n  grid-template-columns: repeat(3, 1fr);\r\n  padding-block: 2rem;\r\n  gap: 1.5rem;\r\n  /* width: min(100%, 115rem); */\r\n  color: #f5f5f5;\r\n  font-size: 2rem;\r\n}\r\n\r\n.city-temp {\r\n  height: fit-content;\r\n  background: var(--secon-bg-color);\r\n  border-radius: 32px;\r\n  box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940,\r\n    0px 4px 4px #fcf5f540;\r\n  grid-column: span 3;\r\n}\r\n\r\n.city-details {\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.icon-location {\r\n  width: 50px;\r\n  height: 50px;\r\n  color: #f5f5f5;\r\n}\r\n\r\n.row-top {\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: space-between;\r\n  font-size: 3rem;\r\n}\r\n\r\n.location,\r\n.temp-weather {\r\n  display: flex;\r\n  align-items: center;\r\n  margin: 1.2rem;\r\n}\r\n\r\n.temp-weather {\r\n  justify-content: flex-end;\r\n}\r\n\r\n#weather-icon {\r\n  width: 40%;\r\n}\r\n\r\n#temperature {\r\n  margin-right: 1.5rem;\r\n  font-size: 1.5em;\r\n}\r\n\r\n#city-description {\r\n  line-height: 1.2;\r\n  margin: 20px;\r\n}\r\n\r\n/* -----------------------------*/\r\n\r\n.weather-details {\r\n  display: grid;\r\n  grid-template-columns: repeat(4, 1fr);\r\n  gap: 1.5rem;\r\n  padding-block: 1.5rem;\r\n  justify-items: center;\r\n  border-radius: 32px;\r\n  box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940,\r\n    0px 4px 4px #fcf5f540;\r\n  background: var(--secon-bg-color);\r\n  grid-column: span 2;\r\n}\r\n\r\n.city-score {\r\n  background: var(--secon-bg-color);\r\n  border-radius: 32px;\r\n  box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940,\r\n    0px 4px 4px #fcf5f540;\r\n  display: grid;\r\n  align-items: center;\r\n  justify-content: center;\r\n  justify-items: center;\r\n}\r\n\r\n#city-score-name {\r\n  font-size: 1.5em;\r\n}\r\n\r\n.score-container {\r\n  font-size: 2em;\r\n}\r\n\r\n.scores-category-container {\r\n  background: var(--secon-bg-color);\r\n  border-radius: 32px;\r\n  box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940,\r\n    0px 4px 4px #fcf5f540;\r\n  grid-column: span 3;\r\n}\r\n\r\n.humidity-container,\r\n.visibility-container,\r\n.air-quality-container,\r\n.wind-speed-container,\r\n.air-pressure-container,\r\n.pollen-container,\r\n.pollutant-container,\r\n.wind-direction-container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n}\r\n\r\n.humidity,\r\n.visibility,\r\n.air-quality,\r\n.wind-speed,\r\n.air-pressure,\r\n.pollen,\r\n.pollutant,\r\n.wind-direction {\r\n  margin-bottom: 1rem;\r\n}\r\n\r\n/* category Section ---------*/\r\n.category-title {\r\n  display: flex;\r\n  justify-content: flex-start;\r\n}\r\n\r\n#category-city {\r\n  display: flex;\r\n  justify-content: flex-end;\r\n}\r\n\r\n.category-main {\r\n  width: 100%;\r\n  display: grid;\r\n  grid-template-columns: repeat(2, 1fr);\r\n  background: var(--secon-bg-color);\r\n  grid-column: span 3;\r\n  gap: 1.5rem;\r\n  border-radius: 32px;\r\n}\r\n\r\n.category-left,\r\n.category-right {\r\n  padding: 1.5rem;\r\n}\r\n\r\n.category-left {\r\n  margin: 1rem 0 1rem 1.5rem;\r\n}\r\n\r\n.category-right {\r\n  margin: 1rem 1.5rem 1rem 0;\r\n}\r\n\r\n.category-bar {\r\n  margin-bottom: 2.3rem;\r\n}\r\n\r\n.category-title,\r\n#category-city {\r\n  margin-bottom: 2rem;\r\n  font-size: var(--normal-font);\r\n  text-align: center;\r\n}\r\n\r\n.category-left .category-bar-left .info {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  padding: 10px;\r\n}\r\n\r\n.category-left .category-bar-left .bar {\r\n  width: 100%;\r\n  height: 10px;\r\n  background-color: var(--bg-color);\r\n  border-radius: 25px;\r\n  margin-top: 10px;\r\n  position: relative;\r\n}\r\n\r\n.category-bar-left .bar span {\r\n  width: 50%;\r\n  height: 100%;\r\n  position: absolute;\r\n  left: 0;\r\n  border-radius: 25px;\r\n}\r\n\r\n.category-bar-left .bar .housing-bar {\r\n  width: 80%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: html 2.5s;\r\n}\r\n\r\n.category-bar-left .bar .safety-bar {\r\n  width: 70%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: css 2s;\r\n}\r\n\r\n.category-bar-left .bar .healtcare-bar {\r\n  width: 60%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: javascript 2s;\r\n}\r\n\r\n.category-bar-left .bar .environmental-quality-bar {\r\n  width: 70%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: premierepro 3.5s;\r\n}\r\n\r\n.category-bar-left .bar .taxation-bar {\r\n  width: 80%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: lightroom 4s;\r\n}\r\n\r\n.category-bar-left .bar .leisure-and-culture-bar {\r\n  width: 80%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: lightroom 4s;\r\n}\r\n\r\n.category-bar-left .bar .startups-bar {\r\n  width: 80%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: lightroom 4s;\r\n}\r\n\r\n/* Skills Right Section ---------*/\r\n.category-bar-right,\r\n.category-bar-left {\r\n  margin-bottom: 2.3rem;\r\n}\r\n\r\n.category-right .category-bar-right .info {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  padding: 10px;\r\n}\r\n\r\n.category-right .category-bar-right .bar {\r\n  width: 100%;\r\n  height: 10px;\r\n  background-color: var(--bg-color);\r\n  border-radius: 25px;\r\n  margin-top: 10px;\r\n  position: relative;\r\n}\r\n\r\n.category-bar-right .bar span {\r\n  width: 50%;\r\n  height: 100%;\r\n  position: absolute;\r\n  left: 0;\r\n  border-radius: 25px;\r\n}\r\n\r\n.category-bar-right .bar .cost-of-living-bar {\r\n  width: 80%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: team-work 2.5s;\r\n}\r\n\r\n.category-bar-right .bar .travel-connectivity-bar {\r\n  width: 75%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: communication 3s;\r\n}\r\n\r\n.category-bar-right .bar .education-bar {\r\n  width: 85%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: motivation 3.5s;\r\n}\r\n\r\n.category-bar-right .bar .economy-bar {\r\n  width: 80%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: resilience 3s;\r\n}\r\n\r\n.category-bar-right .bar .internet-access-bar {\r\n  width: 75%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: creativity 3s;\r\n}\r\n\r\n.category-bar-right .bar .outdoors-bar {\r\n  width: 75%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: creativity 3s;\r\n}\r\n\r\n.category-bar-right .bar .business-freedom-bar {\r\n  width: 75%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: creativity 3s;\r\n}\r\n\r\n/*scrollbar */\r\n\r\n::-webkit-scrollbar {\r\n  height: 0;\r\n  width: 0.5rem;\r\n}\r\n\r\n::-webkit-scrollbar-track {\r\n  background: #252222;\r\n}\r\n\r\n::-webkit-scrollbar-thumb {\r\n  background: var(--hover-color);\r\n  border-radius: 5rem;\r\n}\r\n\r\n/* Animation Keyframes-------------*/\r\n\r\n/* Left panel*/\r\n\r\n@keyframes html {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 80%;\r\n  }\r\n}\r\n\r\n@keyframes css {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 70%;\r\n  }\r\n}\r\n\r\n@keyframes javascript {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 60%;\r\n  }\r\n}\r\n\r\n@keyframes premierepro {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 70%;\r\n  }\r\n}\r\n\r\n@keyframes lightroom {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 80%;\r\n  }\r\n}\r\n\r\n/*right panel*/\r\n\r\n@keyframes team-work {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 80%;\r\n  }\r\n}\r\n\r\n@keyframes communication {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 75%;\r\n  }\r\n}\r\n\r\n@keyframes motivation {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 85%;\r\n  }\r\n}\r\n\r\n@keyframes resilience {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 80%;\r\n  }\r\n}\r\n\r\n@keyframes creativity {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 75%;\r\n  }\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -18067,4 +18396,4 @@ iconImg.href = _assets_img_planet_earth_ico__WEBPACK_IMPORTED_MODULE_3__;
 
 /******/ })()
 ;
-//# sourceMappingURL=bundlef7659af5d1985fc068e5.js.map
+//# sourceMappingURL=bundle331f9841765c404e3b83.js.map
