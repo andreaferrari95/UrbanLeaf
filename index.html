@@ -94,13 +94,25 @@
 
       <div class="city-score">
         <div class="city-name-score">
-          <h3 id="city-score-name">CITY SCORE</h3>
+          <h3 id="city-score-name">ROME CITY SCORE</h3>
         </div>
         <div class="score-container">
-          <p class="score-result">
-            <span id="score">55.08</span>
-            <span class="/100">/100</span>
-          </p>
+          <div class="circular-score-bar">
+            <div class="outer">
+              <div class="inner">
+                <div id="score">55.08%</div>
+              </div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+              <defs>
+                <linearGradient id="GradientColor">
+                  <stop offset="0%" stop-color="#e91e63" />
+                  <stop offset="100%" stop-color="#673ab7" />
+                </linearGradient>
+              </defs>
+              <circle cx="100" cy="100" r="85" stroke-linecap="round" />
+            </svg>
+          </div>
         </div>
       </div>
 

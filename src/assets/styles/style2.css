@@ -445,7 +445,10 @@ body {
 circle {
     fill: none;
     stroke: url(#GradientColor);
-    stroke-width: 25px;
+    stroke-width: 21px;
+    stroke-dasharray: 550;
+    stroke-dashoffset: 550;
+    animation: score 2s linear forwards;
 }
 
 svg {
@@ -457,6 +460,12 @@ svg {
 /* Animation Keyframes-------------*/
 
 /* Left panel*/
+
+@keyframes score {
+    100% {
+        stroke-dashoffset: 247.5;
+    }
+}
 
 @keyframes html {
     0% {
