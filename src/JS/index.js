@@ -5,42 +5,41 @@ import logo from "../assets/img/UrbanLeaf-Logo.png";
 import icon from "../assets/img/planet-earth.ico";
 
 //date and time function
-defer(() => {
-  let hrs = document.getElementById("hrs");
-  let min = document.getElementById("min");
-  let sec = document.getElementById("sec");
-  let day = document.getElementById("day");
-  let date = document.getElementById("date");
-  let month = document.getElementById("month");
-  let year = document.getElementById("year");
 
-  const daysOfWeek = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
+let hrs = document.getElementById("hrs");
+let min = document.getElementById("min");
+let sec = document.getElementById("sec");
+let day = document.getElementById("day");
+let date = document.getElementById("date");
+let month = document.getElementById("month");
+let year = document.getElementById("year");
 
-  setInterval(() => {
-    let currentTime = new Date();
+const daysOfWeek = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
 
-    hrs.innerHTML =
-      (currentTime.getHours() < 10 ? "0" : "") + currentTime.getHours();
-    min.innerHTML =
-      (currentTime.getMinutes() < 10 ? "0" : "") + currentTime.getMinutes();
-    sec.innerHTML =
-      (currentTime.getSeconds() < 10 ? "0" : "") + currentTime.getSeconds();
+setInterval(() => {
+  let currentTime = new Date();
 
-    day.innerHTML = daysOfWeek[currentTime.getDay()];
+  hrs.innerHTML =
+    (currentTime.getHours() < 10 ? "0" : "") + currentTime.getHours();
+  min.innerHTML =
+    (currentTime.getMinutes() < 10 ? "0" : "") + currentTime.getMinutes();
+  sec.innerHTML =
+    (currentTime.getSeconds() < 10 ? "0" : "") + currentTime.getSeconds();
 
-    date.innerHTML = currentTime.getDate();
-    month.innerHTML = currentTime.getMonth();
-    year.innerHTML = currentTime.getFullYear();
-  }, 1000);
-});
+  day.innerHTML = daysOfWeek[currentTime.getDay()];
+
+  date.innerHTML = currentTime.getDate();
+  month.innerHTML = currentTime.getMonth();
+  year.innerHTML = currentTime.getFullYear();
+}, 1000);
 
 console.log(process.env.GOOGLE_PLACES_API);
 console.log(process.env.TELEPORT_API_URL);
