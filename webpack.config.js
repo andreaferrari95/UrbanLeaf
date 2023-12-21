@@ -30,6 +30,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      title: "UrbanLeaf",
+      filename: "index.html",
       template: "./index.html",
     }),
     new Dotenv(),
