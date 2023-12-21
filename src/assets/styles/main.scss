@@ -55,19 +55,18 @@ body {
 }
 .header {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   font-size: large;
   margin: 20px 20px 0px 20px;
-  flex-direction: row-reverse;
 }
-.date {
-  margin-bottom: 10px;
-}
-.date,
-.time,
-.text-wrapper,
-.text-wrapper-2 {
+
+#day,
+#date,
+#month,
+#year,
+#hrs,
+#min,
+#sec {
   font-weight: bold;
 }
 .celsius-switch {
@@ -148,13 +147,6 @@ button .fa-solid {
 
 ::placeholder {
   color: #555;
-}
-.date-time {
-  position: absolute;
-  width: 174px;
-  height: 104px;
-  top: 25px;
-  left: 27px;
 }
 
 .text-wrapper-3 {
