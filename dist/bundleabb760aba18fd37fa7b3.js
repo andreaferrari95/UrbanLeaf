@@ -18412,42 +18412,41 @@ __webpack_require__.r(__webpack_exports__);
 
 
 //date and time function
-(0,lodash__WEBPACK_IMPORTED_MODULE_0__.defer)(() => {
-  let hrs = document.getElementById("hrs");
-  let min = document.getElementById("min");
-  let sec = document.getElementById("sec");
-  let day = document.getElementById("day");
-  let date = document.getElementById("date");
-  let month = document.getElementById("month");
-  let year = document.getElementById("year");
 
-  const daysOfWeek = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
+let hrs = document.getElementById("hrs");
+let min = document.getElementById("min");
+let sec = document.getElementById("sec");
+let day = document.getElementById("day");
+let date = document.getElementById("date");
+let month = document.getElementById("month");
+let year = document.getElementById("year");
 
-  setInterval(() => {
-    let currentTime = new Date();
+const daysOfWeek = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
 
-    hrs.innerHTML =
-      (currentTime.getHours() < 10 ? "0" : "") + currentTime.getHours();
-    min.innerHTML =
-      (currentTime.getMinutes() < 10 ? "0" : "") + currentTime.getMinutes();
-    sec.innerHTML =
-      (currentTime.getSeconds() < 10 ? "0" : "") + currentTime.getSeconds();
+setInterval(() => {
+  let currentTime = new Date();
 
-    day.innerHTML = daysOfWeek[currentTime.getDay()];
+  hrs.innerHTML =
+    (currentTime.getHours() < 10 ? "0" : "") + currentTime.getHours();
+  min.innerHTML =
+    (currentTime.getMinutes() < 10 ? "0" : "") + currentTime.getMinutes();
+  sec.innerHTML =
+    (currentTime.getSeconds() < 10 ? "0" : "") + currentTime.getSeconds();
 
-    date.innerHTML = currentTime.getDate();
-    month.innerHTML = currentTime.getMonth();
-    year.innerHTML = currentTime.getFullYear();
-  }, 1000);
-});
+  day.innerHTML = daysOfWeek[currentTime.getDay()];
+
+  date.innerHTML = currentTime.getDate();
+  month.innerHTML = currentTime.getMonth();
+  year.innerHTML = currentTime.getFullYear();
+}, 1000);
 
 console.log("AIzaSyD8JexleESWtjj3QeZt_slimlfN_pPOqEo");
 console.log("https://api.teleport.org/api/cities/{?search}");
@@ -18466,4 +18465,4 @@ iconImg.href = _assets_img_planet_earth_ico__WEBPACK_IMPORTED_MODULE_3__;
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle6173e10b77a203fa78fa.js.map
+//# sourceMappingURL=bundleabb760aba18fd37fa7b3.js.map

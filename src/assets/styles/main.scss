@@ -57,7 +57,7 @@ body {
   display: flex;
   justify-content: space-between;
   font-size: large;
-  margin: 20px 20px 0px 20px;
+  margin: 2rem 2rem 0 2rem;
 }
 
 #day,
@@ -66,7 +66,9 @@ body {
 #year,
 #hrs,
 #min,
-#sec {
+#sec,
+.fahrenheit-text,
+.celsius-text {
   font-weight: bold;
 }
 .celsius-switch {
@@ -74,6 +76,7 @@ body {
   align-items: center;
   padding: 10px;
 }
+
 .switch-icon {
   margin-top: 10px;
   position: relative;
