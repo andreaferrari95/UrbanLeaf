@@ -549,8 +549,8 @@ button .fa-solid {
   height: 190px;
   width: 190px;
   padding: 20px;
-  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
-    -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+  box-shadow: 6px 6px 10px -1px rgba(54, 54, 54, 0.25),
+    -6px -6px 10px -1px rgba(54, 54, 54, 0.25);
 
   border-radius: 50%;
 }
@@ -558,10 +558,10 @@ button .fa-solid {
 .inner {
   height: 150px;
   width: 150px;
-  box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
-    inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
-    -0.5px -0.5px 0px rgba(255, 255, 255, 1),
-    0.5px 0.5px 0px rgba(0, 0, 0, 0.15), 0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 4px 4px 6px -1px rgba(47, 46, 46, 0.2),
+    inset -4px -4px 6px -1px rgba(67, 67, 67, 0.25),
+    -0.5px -0.5px 0px rgb(59, 59, 59), 0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
+    0px 12px 10px -10px rgba(121, 121, 121, 0.05);
   border-radius: 50%;
   display: flex;
   align-items: center;
