@@ -20,7 +20,7 @@ html {
 :root {
   --text-color: #f5f5f5;
   --hover-color: #8af037b3;
-  --bg-color: #050115;
+  --bg-color: ##083700;
   --big-font: 2.5rem;
   --normal-font: 2rem;
   --neon-box-shadow: 0 0 0.5rem #00c896;
@@ -36,8 +36,8 @@ html {
 
   --secon-bg-color: linear-gradient(
     160deg,
-    rgba(138, 240, 55, 0.7) 0%,
-    rgba(136, 158, 119, 0.54) 100%
+    rgba(89, 134, 76, 0.7) 0%,
+    rgba(130, 170, 119, 0.62) 100%
   );
 }
 
@@ -198,7 +198,7 @@ button .fa-solid {
 .city-details-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  padding-block: 2rem;
+  padding-block: 1.5rem;
   gap: 1.5rem;
   margin: 0 1.5rem;
   color: #f5f5f5;
@@ -217,6 +217,7 @@ button .fa-solid {
 .city-details {
   display: flex;
   flex-direction: column;
+  font-size: 1.5rem;
 }
 
 .icon-location {
@@ -229,7 +230,7 @@ button .fa-solid {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-size: 3rem;
+  font-size: 1.5em;
 }
 
 .location,
@@ -244,7 +245,7 @@ button .fa-solid {
 }
 
 #weather-icon {
-  width: 40%;
+  width: 4em;
 }
 
 #temperature {
@@ -261,10 +262,7 @@ button .fa-solid {
 
 .weather-details {
   display: grid;
-  /*grid-template-columns: repeat(4, minmax(0, 1fr));*/
-
   grid-template-columns: subgrid;
-  gap: 1.5rem;
   align-items: stretch;
   padding-block: 1.5rem;
   justify-items: center;
@@ -273,6 +271,7 @@ button .fa-solid {
     0px 4px 4px #fcf5f540;
   background: var(--secon-bg-color);
   grid-column: span 4;
+  margin-bottom: auto;
 }
 .city-score {
   background: var(--secon-bg-color);
@@ -291,7 +290,7 @@ button .fa-solid {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 #score {
@@ -306,10 +305,6 @@ button .fa-solid {
 .pollen-container,
 .pollutant-container,
 .wind-direction-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 0.5rem;
   text-align: center;
 }
 
@@ -321,6 +316,18 @@ button .fa-solid {
 .pollen,
 .pollutant,
 .wind-direction {
+  margin-bottom: 0.5rem;
+}
+
+#humidity-data,
+#visibility-data,
+#air-quality-data,
+#wind-speed-data,
+#air-pressure-data,
+#pollen-data,
+#pollutant-data,
+#wind-direction-data {
+  font-size: 1.7rem;
   margin-bottom: 1rem;
 }
 
@@ -540,8 +547,8 @@ button .fa-solid {
 /*circular score bar */
 
 .circular-score-bar {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   position: relative;
   display: flex;
   justify-content: center;
