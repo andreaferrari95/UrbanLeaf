@@ -36,8 +36,11 @@ setInterval(() => {
 
   day.innerHTML = daysOfWeek[currentTime.getDay()];
 
-  date.innerHTML = currentTime.getDate();
-  month.innerHTML = currentTime.getMonth();
+  date.innerHTML =
+    (currentTime.getDate() < 10 ? "0" : "") + currentTime.getDate();
+
+  month.innerHTML =
+    (currentTime.getMonth() + 1 < 10 ? "0" : "") + (currentTime.getMonth() + 1);
   year.innerHTML = currentTime.getFullYear();
 }, 1000);
 

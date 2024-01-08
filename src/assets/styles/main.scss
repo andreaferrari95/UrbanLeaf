@@ -262,8 +262,9 @@ button .fa-solid {
 
 .weather-details {
   display: grid;
-  grid-template-columns: subgrid;
-  align-items: stretch;
+  grid-template-columns: repeat(auto-fit, minmax(min(20rem), 1fr));
+  gap: 1rem;
+  padding: 0.5rem;
   padding-block: 1.5rem;
   justify-items: center;
   border-radius: 32px;
@@ -305,7 +306,15 @@ button .fa-solid {
 .pollen-container,
 .pollutant-container,
 .wind-direction-container {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0.5rem;
+  border: 3px solid #cdcdcd;
+  border-radius: 25px;
+  width: 310px;
+  height: 120px;
+  justify-content: center;
 }
 
 .humidity,
