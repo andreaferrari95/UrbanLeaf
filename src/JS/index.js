@@ -3,6 +3,7 @@ import _, { defer, head } from "lodash";
 import "../assets/styles/main.scss";
 import logo from "../assets/img/UrbanLeaf-Logo.png";
 import icon from "../assets/img/planet-earth.ico";
+import defaultCity from "./defaultCity";
 
 //logo and icon
 
@@ -51,6 +52,8 @@ setInterval(() => {
     (currentTime.getMonth() + 1 < 10 ? "0" : "") + (currentTime.getMonth() + 1);
   year.innerHTML = currentTime.getFullYear();
 }, 1000);
+
+defaultCity();
 
 //geolocation function
 navigator.geolocation.getCurrentPosition(function (position) {

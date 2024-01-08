@@ -18271,6 +18271,68 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
+/***/ "./src/JS/defaultCity.js":
+/*!*******************************!*\
+  !*** ./src/JS/defaultCity.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+
+
+
+function defaultCity() {
+  const defcity = document.getElementById("city");
+  const defSummary = document.getElementById("city-description");
+  axios__WEBPACK_IMPORTED_MODULE_1__["default"]
+    .get(`https://api.teleport.org/api/cities/?search=rome&limit=1`)
+    .then((response) => {
+      const data = response.data;
+
+      const defCityHref = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(
+        data,
+        '_embedded["city:search-results"][0]._links["city:item"].href'
+      );
+      axios__WEBPACK_IMPORTED_MODULE_1__["default"]
+        .get(defCityHref)
+        .then((response) => {
+          const cityData = response.data;
+
+          const fullName = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(cityData, "full_name");
+          defcity.innerHTML = fullName;
+
+          const defDescriptionHref = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(
+            `https://api.teleport.org/api/urban_areas/slug:rome/scores/`
+          );
+
+          axios__WEBPACK_IMPORTED_MODULE_1__["default"].get(defDescriptionHref).then((response) => {
+            const defDescriptionData = response.data;
+
+            const summary = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(defDescriptionData, "summary");
+            defSummary.innerHTML = summary;
+          });
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (defaultCity);
+
+
+/***/ }),
+
 /***/ "./src/assets/img/UrbanLeaf-Logo.png":
 /*!*******************************************!*\
   !*** ./src/assets/img/UrbanLeaf-Logo.png ***!
@@ -22553,12 +22615,14 @@ var __webpack_exports__ = {};
   !*** ./src/JS/index.js ***!
   \*************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../assets/styles/main.scss */ "./src/assets/styles/main.scss");
 /* harmony import */ var _assets_img_UrbanLeaf_Logo_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/img/UrbanLeaf-Logo.png */ "./src/assets/img/UrbanLeaf-Logo.png");
 /* harmony import */ var _assets_img_planet_earth_ico__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../assets/img/planet-earth.ico */ "./src/assets/img/planet-earth.ico");
+/* harmony import */ var _defaultCity__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./defaultCity */ "./src/JS/defaultCity.js");
+
 
 
 
@@ -22613,6 +22677,8 @@ setInterval(() => {
   year.innerHTML = currentTime.getFullYear();
 }, 1000);
 
+(0,_defaultCity__WEBPACK_IMPORTED_MODULE_4__["default"])();
+
 //geolocation function
 navigator.geolocation.getCurrentPosition(function (position) {
   const latitude = position.coords.latitude;
@@ -22620,7 +22686,7 @@ navigator.geolocation.getCurrentPosition(function (position) {
 
   // Call the other API with the latitude and longitude
   // You can use Axios to make the API request
-  axios__WEBPACK_IMPORTED_MODULE_4__["default"]
+  axios__WEBPACK_IMPORTED_MODULE_5__["default"]
     .get(`https://api.teleport.org/api/locations/${latitude},${longitude}/`)
     .then(function (response) {
       // Handle the response
@@ -22644,4 +22710,4 @@ console.log("https://api.teleport.org/api/cities/{?search}");
 
 /******/ })()
 ;
-//# sourceMappingURL=bundledb528908ebfff3c01529.js.map
+//# sourceMappingURL=bundle6c15a74563889609fdab.js.map

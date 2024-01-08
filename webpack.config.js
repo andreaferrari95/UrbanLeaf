@@ -8,6 +8,7 @@ module.exports = {
     bundle: path.resolve(__dirname, "src/JS/index.js"),
     teleport: path.resolve(__dirname, "src/JS/API/teleport.js"),
     iqair: path.resolve(__dirname, "src/JS/API/iqair.js"),
+    defaultCity: path.resolve(__dirname, "src/JS/defaultCity.js"),
   },
   output: {
     path: path.resolve(__dirname, "dist"),
