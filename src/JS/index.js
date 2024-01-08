@@ -4,6 +4,14 @@ import "../assets/styles/main.scss";
 import logo from "../assets/img/UrbanLeaf-Logo.png";
 import icon from "../assets/img/planet-earth.ico";
 
+//logo and icon
+
+const logoImg = document.getElementById("logo");
+logoImg.src = logo;
+
+const iconImg = document.getElementById("icon");
+iconImg.href = icon;
+
 //date and time function
 
 let hrs = document.getElementById("hrs");
@@ -44,15 +52,29 @@ setInterval(() => {
   year.innerHTML = currentTime.getFullYear();
 }, 1000);
 
+//geolocation function
+navigator.geolocation.getCurrentPosition(function (position) {
+  const latitude = position.coords.latitude;
+  const longitude = position.coords.longitude;
+
+  // Call the other API with the latitude and longitude
+  // You can use Axios to make the API request
+  axios
+    .get(`https://api.teleport.org/api/locations/${latitude},${longitude}/`)
+    .then(function (response) {
+      // Handle the response
+      console.log(response.data);
+    })
+    .catch(function (error) {
+      // Handle the error
+      console.error(error);
+    });
+});
+
 console.log(process.env.GOOGLE_PLACES_API);
 console.log(process.env.TELEPORT_API_URL);
 //import city from "./API/teleport.js";
 //import getAirAndWeatherData from "./API/iqair.js";
-const logoImg = document.getElementById("logo");
-logoImg.src = logo;
-
-const iconImg = document.getElementById("icon");
-iconImg.href = icon;
 
 //const cityToSearch = "Rome";
 //getAirAndWeatherData(cityToSearch);
