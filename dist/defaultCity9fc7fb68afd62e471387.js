@@ -21457,6 +21457,16 @@ __webpack_require__.r(__webpack_exports__);
 function defaultCity() {
   const defcity = document.getElementById("city");
   const defSummary = document.getElementById("city-description");
+  const defTemp = document.getElementById("temperature");
+  const defcityScore = document.getElementById("score");
+  const defPressure = document.getElementById("air-pressure-data");
+  const defHumidity = document.getElementById("humidity-data");
+  const defWind = document.getElementById("wind-speed-data");
+  const defWindDirection = document.getElementById("wind-direction-data");
+  const defWeatherIcon = document.getElementById("weather-icon");
+  const defAirQuality = document.getElementById("air-quality-data");
+  const defPollutant = document.getElementById("pollutant-data");
+
   axios__WEBPACK_IMPORTED_MODULE_1__["default"]
     .get(`https://api.teleport.org/api/cities/?search=rome&limit=1`)
     .then((response) => {
@@ -21472,28 +21482,87 @@ function defaultCity() {
           const cityData = response.data;
 
           const fullName = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(cityData, "full_name");
-          const lat = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(cityData, "location[latlon].latitude");
-          const lon = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(cityData, "location[latlon].longitude");
           defcity.innerHTML = fullName;
 
           axios__WEBPACK_IMPORTED_MODULE_1__["default"]
             .get(
-              `http://api.airvisual.com/v2/nearest_city?lat=${lat}&lon=${lon}&key={{4fb35cd8-01d9-4068-a090-0634e06a0e4a}}`
+              `https://api.airvisual.com/v2/city?city=Rome&state=Latium&country=Italy&key=4fb35cd8-01d9-4068-a090-0634e06a0e4a`
             )
+
             .then((response) => {
               const defWeatherData = response.data;
 
-              const defWeather = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(defWeatherData, "data.current.weather");
-              console.log(defWeather);
-            });
+              console.log(defWeatherData, "data");
 
+              const temperature = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(
+                defWeatherData,
+                "data.current.weather.tp"
+              );
+              const pressure = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(defWeatherData, "data.current.weather.pr");
+              const humidity = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(defWeatherData, "data.current.weather.hu");
+              const windSpeed = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(
+                defWeatherData,
+                "data.current.weather.ws"
+              );
+              const windDirection = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(
+                defWeatherData,
+                "data.current.weather.wd"
+              );
+              const weatherIcon = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(
+                defWeatherData,
+                "data.current.weather.ic"
+              );
+              const airQuality = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(
+                defWeatherData,
+                "data.current.pollution.aqius"
+              );
+              const mainPollutant = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(
+                defWeatherData,
+                "data.current.pollution.mainus"
+              );
+
+              defTemp.innerHTML = temperature + "°C";
+              defPressure.innerHTML = pressure + " hPa";
+              defHumidity.innerHTML = humidity + "%";
+              defWind.innerHTML = windSpeed + " m/s";
+              defWindDirection.innerHTML = windDirection + "°";
+              defWeatherIcon.src = `https://www.airvisual.com/images/${weatherIcon}.png`;
+              defAirQuality.innerHTML = airQuality + " AQI";
+              defPollutant.innerHTML = mainPollutant;
+            });
           axios__WEBPACK_IMPORTED_MODULE_1__["default"]
             .get(`https://api.teleport.org/api/urban_areas/slug:rome/scores/`)
             .then((response) => {
               const defDescriptionData = response.data;
 
               const summary = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(defDescriptionData, "summary");
+              const scores = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(defDescriptionData, "teleport_city_score");
+              const roundedScores = Math.round(scores);
               defSummary.innerHTML = summary;
+
+              const svgCircle = document.querySelector("circle");
+              const svgCircleRadius = 85;
+              const svgCircleCircumference = 2 * Math.PI * svgCircleRadius;
+              const percentage = (roundedScores / 100) * svgCircleCircumference;
+              const strokeDashoffset = svgCircleCircumference - percentage;
+              const animationDuration = 2000; // Specify the animation duration in milliseconds
+
+              svgCircle.style.setProperty("--dash-offset", strokeDashoffset);
+              svgCircle.style.animationDuration = `${animationDuration}ms`;
+
+              let counter = 0;
+              const intervalDuration = Math.floor(
+                animationDuration / roundedScores
+              ); // Calculate interval duration based on animation duration and rounded scores
+
+              const intervalId = setInterval(() => {
+                if (counter >= roundedScores) {
+                  clearInterval(intervalId);
+                } else {
+                  counter += 1;
+                  defcityScore.innerHTML = `${counter}%`;
+                }
+              }, intervalDuration);
             })
 
             .catch((error) => {
@@ -21512,4 +21581,4 @@ function defaultCity() {
 
 /******/ })()
 ;
-//# sourceMappingURL=defaultCityd74ff6466d4119177815.js.map
+//# sourceMappingURL=defaultCity9fc7fb68afd62e471387.js.map

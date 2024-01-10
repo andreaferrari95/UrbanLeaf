@@ -604,7 +604,7 @@ svg {
 /* Animation Keyframes-------------*/
 @keyframes score {
   100% {
-    stroke-dashoffset: 247.5;
+    stroke-dashoffset: var(--dash-offset);
   }
 }
 

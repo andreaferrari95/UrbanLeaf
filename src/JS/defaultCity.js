@@ -14,6 +14,47 @@ function defaultCity() {
   const defAirQuality = document.getElementById("air-quality-data");
   const defPollutant = document.getElementById("pollutant-data");
 
+  //Categories scores
+
+  const defCategoryCity = document.getElementById("category-city");
+  const defHousing = document.getElementById("housing");
+  const defHousingBar = document.querySelector(".housing-bar");
+  const defSafety = document.getElementById("safety");
+  const defSafetyBar = document.querySelector(".safety-bar");
+  const defHealthCare = document.getElementById("healthcare");
+  const defHealthCareBar = document.querySelector(".healthcare-bar");
+  const defEnvironmentalQuality = document.getElementById(
+    "environmental-quality"
+  );
+  const defEnvironmentalQualityBar = document.querySelector(
+    ".enviromental-quality-bar"
+  );
+  const defTaxation = document.getElementById("taxation");
+  const defTaxationBar = document.querySelector(".taxation-bar");
+  const defLeisureAndCulture = document.getElementById("leisure-and-culture");
+  const defLeisureAndCultureBar = document.querySelector(
+    ".leisure-and-culture-bar"
+  );
+  const defStartups = document.getElementById("startups");
+  const defStartupsBar = document.querySelector(".startups-bar");
+
+  const defCityostOfLiving = document.getElementById("cost-of-living");
+  const defCostOfLivingBar = document.querySelector(".cost-of-living-bar");
+  const defTravelConnectivity = document.getElementById("travel-connectivity");
+  const defTravelConnectivityBar = document.querySelector(
+    ".travel-connectivity-bar"
+  );
+  const defEducation = document.getElementById("education");
+  const defEducationBar = document.querySelector(".education-bar");
+  const defEconomy = document.getElementById("economy");
+  const defEconomyBar = document.querySelector(".economy-bar");
+  const defInternetAccess = document.getElementById("internet-access");
+  const defInternetAccessBar = document.querySelector(".internet-access-bar");
+  const defOutdoors = document.getElementById("outdoors");
+  const defOutdoorsBar = document.querySelector(".outdoors-bar");
+  const defBusinessFreedom = document.getElementById("business-freedom");
+  const defBusinessFreedomBar = document.querySelector(".business-freedom-bar");
+
   axios
     .get(`https://api.teleport.org/api/cities/?search=rome&limit=1`)
     .then((response) => {
@@ -38,8 +79,6 @@ function defaultCity() {
 
             .then((response) => {
               const defWeatherData = response.data;
-
-              console.log(defWeatherData, "data");
 
               const temperature = _.get(
                 defWeatherData,
@@ -68,17 +107,6 @@ function defaultCity() {
                 "data.current.pollution.mainus"
               );
 
-              console.log(
-                temperature,
-                pressure,
-                humidity,
-                windSpeed,
-                windDirection,
-                weatherIcon,
-                airQuality,
-                mainPollutant
-              );
-
               defTemp.innerHTML = temperature + "°C";
               defPressure.innerHTML = pressure + " hPa";
               defHumidity.innerHTML = humidity + "%";
@@ -95,9 +123,69 @@ function defaultCity() {
 
               const summary = _.get(defDescriptionData, "summary");
               const scores = _.get(defDescriptionData, "teleport_city_score");
+              const categories = _.get(defDescriptionData, "categories");
               const roundedScores = Math.round(scores);
               defSummary.innerHTML = summary;
-              defcityScore.innerHTML = roundedScores + "%";
+
+              const svgCircle = document.querySelector("circle");
+              const svgCircleRadius = 85;
+              const svgCircleCircumference = 2 * Math.PI * svgCircleRadius;
+              const percentage = (roundedScores / 100) * svgCircleCircumference;
+              const strokeDashoffset = svgCircleCircumference - percentage;
+              const animationDuration = 2000; // Specify the animation duration in milliseconds
+
+              svgCircle.style.setProperty("--dash-offset", strokeDashoffset);
+              svgCircle.style.animationDuration = `${animationDuration}ms`;
+
+              let counter = 0;
+              const intervalDuration = Math.floor(
+                animationDuration / roundedScores
+              ); // Calculate interval duration based on animation duration and rounded scores
+
+              const intervalId = setInterval(() => {
+                if (counter >= roundedScores) {
+                  clearInterval(intervalId);
+                } else {
+                  counter += 1;
+                  defcityScore.innerHTML = `${counter}%`;
+                }
+              }, intervalDuration);
+
+              console.log(categories);
+
+              const idMapping = {
+                housing: "housing",
+                education: "education",
+                economy: "economy",
+                healthcare: "healthcare",
+                safety: "safety",
+                outdoors: "outdoors",
+                startups: "startups",
+                taxation: "taxation",
+                "cost of living": "cost-of-living",
+                "travel connectivity": "travel-connectivity",
+                "environmental quality": "environmental-quality",
+                "internet access": "internet-access",
+                "business freedom": "business-freedom",
+                "leisure & culture": "leisure-and-culture",
+              };
+
+              categories.forEach((item) => {
+                const categoryId = idMapping[item.name.toLowerCase()];
+
+                if (categoryId) {
+                  const categoryElement = document.getElementById(categoryId);
+
+                  if (categoryElement) {
+                    categoryElement.textContent =
+                      item.score_out_of_10.toFixed(1) + "/10";
+                  } else {
+                    console.warn(
+                      `Element with id "${categoryId}" not found in HTML. Skipping.`
+                    );
+                  }
+                }
+              });
             })
 
             .catch((error) => {
