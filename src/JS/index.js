@@ -13,26 +13,20 @@ import defaultCity from "./defaultCity";
 
 //logo and icons
 
-const logoImg = document.getElementById("logo");
-logoImg.src = logo;
+const elements = [
+  { id: "logo", src: logo },
+  { id: "humidity-svg", src: humiditySvg },
+  { id: "pollutant-svg", src: pollutionSvg },
+  { id: "air-quality-svg", src: airQualitySvg },
+  { id: "wind-speed-svg", src: windSvg },
+  { id: "air-pressure-svg", src: pressureSvg },
+  { id: "wind-direction-svg", src: windDirectionSvg },
+];
 
-const humiditySvgSrc = document.getElementById("humidity-svg");
-humiditySvgSrc.src = humiditySvg;
-
-const pollutionSvgSrc = document.getElementById("pollutant-svg");
-pollutionSvgSrc.src = pollutionSvg;
-
-const airQualitySvgSrc = document.getElementById("air-quality-svg");
-airQualitySvgSrc.src = airQualitySvg;
-
-const windSvgSrc = document.getElementById("wind-speed-svg");
-windSvgSrc.src = windSvg;
-
-const pressureSvgSrc = document.getElementById("air-pressure-svg");
-pressureSvgSrc.src = pressureSvg;
-
-const windDirectionSvgSrc = document.getElementById("wind-direction-svg");
-windDirectionSvgSrc.src = windDirectionSvg;
+elements.forEach((element) => {
+  const img = document.getElementById(element.id);
+  img.src = element.src;
+});
 
 const iconImg = document.getElementById("icon");
 iconImg.href = icon;
@@ -79,24 +73,38 @@ setInterval(() => {
 
 defaultCity();
 
-//geolocation function
-navigator.geolocation.getCurrentPosition(function (position) {
-  const latitude = position.coords.latitude;
-  const longitude = position.coords.longitude;
+const expandResultButton = document.querySelector(".expand-result-button");
+const cityDetails = document.querySelector(".category-main");
 
-  // Call the other API with the latitude and longitude
-  // You can use Axios to make the API request
-  axios
-    .get(`https://api.teleport.org/api/locations/${latitude},${longitude}/`)
-    .then(function (response) {
-      // Handle the response
-      console.log(response.data);
-    })
-    .catch(function (error) {
-      // Handle the error
-      console.error(error);
-    });
+expandResultButton.addEventListener("click", () => {
+  cityDetails.style.display = "grid";
 });
+
+//geolocation function
+
+const geolocationButton = document.querySelector(".location-button");
+
+function getLocationAndRequest() {
+  navigator.geolocation.getCurrentPosition(function (position) {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+
+    // Call the other API with the latitude and longitude
+    // You can use Axios to make the API request
+    axios
+      .get(`https://api.teleport.org/api/locations/${latitude},${longitude}/`)
+      .then(function (response) {
+        // Handle the response
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        // Handle the error
+        console.error(error);
+      });
+  });
+}
+
+geolocationButton.addEventListener("click", getLocationAndRequest);
 
 console.log(process.env.GOOGLE_PLACES_API);
 console.log(process.env.TELEPORT_API_URL);

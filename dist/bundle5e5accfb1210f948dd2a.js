@@ -62,7 +62,7 @@ a {
   text-decoration: none; }
 
 body {
-  background: linear-gradient(180deg, #383838 0%, rgba(158, 158, 158, 0) 100%);
+  background: linear-gradient(181deg, #383838 0%, #555555b5 100%);
   min-height: 100vh;
   display: flex;
   align-items: stretch;
@@ -207,7 +207,7 @@ button .fa-solid {
   background: var(--secon-bg-color);
   border-radius: 32px;
   box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940, 0px 4px 4px #fcf5f540;
-  grid-column: span 5; }
+  grid-column: span 4; }
 
 .city-details {
   display: flex;
@@ -248,16 +248,19 @@ button .fa-solid {
 /* -----------------------------*/
 .weather-details {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   gap: 1rem;
-  padding: 0.5rem;
+  padding: 1.5rem;
   padding-block: 1.5rem;
   justify-items: center;
   border-radius: 32px;
   box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940, 0px 4px 4px #fcf5f540;
   background: var(--secon-bg-color);
-  grid-column: span 4;
+  grid-column: span 5;
   margin-bottom: auto; }
+
+.svgs {
+  width: 4rem; }
 
 .city-score {
   background: var(--secon-bg-color);
@@ -283,7 +286,7 @@ button .fa-solid {
   width: 10rem;
   height: 2.5rem;
   border-radius: 25px;
-  margin-top: 2rem;
+  margin-top: 1rem;
   border: 2px solid #e54d26;
   outline: unset;
   color: #f5f5f5;
@@ -302,24 +305,15 @@ button .fa-solid {
 .pollutant-container,
 .wind-direction-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
   margin-top: 0.5rem;
   border: 3px solid #cdcdcd;
   border-radius: 25px;
-  width: 350px;
-  height: 140px;
-  justify-content: center; }
-
-.humidity,
-.visibility,
-.air-quality,
-.wind-speed,
-.air-pressure,
-.pollen,
-.pollutant,
-.wind-direction {
-  margin-bottom: 0.5rem; }
+  width: -webkit-fill-available;
+  height: 4em;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem; }
 
 #humidity-data,
 #visibility-data,
@@ -329,17 +323,19 @@ button .fa-solid {
 #pollen-data,
 #pollutant-data,
 #wind-direction-data {
-  font-size: 1.7rem;
-  margin-bottom: 1rem; }
+  font-size: 1.7rem; }
 
 /* category Section ---------*/
 .category-title {
   display: flex;
-  justify-content: flex-start; }
+  justify-content: flex-start;
+  font-weight: bold; }
 
 #category-city {
   display: flex;
-  justify-content: flex-end; }
+  justify-content: flex-end;
+  font-weight: bold;
+  margin-right: inherit; }
 
 .category-main {
   width: 100%;
@@ -371,9 +367,12 @@ button .fa-solid {
 
 .category-left .category-bar-left .info {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 10px; }
+  padding: 10px;
+  gap: 2em; }
+
+.category-left .category-bar-left .info p {
+  font-weight: bold; }
 
 .category-left .category-bar-left .bar {
   width: 100%;
@@ -439,9 +438,12 @@ button .fa-solid {
 
 .category-right .category-bar-right .info {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 10px; }
+  padding: 10px;
+  gap: 2em; }
+
+.category-right .category-bar-right .info p {
+  font-weight: bold; }
 
 .category-right .category-bar-right .bar {
   width: 100%;
@@ -616,7 +618,7 @@ svg {
     width: 0%; }
   100% {
     width: 75%; } }
-`, "",{"version":3,"sources":["webpack://./src/assets/styles/main.scss"],"names":[],"mappings":"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","sourcesContent":["@import url(\"https://fonts.googleapis.com/css?family=Poppins:300,500,400,600\");\r\n\r\nhtml {\r\n  /* For Firefox */\r\n  overflow-y: scroll;\r\n  scrollbar-color: var(--hover-color) var(--secon-bg-color);\r\n  scrollbar-width: thin;\r\n}\r\n\r\n* {\r\n  -webkit-font-smoothing: antialiased;\r\n  box-sizing: border-box;\r\n  margin: 0px;\r\n  padding: 0px;\r\n  font-family: \"Poppins\", Helvetica;\r\n  font-weight: 300;\r\n  color: #f5f5f5;\r\n}\r\n\r\n:root {\r\n  --text-color: #f5f5f5;\r\n  --hover-color: #8af037b3;\r\n  --bg-color: ##083700;\r\n  --big-font: 2.5rem;\r\n  --normal-font: 2rem;\r\n  --neon-box-shadow: 0 0 0.5rem #00c896;\r\n  --h2-font: 3rem;\r\n  --font-neon-text-shadow: 0 0 10px rgba(0, 200, 150, 0.3),\r\n    0 0 20px rgba(70, 200, 150, 0.3), 0 0 30px rgba(0, 200, 150, 0.3),\r\n    0 0 40px rgba(0, 200, 150, 0.3), 0 0 70px rgba(0, 200, 150, 0.3),\r\n    0 0 80px rgba(0, 200, 150, 0.3), 0 0 100px rgba(0, 200, 150, 0.3),\r\n    0 0 150px rgba(0, 200, 150, 0.3);\r\n\r\n  --bar-color: #e54d26;\r\n  --neon-box-shadow-bar: 0 0 0.5rem #e54d26;\r\n\r\n  --secon-bg-color: linear-gradient(\r\n    160deg,\r\n    rgba(89, 134, 76, 0.7) 0%,\r\n    rgba(130, 170, 119, 0.62) 100%\r\n  );\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n}\r\n\r\nbody {\r\n  background: linear-gradient(\r\n    180deg,\r\n    rgb(56, 56, 56) 0%,\r\n    rgba(158, 158, 158, 0) 100%\r\n  );\r\n  min-height: 100vh;\r\n\r\n  display: flex;\r\n  align-items: stretch;\r\n  flex-direction: column;\r\n}\r\n.header {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  font-size: large;\r\n  margin: 2rem 2rem 0 2rem;\r\n  padding-bottom: 1rem;\r\n}\r\n\r\n#day,\r\n#date,\r\n#month,\r\n#year,\r\n#hrs,\r\n#min,\r\n#sec {\r\n  font-weight: bold;\r\n}\r\n.container-location {\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\n.location-button {\r\n  width: 13rem;\r\n  height: 3rem;\r\n  border-radius: 25px;\r\n  box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940,\r\n    0px 4px 4px #fcf5f540;\r\n  background: var(--secon-bg-color);\r\n  margin: 0 10px 0 10px;\r\n  font-weight: bold;\r\n  display: flex;\r\n  justify-content: space-around;\r\n  align-items: center;\r\n}\r\n\r\n.location-button:hover {\r\n  cursor: pointer;\r\n  background-color: var(--hover-color);\r\n}\r\n\r\n.container-logo {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: flex-start;\r\n}\r\n#logo {\r\n  width: 20rem;\r\n}\r\n\r\n.container-search {\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n\r\n.search-box {\r\n  margin: 20px 0;\r\n  width: 600px;\r\n  border: 1px solid #f4f4f4;\r\n  border-radius: 25px;\r\n  font-size: 16px;\r\n  background-color: rgba(144, 234, 150, 0.836);\r\n}\r\n\r\n.row {\r\n  display: flex;\r\n  align-items: center;\r\n  padding: 10px 20px;\r\n}\r\n\r\ninput {\r\n  flex: 1;\r\n  height: 50px;\r\n  border: none;\r\n  outline: none;\r\n  font-size: 22px;\r\n  font-weight: bold;\r\n  color: #333;\r\n  background-color: transparent;\r\n}\r\nbutton {\r\n  background: transparent;\r\n  border: none;\r\n  outline: none;\r\n}\r\n\r\nbutton .fa-solid {\r\n  width: 40px;\r\n  color: #555;\r\n  font-size: 30px;\r\n  cursor: pointer;\r\n}\r\n\r\n::placeholder {\r\n  color: #555;\r\n}\r\n\r\n.text-wrapper-3 {\r\n  position: absolute;\r\n  width: 174px;\r\n  top: 46px;\r\n  left: 0;\r\n  font-family: \"Poppins\", Helvetica;\r\n  font-weight: 600;\r\n  color: #ffffff;\r\n  font-size: 24px;\r\n  letter-spacing: 0;\r\n  line-height: normal;\r\n}\r\n\r\n.text-wrapper-4 {\r\n  position: absolute;\r\n  top: -1px;\r\n  left: 0;\r\n  font-family: \"Poppins\", Helvetica;\r\n  font-weight: 600;\r\n  color: #ffffff;\r\n  font-size: 24px;\r\n  letter-spacing: 0;\r\n  line-height: normal;\r\n}\r\n\r\n.search-bar {\r\n  position: absolute;\r\n  width: 614px;\r\n  height: 57px;\r\n  top: 160px;\r\n  left: 413px;\r\n  background-color: #d9d9d9;\r\n  border-radius: 25px;\r\n}\r\n\r\n.icon-search {\r\n  position: absolute;\r\n  width: 38px;\r\n  height: 38px;\r\n  top: 9px;\r\n  left: 558px;\r\n}\r\n\r\n.city-details-container {\r\n  display: grid;\r\n  grid-template-columns: repeat(5, 1fr);\r\n  padding-block: 1.5rem;\r\n  gap: 1.5rem;\r\n  margin: 0 1.5rem;\r\n  color: #f5f5f5;\r\n  font-size: 2rem;\r\n}\r\n\r\n.city-temp {\r\n  height: fit-content;\r\n  background: var(--secon-bg-color);\r\n  border-radius: 32px;\r\n  box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940,\r\n    0px 4px 4px #fcf5f540;\r\n  grid-column: span 5;\r\n}\r\n\r\n.city-details {\r\n  display: flex;\r\n  flex-direction: column;\r\n  font-size: 1.5rem;\r\n}\r\n\r\n.icon-location {\r\n  width: 50px;\r\n  height: 50px;\r\n  color: #f5f5f5;\r\n}\r\n\r\n.row-top {\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: space-between;\r\n  font-size: 1.5em;\r\n}\r\n\r\n.location,\r\n.temp-weather {\r\n  display: flex;\r\n  align-items: center;\r\n  margin: 1.2rem;\r\n}\r\n\r\n.temp-weather {\r\n  justify-content: flex-end;\r\n}\r\n\r\n#weather-icon {\r\n  width: 4em;\r\n}\r\n\r\n#temperature {\r\n  margin-right: 1.5rem;\r\n  font-size: 1.5em;\r\n}\r\n\r\n#city-description {\r\n  line-height: 1.2;\r\n  margin: 20px;\r\n}\r\n\r\n/* -----------------------------*/\r\n\r\n.weather-details {\r\n  display: grid;\r\n  grid-template-columns: repeat(auto-fit, minmax(min(25rem), 1fr));\r\n  gap: 1rem;\r\n  padding: 0.5rem;\r\n  padding-block: 1.5rem;\r\n  justify-items: center;\r\n  border-radius: 32px;\r\n  box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940,\r\n    0px 4px 4px #fcf5f540;\r\n  background: var(--secon-bg-color);\r\n  grid-column: span 4;\r\n  margin-bottom: auto;\r\n}\r\n.city-score {\r\n  background: var(--secon-bg-color);\r\n  border-radius: 32px;\r\n  box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940,\r\n    0px 4px 4px #fcf5f540;\r\n  display: flex;\r\n  justify-items: center;\r\n  flex-direction: column;\r\n  align-items: center;\r\n}\r\n\r\n#city-score-name {\r\n  font-size: 1em;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n  margin-top: 1rem;\r\n}\r\n\r\n#score {\r\n  font-size: 1.2em;\r\n}\r\n\r\n.expand-result-button {\r\n  width: 10rem;\r\n  height: 2.5rem;\r\n  border-radius: 25px;\r\n  margin-top: 2rem;\r\n  border: 2px solid #e54d26;\r\n  outline: unset;\r\n  color: #f5f5f5;\r\n  font-weight: bold;\r\n  font-size: 1.3rem;\r\n  background: chocolate;\r\n}\r\n\r\n.expand-result-button:hover {\r\n  background: #e54d26;\r\n  cursor: pointer;\r\n}\r\n\r\n.humidity-container,\r\n.air-quality-container,\r\n.wind-speed-container,\r\n.air-pressure-container,\r\n.pollutant-container,\r\n.wind-direction-container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  margin-top: 0.5rem;\r\n  border: 3px solid #cdcdcd;\r\n  border-radius: 25px;\r\n  width: 350px;\r\n  height: 140px;\r\n  justify-content: center;\r\n}\r\n\r\n.humidity,\r\n.visibility,\r\n.air-quality,\r\n.wind-speed,\r\n.air-pressure,\r\n.pollen,\r\n.pollutant,\r\n.wind-direction {\r\n  margin-bottom: 0.5rem;\r\n}\r\n\r\n#humidity-data,\r\n#visibility-data,\r\n#air-quality-data,\r\n#wind-speed-data,\r\n#air-pressure-data,\r\n#pollen-data,\r\n#pollutant-data,\r\n#wind-direction-data {\r\n  font-size: 1.7rem;\r\n  margin-bottom: 1rem;\r\n}\r\n\r\n/* category Section ---------*/\r\n.category-title {\r\n  display: flex;\r\n  justify-content: flex-start;\r\n}\r\n\r\n#category-city {\r\n  display: flex;\r\n  justify-content: flex-end;\r\n}\r\n\r\n.category-main {\r\n  width: 100%;\r\n  display: grid;\r\n  grid-template-columns: repeat(2, 1fr);\r\n  background: var(--secon-bg-color);\r\n  grid-column: span 5;\r\n  gap: 1.5rem;\r\n  border-radius: 32px;\r\n}\r\n\r\n.category-left,\r\n.category-right {\r\n  padding: 1.5rem;\r\n}\r\n\r\n.category-left {\r\n  margin: 1rem 0 1rem 1.5rem;\r\n}\r\n\r\n.category-right {\r\n  margin: 1rem 1.5rem 1rem 0;\r\n}\r\n\r\n.category-bar {\r\n  margin-bottom: 2.3rem;\r\n}\r\n\r\n.category-title,\r\n#category-city {\r\n  margin-bottom: 2rem;\r\n  font-size: var(--normal-font);\r\n  text-align: center;\r\n}\r\n\r\n.category-left .category-bar-left .info {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  padding: 10px;\r\n}\r\n\r\n.category-left .category-bar-left .bar {\r\n  width: 100%;\r\n  height: 10px;\r\n  background-color: var(--bg-color);\r\n  border-radius: 25px;\r\n  margin-top: 10px;\r\n  position: relative;\r\n}\r\n\r\n.category-bar-left .bar span {\r\n  width: 50%;\r\n  height: 100%;\r\n  position: absolute;\r\n  left: 0;\r\n  border-radius: 25px;\r\n}\r\n\r\n.category-bar-left .bar .housing-bar {\r\n  width: 80%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: html 2.5s;\r\n}\r\n\r\n.category-bar-left .bar .safety-bar {\r\n  width: 70%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: css 2s;\r\n}\r\n\r\n.category-bar-left .bar .healtcare-bar {\r\n  width: 60%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: javascript 2s;\r\n}\r\n\r\n.category-bar-left .bar .environmental-quality-bar {\r\n  width: 70%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: premierepro 3.5s;\r\n}\r\n\r\n.category-bar-left .bar .taxation-bar {\r\n  width: 80%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: lightroom 4s;\r\n}\r\n\r\n.category-bar-left .bar .leisure-and-culture-bar {\r\n  width: 80%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: lightroom 4s;\r\n}\r\n\r\n.category-bar-left .bar .startups-bar {\r\n  width: 80%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: lightroom 4s;\r\n}\r\n\r\n/* Skills Right Section ---------*/\r\n.category-bar-right,\r\n.category-bar-left {\r\n  margin-bottom: 2.3rem;\r\n}\r\n\r\n.category-right .category-bar-right .info {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  padding: 10px;\r\n}\r\n\r\n.category-right .category-bar-right .bar {\r\n  width: 100%;\r\n  height: 10px;\r\n  background-color: var(--bg-color);\r\n  border-radius: 25px;\r\n  margin-top: 10px;\r\n  position: relative;\r\n}\r\n\r\n.category-bar-right .bar span {\r\n  width: 50%;\r\n  height: 100%;\r\n  position: absolute;\r\n  left: 0;\r\n  border-radius: 25px;\r\n}\r\n\r\n.category-bar-right .bar .cost-of-living-bar {\r\n  width: 80%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: team-work 2.5s;\r\n}\r\n\r\n.category-bar-right .bar .travel-connectivity-bar {\r\n  width: 75%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: communication 3s;\r\n}\r\n\r\n.category-bar-right .bar .education-bar {\r\n  width: 85%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: motivation 3.5s;\r\n}\r\n\r\n.category-bar-right .bar .economy-bar {\r\n  width: 80%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: resilience 3s;\r\n}\r\n\r\n.category-bar-right .bar .internet-access-bar {\r\n  width: 75%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: creativity 3s;\r\n}\r\n\r\n.category-bar-right .bar .outdoors-bar {\r\n  width: 75%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: creativity 3s;\r\n}\r\n\r\n.category-bar-right .bar .business-freedom-bar {\r\n  width: 75%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: creativity 3s;\r\n}\r\n\r\n/*scrollbar */\r\n\r\n::-webkit-scrollbar {\r\n  height: 0;\r\n  width: 0.5rem;\r\n}\r\n\r\n::-webkit-scrollbar-track {\r\n  background: #252222;\r\n}\r\n\r\n::-webkit-scrollbar-thumb {\r\n  background: var(--hover-color);\r\n  border-radius: 5rem;\r\n}\r\n\r\n/*circular score bar */\r\n\r\n.circular-score-bar {\r\n  width: 200px;\r\n  height: 200px;\r\n  position: relative;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.outer {\r\n  height: 190px;\r\n  width: 190px;\r\n  padding: 20px;\r\n  box-shadow: 6px 6px 10px -1px rgba(54, 54, 54, 0.25),\r\n    -6px -6px 10px -1px rgba(54, 54, 54, 0.25);\r\n\r\n  border-radius: 50%;\r\n}\r\n\r\n.inner {\r\n  height: 150px;\r\n  width: 150px;\r\n  box-shadow: inset 4px 4px 6px -1px rgba(47, 46, 46, 0.2),\r\n    inset -4px -4px 6px -1px rgba(67, 67, 67, 0.25),\r\n    -0.5px -0.5px 0px rgba(59, 59, 59, 0.29),\r\n    0.5px 0.5px 0px rgba(0, 0, 0, 0.15),\r\n    0px 12px 10px -10px rgba(121, 121, 121, 0.05);\r\n  border-radius: 50%;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n\r\ncircle {\r\n  fill: none;\r\n  stroke: url(#GradientColor);\r\n  stroke-width: 21px;\r\n  stroke-dasharray: 550;\r\n  stroke-dashoffset: 550;\r\n  animation: score 2s linear forwards;\r\n}\r\n\r\nsvg {\r\n  position: absolute;\r\n  width: 200px;\r\n  height: 200px;\r\n}\r\n\r\n/* Animation Keyframes-------------*/\r\n@keyframes score {\r\n  100% {\r\n    stroke-dashoffset: var(--dash-offset);\r\n  }\r\n}\r\n\r\n/* category panel*/\r\n\r\n@keyframes html {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 80%;\r\n  }\r\n}\r\n\r\n@keyframes css {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 70%;\r\n  }\r\n}\r\n\r\n@keyframes javascript {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 60%;\r\n  }\r\n}\r\n\r\n@keyframes premierepro {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 70%;\r\n  }\r\n}\r\n\r\n@keyframes lightroom {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 80%;\r\n  }\r\n}\r\n\r\n/*right panel*/\r\n\r\n@keyframes team-work {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 80%;\r\n  }\r\n}\r\n\r\n@keyframes communication {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 75%;\r\n  }\r\n}\r\n\r\n@keyframes motivation {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 85%;\r\n  }\r\n}\r\n\r\n@keyframes resilience {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 80%;\r\n  }\r\n}\r\n\r\n@keyframes creativity {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 75%;\r\n  }\r\n}\r\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/assets/styles/main.scss"],"names":[],"mappings":"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","sourcesContent":["@import url(\"https://fonts.googleapis.com/css?family=Poppins:300,500,400,600\");\r\n\r\nhtml {\r\n  /* For Firefox */\r\n  overflow-y: scroll;\r\n  scrollbar-color: var(--hover-color) var(--secon-bg-color);\r\n  scrollbar-width: thin;\r\n}\r\n\r\n* {\r\n  -webkit-font-smoothing: antialiased;\r\n  box-sizing: border-box;\r\n  margin: 0px;\r\n  padding: 0px;\r\n  font-family: \"Poppins\", Helvetica;\r\n  font-weight: 300;\r\n  color: #f5f5f5;\r\n}\r\n\r\n:root {\r\n  --text-color: #f5f5f5;\r\n  --hover-color: #8af037b3;\r\n  --bg-color: ##083700;\r\n  --big-font: 2.5rem;\r\n  --normal-font: 2rem;\r\n  --neon-box-shadow: 0 0 0.5rem #00c896;\r\n  --h2-font: 3rem;\r\n  --font-neon-text-shadow: 0 0 10px rgba(0, 200, 150, 0.3),\r\n    0 0 20px rgba(70, 200, 150, 0.3), 0 0 30px rgba(0, 200, 150, 0.3),\r\n    0 0 40px rgba(0, 200, 150, 0.3), 0 0 70px rgba(0, 200, 150, 0.3),\r\n    0 0 80px rgba(0, 200, 150, 0.3), 0 0 100px rgba(0, 200, 150, 0.3),\r\n    0 0 150px rgba(0, 200, 150, 0.3);\r\n\r\n  --bar-color: #e54d26;\r\n  --neon-box-shadow-bar: 0 0 0.5rem #e54d26;\r\n\r\n  --secon-bg-color: linear-gradient(\r\n    160deg,\r\n    rgba(89, 134, 76, 0.7) 0%,\r\n    rgba(130, 170, 119, 0.62) 100%\r\n  );\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n}\r\n\r\nbody {\r\n  background: linear-gradient(181deg, #383838 0%, #555555b5 100%);\r\n  min-height: 100vh;\r\n  display: flex;\r\n  align-items: stretch;\r\n  flex-direction: column;\r\n}\r\n.header {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  font-size: large;\r\n  margin: 2rem 2rem 0 2rem;\r\n  padding-bottom: 1rem;\r\n}\r\n\r\n#day,\r\n#date,\r\n#month,\r\n#year,\r\n#hrs,\r\n#min,\r\n#sec {\r\n  font-weight: bold;\r\n}\r\n.container-location {\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\n.location-button {\r\n  width: 13rem;\r\n  height: 3rem;\r\n  border-radius: 25px;\r\n  box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940,\r\n    0px 4px 4px #fcf5f540;\r\n  background: var(--secon-bg-color);\r\n  margin: 0 10px 0 10px;\r\n  font-weight: bold;\r\n  display: flex;\r\n  justify-content: space-around;\r\n  align-items: center;\r\n}\r\n\r\n.location-button:hover {\r\n  cursor: pointer;\r\n  background-color: var(--hover-color);\r\n}\r\n\r\n.container-logo {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: flex-start;\r\n}\r\n#logo {\r\n  width: 20rem;\r\n}\r\n\r\n.container-search {\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n\r\n.search-box {\r\n  margin: 20px 0;\r\n  width: 600px;\r\n  border: 1px solid #f4f4f4;\r\n  border-radius: 25px;\r\n  font-size: 16px;\r\n  background-color: rgba(144, 234, 150, 0.836);\r\n}\r\n\r\n.row {\r\n  display: flex;\r\n  align-items: center;\r\n  padding: 10px 20px;\r\n}\r\n\r\ninput {\r\n  flex: 1;\r\n  height: 50px;\r\n  border: none;\r\n  outline: none;\r\n  font-size: 22px;\r\n  font-weight: bold;\r\n  color: #333;\r\n  background-color: transparent;\r\n}\r\nbutton {\r\n  background: transparent;\r\n  border: none;\r\n  outline: none;\r\n}\r\n\r\nbutton .fa-solid {\r\n  width: 40px;\r\n  color: #555;\r\n  font-size: 30px;\r\n  cursor: pointer;\r\n}\r\n\r\n::placeholder {\r\n  color: #555;\r\n}\r\n\r\n.text-wrapper-3 {\r\n  position: absolute;\r\n  width: 174px;\r\n  top: 46px;\r\n  left: 0;\r\n  font-family: \"Poppins\", Helvetica;\r\n  font-weight: 600;\r\n  color: #ffffff;\r\n  font-size: 24px;\r\n  letter-spacing: 0;\r\n  line-height: normal;\r\n}\r\n\r\n.text-wrapper-4 {\r\n  position: absolute;\r\n  top: -1px;\r\n  left: 0;\r\n  font-family: \"Poppins\", Helvetica;\r\n  font-weight: 600;\r\n  color: #ffffff;\r\n  font-size: 24px;\r\n  letter-spacing: 0;\r\n  line-height: normal;\r\n}\r\n\r\n.search-bar {\r\n  position: absolute;\r\n  width: 614px;\r\n  height: 57px;\r\n  top: 160px;\r\n  left: 413px;\r\n  background-color: #d9d9d9;\r\n  border-radius: 25px;\r\n}\r\n\r\n.icon-search {\r\n  position: absolute;\r\n  width: 38px;\r\n  height: 38px;\r\n  top: 9px;\r\n  left: 558px;\r\n}\r\n\r\n.city-details-container {\r\n  display: grid;\r\n  grid-template-columns: repeat(5, 1fr);\r\n  padding-block: 1.5rem;\r\n  gap: 1.5rem;\r\n  margin: 0 1.5rem;\r\n  color: #f5f5f5;\r\n  font-size: 2rem;\r\n}\r\n\r\n.city-temp {\r\n  height: fit-content;\r\n  background: var(--secon-bg-color);\r\n  border-radius: 32px;\r\n  box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940,\r\n    0px 4px 4px #fcf5f540;\r\n  grid-column: span 4;\r\n}\r\n\r\n.city-details {\r\n  display: flex;\r\n  flex-direction: column;\r\n  font-size: 1.5rem;\r\n}\r\n\r\n.icon-location {\r\n  width: 50px;\r\n  height: 50px;\r\n  color: #f5f5f5;\r\n}\r\n\r\n.row-top {\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: space-between;\r\n  font-size: 1.5em;\r\n}\r\n\r\n.location,\r\n.temp-weather {\r\n  display: flex;\r\n  align-items: center;\r\n  margin: 1.2rem;\r\n}\r\n\r\n.temp-weather {\r\n  justify-content: flex-end;\r\n}\r\n\r\n#weather-icon {\r\n  width: 4em;\r\n}\r\n\r\n#temperature {\r\n  margin-right: 1.5rem;\r\n  font-size: 1.5em;\r\n}\r\n\r\n#city-description {\r\n  line-height: 1.2;\r\n  margin: 20px;\r\n}\r\n\r\n/* -----------------------------*/\r\n\r\n.weather-details {\r\n  display: grid;\r\n  grid-template-columns: repeat(auto-fit, minmax(min(30rem), 1fr));\r\n  gap: 1rem;\r\n  padding: 1.5rem;\r\n  padding-block: 1.5rem;\r\n  justify-items: center;\r\n  border-radius: 32px;\r\n  box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940,\r\n    0px 4px 4px #fcf5f540;\r\n  background: var(--secon-bg-color);\r\n  grid-column: span 5;\r\n  margin-bottom: auto;\r\n}\r\n\r\n.svgs {\r\n  width: 4rem;\r\n}\r\n\r\n.city-score {\r\n  background: var(--secon-bg-color);\r\n  border-radius: 32px;\r\n  box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940,\r\n    0px 4px 4px #fcf5f540;\r\n  display: flex;\r\n  justify-items: center;\r\n  flex-direction: column;\r\n  align-items: center;\r\n}\r\n\r\n#city-score-name {\r\n  font-size: 1em;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n  margin-top: 1rem;\r\n}\r\n\r\n#score {\r\n  font-size: 1.2em;\r\n}\r\n\r\n.expand-result-button {\r\n  width: 10rem;\r\n  height: 2.5rem;\r\n  border-radius: 25px;\r\n  margin-top: 1rem;\r\n  border: 2px solid #e54d26;\r\n  outline: unset;\r\n  color: #f5f5f5;\r\n  font-weight: bold;\r\n  font-size: 1.3rem;\r\n  background: chocolate;\r\n}\r\n\r\n.expand-result-button:hover {\r\n  background: #e54d26;\r\n  cursor: pointer;\r\n}\r\n\r\n.humidity-container,\r\n.air-quality-container,\r\n.wind-speed-container,\r\n.air-pressure-container,\r\n.pollutant-container,\r\n.wind-direction-container {\r\n  display: flex;\r\n  flex-direction: row;\r\n  margin-top: 0.5rem;\r\n  border: 3px solid #cdcdcd;\r\n  border-radius: 25px;\r\n  width: -webkit-fill-available;\r\n  height: 4em;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  padding: 2rem;\r\n}\r\n\r\n#humidity-data,\r\n#visibility-data,\r\n#air-quality-data,\r\n#wind-speed-data,\r\n#air-pressure-data,\r\n#pollen-data,\r\n#pollutant-data,\r\n#wind-direction-data {\r\n  font-size: 1.7rem;\r\n}\r\n\r\n/* category Section ---------*/\r\n.category-title {\r\n  display: flex;\r\n  justify-content: flex-start;\r\n  font-weight: bold;\r\n}\r\n\r\n#category-city {\r\n  display: flex;\r\n  justify-content: flex-end;\r\n  font-weight: bold;\r\n  margin-right: inherit;\r\n}\r\n\r\n.category-main {\r\n  width: 100%;\r\n  display: grid;\r\n  grid-template-columns: repeat(2, 1fr);\r\n  background: var(--secon-bg-color);\r\n  grid-column: span 5;\r\n  gap: 1.5rem;\r\n  border-radius: 32px;\r\n}\r\n\r\n.category-left,\r\n.category-right {\r\n  padding: 1.5rem;\r\n}\r\n\r\n.category-left {\r\n  margin: 1rem 0 1rem 1.5rem;\r\n}\r\n\r\n.category-right {\r\n  margin: 1rem 1.5rem 1rem 0;\r\n}\r\n\r\n.category-bar {\r\n  margin-bottom: 2.3rem;\r\n}\r\n\r\n.category-title,\r\n#category-city {\r\n  margin-bottom: 2rem;\r\n  font-size: var(--normal-font);\r\n  text-align: center;\r\n}\r\n\r\n.category-left .category-bar-left .info {\r\n  display: flex;\r\n  align-items: center;\r\n  padding: 10px;\r\n  gap: 2em;\r\n}\r\n\r\n.category-left .category-bar-left .info p {\r\n  font-weight: bold;\r\n}\r\n\r\n.category-left .category-bar-left .bar {\r\n  width: 100%;\r\n  height: 10px;\r\n  background-color: var(--bg-color);\r\n  border-radius: 25px;\r\n  margin-top: 10px;\r\n  position: relative;\r\n}\r\n\r\n.category-bar-left .bar span {\r\n  width: 50%;\r\n  height: 100%;\r\n  position: absolute;\r\n  left: 0;\r\n  border-radius: 25px;\r\n}\r\n\r\n.category-bar-left .bar .housing-bar {\r\n  width: 80%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: html 2.5s;\r\n}\r\n\r\n.category-bar-left .bar .safety-bar {\r\n  width: 70%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: css 2s;\r\n}\r\n\r\n.category-bar-left .bar .healtcare-bar {\r\n  width: 60%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: javascript 2s;\r\n}\r\n\r\n.category-bar-left .bar .environmental-quality-bar {\r\n  width: 70%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: premierepro 3.5s;\r\n}\r\n\r\n.category-bar-left .bar .taxation-bar {\r\n  width: 80%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: lightroom 4s;\r\n}\r\n\r\n.category-bar-left .bar .leisure-and-culture-bar {\r\n  width: 80%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: lightroom 4s;\r\n}\r\n\r\n.category-bar-left .bar .startups-bar {\r\n  width: 80%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: lightroom 4s;\r\n}\r\n\r\n/* Skills Right Section ---------*/\r\n.category-bar-right,\r\n.category-bar-left {\r\n  margin-bottom: 2.3rem;\r\n}\r\n\r\n.category-right .category-bar-right .info {\r\n  display: flex;\r\n  align-items: center;\r\n  padding: 10px;\r\n  gap: 2em;\r\n}\r\n\r\n.category-right .category-bar-right .info p {\r\n  font-weight: bold;\r\n}\r\n\r\n.category-right .category-bar-right .bar {\r\n  width: 100%;\r\n  height: 10px;\r\n  background-color: var(--bg-color);\r\n  border-radius: 25px;\r\n  margin-top: 10px;\r\n  position: relative;\r\n}\r\n\r\n.category-bar-right .bar span {\r\n  width: 50%;\r\n  height: 100%;\r\n  position: absolute;\r\n  left: 0;\r\n  border-radius: 25px;\r\n}\r\n\r\n.category-bar-right .bar .cost-of-living-bar {\r\n  width: 80%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: team-work 2.5s;\r\n}\r\n\r\n.category-bar-right .bar .travel-connectivity-bar {\r\n  width: 75%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: communication 3s;\r\n}\r\n\r\n.category-bar-right .bar .education-bar {\r\n  width: 85%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: motivation 3.5s;\r\n}\r\n\r\n.category-bar-right .bar .economy-bar {\r\n  width: 80%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: resilience 3s;\r\n}\r\n\r\n.category-bar-right .bar .internet-access-bar {\r\n  width: 75%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: creativity 3s;\r\n}\r\n\r\n.category-bar-right .bar .outdoors-bar {\r\n  width: 75%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: creativity 3s;\r\n}\r\n\r\n.category-bar-right .bar .business-freedom-bar {\r\n  width: 75%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: creativity 3s;\r\n}\r\n\r\n/*scrollbar */\r\n\r\n::-webkit-scrollbar {\r\n  height: 0;\r\n  width: 0.5rem;\r\n}\r\n\r\n::-webkit-scrollbar-track {\r\n  background: #252222;\r\n}\r\n\r\n::-webkit-scrollbar-thumb {\r\n  background: var(--hover-color);\r\n  border-radius: 5rem;\r\n}\r\n\r\n/*circular score bar */\r\n\r\n.circular-score-bar {\r\n  width: 200px;\r\n  height: 200px;\r\n  position: relative;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.outer {\r\n  height: 190px;\r\n  width: 190px;\r\n  padding: 20px;\r\n  box-shadow: 6px 6px 10px -1px rgba(54, 54, 54, 0.25),\r\n    -6px -6px 10px -1px rgba(54, 54, 54, 0.25);\r\n\r\n  border-radius: 50%;\r\n}\r\n\r\n.inner {\r\n  height: 150px;\r\n  width: 150px;\r\n  box-shadow: inset 4px 4px 6px -1px rgba(47, 46, 46, 0.2),\r\n    inset -4px -4px 6px -1px rgba(67, 67, 67, 0.25),\r\n    -0.5px -0.5px 0px rgba(59, 59, 59, 0.29),\r\n    0.5px 0.5px 0px rgba(0, 0, 0, 0.15),\r\n    0px 12px 10px -10px rgba(121, 121, 121, 0.05);\r\n  border-radius: 50%;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n\r\ncircle {\r\n  fill: none;\r\n  stroke: url(#GradientColor);\r\n  stroke-width: 21px;\r\n  stroke-dasharray: 550;\r\n  stroke-dashoffset: 550;\r\n  animation: score 2s linear forwards;\r\n}\r\n\r\nsvg {\r\n  position: absolute;\r\n  width: 200px;\r\n  height: 200px;\r\n}\r\n\r\n/* Animation Keyframes-------------*/\r\n@keyframes score {\r\n  100% {\r\n    stroke-dashoffset: var(--dash-offset);\r\n  }\r\n}\r\n\r\n/* category panel*/\r\n\r\n@keyframes html {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 80%;\r\n  }\r\n}\r\n\r\n@keyframes css {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 70%;\r\n  }\r\n}\r\n\r\n@keyframes javascript {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 60%;\r\n  }\r\n}\r\n\r\n@keyframes premierepro {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 70%;\r\n  }\r\n}\r\n\r\n@keyframes lightroom {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 80%;\r\n  }\r\n}\r\n\r\n/*right panel*/\r\n\r\n@keyframes team-work {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 80%;\r\n  }\r\n}\r\n\r\n@keyframes communication {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 75%;\r\n  }\r\n}\r\n\r\n@keyframes motivation {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 85%;\r\n  }\r\n}\r\n\r\n@keyframes resilience {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 80%;\r\n  }\r\n}\r\n\r\n@keyframes creativity {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 75%;\r\n  }\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -18514,6 +18516,17 @@ module.exports = __webpack_require__.p + "UrbanLeaf-Logo.png";
 
 /***/ }),
 
+/***/ "./src/assets/img/air-pressure.png":
+/*!*****************************************!*\
+  !*** ./src/assets/img/air-pressure.png ***!
+  \*****************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "air-pressure.png";
+
+/***/ }),
+
 /***/ "./src/assets/img/air-quality.png":
 /*!****************************************!*\
   !*** ./src/assets/img/air-quality.png ***!
@@ -22850,7 +22863,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_img_air_quality_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../assets/img/air-quality.png */ "./src/assets/img/air-quality.png");
 /* harmony import */ var _assets_img_humidity_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../assets/img/humidity.png */ "./src/assets/img/humidity.png");
 /* harmony import */ var _assets_img_wind_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../assets/img/wind.png */ "./src/assets/img/wind.png");
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '../assets/img/pressure.png'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var _assets_img_air_pressure_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../assets/img/air-pressure.png */ "./src/assets/img/air-pressure.png");
 /* harmony import */ var _assets_img_wind_direction_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../assets/img/wind-direction.png */ "./src/assets/img/wind-direction.png");
 /* harmony import */ var _defaultCity__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./defaultCity */ "./src/JS/defaultCity.js");
 
@@ -22866,13 +22879,22 @@ Object(function webpackMissingModule() { var e = new Error("Cannot find module '
 
 
 
-//logo and icon
+//logo and icons
 
-const logoImg = document.getElementById("logo");
-logoImg.src = _assets_img_UrbanLeaf_Logo_png__WEBPACK_IMPORTED_MODULE_2__;
+const elements = [
+  { id: "logo", src: _assets_img_UrbanLeaf_Logo_png__WEBPACK_IMPORTED_MODULE_2__ },
+  { id: "humidity-svg", src: _assets_img_humidity_png__WEBPACK_IMPORTED_MODULE_6__ },
+  { id: "pollutant-svg", src: _assets_img_pollutant_png__WEBPACK_IMPORTED_MODULE_4__ },
+  { id: "air-quality-svg", src: _assets_img_air_quality_png__WEBPACK_IMPORTED_MODULE_5__ },
+  { id: "wind-speed-svg", src: _assets_img_wind_png__WEBPACK_IMPORTED_MODULE_7__ },
+  { id: "air-pressure-svg", src: _assets_img_air_pressure_png__WEBPACK_IMPORTED_MODULE_8__ },
+  { id: "wind-direction-svg", src: _assets_img_wind_direction_png__WEBPACK_IMPORTED_MODULE_9__ },
+];
 
-const humiditySvgSrc = document.getElementById("humidity-svg");
-humiditySvgSrc.src = _assets_img_humidity_png__WEBPACK_IMPORTED_MODULE_6__;
+elements.forEach((element) => {
+  const img = document.getElementById(element.id);
+  img.src = element.src;
+});
 
 const iconImg = document.getElementById("icon");
 iconImg.href = _assets_img_planet_earth_ico__WEBPACK_IMPORTED_MODULE_3__;
@@ -22919,24 +22941,38 @@ setInterval(() => {
 
 (0,_defaultCity__WEBPACK_IMPORTED_MODULE_10__["default"])();
 
-//geolocation function
-navigator.geolocation.getCurrentPosition(function (position) {
-  const latitude = position.coords.latitude;
-  const longitude = position.coords.longitude;
+const expandResultButton = document.querySelector(".expand-result-button");
+const cityDetails = document.querySelector(".category-main");
 
-  // Call the other API with the latitude and longitude
-  // You can use Axios to make the API request
-  axios__WEBPACK_IMPORTED_MODULE_11__["default"]
-    .get(`https://api.teleport.org/api/locations/${latitude},${longitude}/`)
-    .then(function (response) {
-      // Handle the response
-      console.log(response.data);
-    })
-    .catch(function (error) {
-      // Handle the error
-      console.error(error);
-    });
+expandResultButton.addEventListener("click", () => {
+  cityDetails.style.display = "grid";
 });
+
+//geolocation function
+
+const geolocationButton = document.querySelector(".location-button");
+
+function getLocationAndRequest() {
+  navigator.geolocation.getCurrentPosition(function (position) {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+
+    // Call the other API with the latitude and longitude
+    // You can use Axios to make the API request
+    axios__WEBPACK_IMPORTED_MODULE_11__["default"]
+      .get(`https://api.teleport.org/api/locations/${latitude},${longitude}/`)
+      .then(function (response) {
+        // Handle the response
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        // Handle the error
+        console.error(error);
+      });
+  });
+}
+
+geolocationButton.addEventListener("click", getLocationAndRequest);
 
 console.log("AIzaSyD8JexleESWtjj3QeZt_slimlfN_pPOqEo");
 console.log("https://api.teleport.org/api/cities/{?search}");
@@ -22950,4 +22986,4 @@ console.log("https://api.teleport.org/api/cities/{?search}");
 
 /******/ })()
 ;
-//# sourceMappingURL=bundled7bf73236c55959dd34d.js.map
+//# sourceMappingURL=bundle5e5accfb1210f948dd2a.js.map

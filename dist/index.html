@@ -30,7 +30,7 @@
       src="https://kit.fontawesome.com/6b71f57b8e.js"
       crossorigin="anonymous"
     ></script>
-  <script defer src="bundled7bf73236c55959dd34d.js"></script><script defer src="teleport8d6c53d20fbe87e2ef2c.js"></script><script defer src="iqairc2a217263d42b31f81b1.js"></script><script defer src="defaultCityd38a18c2bada434c19df.js"></script></head>
+  <script defer src="bundle5e5accfb1210f948dd2a.js"></script><script defer src="teleport8d6c53d20fbe87e2ef2c.js"></script><script defer src="iqairc2a217263d42b31f81b1.js"></script><script defer src="defaultCityd38a18c2bada434c19df.js"></script></head>
   <body>
     <header class="header time-date degree-switch">
       <div class="date-time">
@@ -122,39 +122,44 @@
 
       <div class="weather-details">
         <div class="humidity-container grid-item">
-          <img id="humidity-svg" alt="" />
-          <div class="humidity">HUMIDITY</div>
+          <img id="humidity-svg" class="svgs" alt="" />
+          <div class="humidity">HUMIDITY:</div>
           <div id="humidity-data"></div>
         </div>
 
         <div class="air-quality-container grid-item">
-          <div class="air-quality">AIR QUALITY</div>
+          <img id="air-quality-svg" class="svgs" alt="" />
+          <div class="air-quality">AIR QUALITY:</div>
           <div id="air-quality-data"></div>
         </div>
 
         <div class="wind-speed-container grid-item">
-          <div class="wind-speed">WIND SPEED</div>
+          <img id="wind-speed-svg" class="svgs" alt="" />
+          <div class="wind-speed">WIND SPEED:</div>
           <div id="wind-speed-data"></div>
         </div>
 
         <div class="air-pressure-container grid-item">
-          <div class="air-pressure">AIR PRESSURE</div>
+          <img id="air-pressure-svg" class="svgs" alt="" />
+          <div class="air-pressure">AIR PRESSURE:</div>
           <div id="air-pressure-data"></div>
         </div>
 
         <div class="pollutant-container grid-item">
-          <div class="pollutant">MAIN POLLUTANT</div>
+          <img id="pollutant-svg" class="svgs" alt="" />
+          <div class="pollutant">MAIN POLLUTANT:</div>
           <div id="pollutant-data"></div>
         </div>
 
         <div class="wind-direction-container grid-item">
-          <div class="wind-direction">WIND DIRECTION</div>
+          <img id="wind-direction-svg" class="svgs" alt="" />
+          <div class="wind-direction">WIND DIRECTION:</div>
           <div id="wind-direction-data"></div>
         </div>
       </div>
       <!-------------------------------------------------------------------------------------->
 
-      <div class="category-main">
+      <div class="category-main" style="display: none">
         <div class="category-left">
           <h3 class="category-title">SCORES BY CATEGORY:</h3>
           <div class="category-bar-left">
@@ -222,7 +227,7 @@
           </div>
         </div>
 
-        <!-- Skills Right -->
+        <!-- Category Right -->
 
         <div class="category-right">
           <h3 id="category-city">CITY: ROME</h3>
