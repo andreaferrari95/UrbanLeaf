@@ -21467,6 +21467,47 @@ function defaultCity() {
   const defAirQuality = document.getElementById("air-quality-data");
   const defPollutant = document.getElementById("pollutant-data");
 
+  //Categories scores
+
+  const defCategoryCity = document.getElementById("category-city");
+  const defHousing = document.getElementById("housing");
+  const defHousingBar = document.querySelector(".housing-bar");
+  const defSafety = document.getElementById("safety");
+  const defSafetyBar = document.querySelector(".safety-bar");
+  const defHealthCare = document.getElementById("healthcare");
+  const defHealthCareBar = document.querySelector(".healthcare-bar");
+  const defEnvironmentalQuality = document.getElementById(
+    "environmental-quality"
+  );
+  const defEnvironmentalQualityBar = document.querySelector(
+    ".enviromental-quality-bar"
+  );
+  const defTaxation = document.getElementById("taxation");
+  const defTaxationBar = document.querySelector(".taxation-bar");
+  const defLeisureAndCulture = document.getElementById("leisure-and-culture");
+  const defLeisureAndCultureBar = document.querySelector(
+    ".leisure-and-culture-bar"
+  );
+  const defStartups = document.getElementById("startups");
+  const defStartupsBar = document.querySelector(".startups-bar");
+
+  const defCityostOfLiving = document.getElementById("cost-of-living");
+  const defCostOfLivingBar = document.querySelector(".cost-of-living-bar");
+  const defTravelConnectivity = document.getElementById("travel-connectivity");
+  const defTravelConnectivityBar = document.querySelector(
+    ".travel-connectivity-bar"
+  );
+  const defEducation = document.getElementById("education");
+  const defEducationBar = document.querySelector(".education-bar");
+  const defEconomy = document.getElementById("economy");
+  const defEconomyBar = document.querySelector(".economy-bar");
+  const defInternetAccess = document.getElementById("internet-access");
+  const defInternetAccessBar = document.querySelector(".internet-access-bar");
+  const defOutdoors = document.getElementById("outdoors");
+  const defOutdoorsBar = document.querySelector(".outdoors-bar");
+  const defBusinessFreedom = document.getElementById("business-freedom");
+  const defBusinessFreedomBar = document.querySelector(".business-freedom-bar");
+
   axios__WEBPACK_IMPORTED_MODULE_1__["default"]
     .get(`https://api.teleport.org/api/cities/?search=rome&limit=1`)
     .then((response) => {
@@ -21491,8 +21532,6 @@ function defaultCity() {
 
             .then((response) => {
               const defWeatherData = response.data;
-
-              console.log(defWeatherData, "data");
 
               const temperature = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(
                 defWeatherData,
@@ -21537,6 +21576,7 @@ function defaultCity() {
 
               const summary = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(defDescriptionData, "summary");
               const scores = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(defDescriptionData, "teleport_city_score");
+              const categories = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(defDescriptionData, "categories");
               const roundedScores = Math.round(scores);
               defSummary.innerHTML = summary;
 
@@ -21563,6 +21603,42 @@ function defaultCity() {
                   defcityScore.innerHTML = `${counter}%`;
                 }
               }, intervalDuration);
+
+              console.log(categories);
+
+              const idMapping = {
+                housing: "housing",
+                education: "education",
+                economy: "economy",
+                healthcare: "healthcare",
+                safety: "safety",
+                outdoors: "outdoors",
+                startups: "startups",
+                taxation: "taxation",
+                "cost of living": "cost-of-living",
+                "travel connectivity": "travel-connectivity",
+                "environmental quality": "environmental-quality",
+                "internet access": "internet-access",
+                "business freedom": "business-freedom",
+                "leisure & culture": "leisure-and-culture",
+              };
+
+              categories.forEach((item) => {
+                const categoryId = idMapping[item.name.toLowerCase()];
+
+                if (categoryId) {
+                  const categoryElement = document.getElementById(categoryId);
+
+                  if (categoryElement) {
+                    categoryElement.textContent =
+                      item.score_out_of_10.toFixed(1) + "/10";
+                  } else {
+                    console.warn(
+                      `Element with id "${categoryId}" not found in HTML. Skipping.`
+                    );
+                  }
+                }
+              });
             })
 
             .catch((error) => {
@@ -21581,4 +21657,4 @@ function defaultCity() {
 
 /******/ })()
 ;
-//# sourceMappingURL=defaultCity9fc7fb68afd62e471387.js.map
+//# sourceMappingURL=defaultCityd38a18c2bada434c19df.js.map

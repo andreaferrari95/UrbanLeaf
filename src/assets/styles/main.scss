@@ -46,8 +46,12 @@ a {
 }
 
 body {
-  background-color: #252222;
-  width: 100%;
+  background: linear-gradient(
+    180deg,
+    rgb(56, 56, 56) 0%,
+    rgba(158, 158, 158, 0) 100%
+  );
+  min-height: 100vh;
 
   display: flex;
   align-items: stretch;
@@ -99,15 +103,19 @@ body {
   border-radius: 25px;
   cursor: pointer;
 }
-.container-logo-search {
+.container-logo {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
 }
 #logo {
-  margin-top: 10px;
-  width: 25%;
+  width: 20rem;
+}
+
+.container-search {
+  display: flex;
+  justify-content: center;
 }
 
 .search-box {
