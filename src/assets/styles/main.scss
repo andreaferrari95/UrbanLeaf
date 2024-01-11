@@ -62,6 +62,7 @@ body {
   justify-content: space-between;
   font-size: large;
   margin: 2rem 2rem 0 2rem;
+  padding-bottom: 1rem;
 }
 
 #day,
@@ -70,39 +71,33 @@ body {
 #year,
 #hrs,
 #min,
-#sec,
-.fahrenheit-text,
-.celsius-text {
+#sec {
   font-weight: bold;
 }
-.celsius-switch {
+.container-location {
   display: flex;
   align-items: center;
-  padding: 10px;
 }
 
-.switch-icon {
-  margin-top: 10px;
-  position: relative;
-  width: 100px;
-  height: 30px;
+.location-button {
+  width: 13rem;
+  height: 3rem;
   border-radius: 25px;
-  background: linear-gradient(
-    90deg,
-    rgb(51.47, 224.19, 23.35) 0%,
-    rgba(148.71, 241.19, 133.66, 0) 100%
-  );
+  box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940,
+    0px 4px 4px #fcf5f540;
+  background: var(--secon-bg-color);
   margin: 0 10px 0 10px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
-.ellipse {
-  position: relative;
-  width: 1.6rem;
-  height: 1.6rem;
-  top: 3px;
-  background-color: #181515;
-  border-radius: 25px;
+
+.location-button:hover {
   cursor: pointer;
+  background-color: var(--hover-color);
 }
+
 .container-logo {
   display: flex;
   flex-direction: column;
@@ -304,6 +299,24 @@ button .fa-solid {
 
 #score {
   font-size: 1.2em;
+}
+
+.expand-result-button {
+  width: 10rem;
+  height: 2.5rem;
+  border-radius: 25px;
+  margin-top: 2rem;
+  border: 2px solid #e54d26;
+  outline: unset;
+  color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.3rem;
+  background: chocolate;
+}
+
+.expand-result-button:hover {
+  background: #e54d26;
+  cursor: pointer;
 }
 
 .humidity-container,
