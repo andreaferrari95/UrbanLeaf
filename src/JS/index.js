@@ -80,37 +80,3 @@ expandResultButton.addEventListener("click", () => {
   cityDetails.style.display = "grid";
   cityDetails.scrollIntoView({ behavior: "smooth" });
 });
-
-//geolocation function
-
-const geolocationButton = document.querySelector(".location-button");
-
-function getLocationAndRequest() {
-  navigator.geolocation.getCurrentPosition(function (position) {
-    const latitude = position.coords.latitude;
-    const longitude = position.coords.longitude;
-
-    // Call the other API with the latitude and longitude
-    // You can use Axios to make the API request
-    axios
-      .get(`https://api.teleport.org/api/locations/${latitude},${longitude}/`)
-      .then(function (response) {
-        // Handle the response
-        console.log(response.data);
-      })
-      .catch(function (error) {
-        // Handle the error
-        console.error(error);
-      });
-  });
-}
-
-geolocationButton.addEventListener("click", getLocationAndRequest);
-
-console.log(process.env.GOOGLE_PLACES_API);
-console.log(process.env.TELEPORT_API_URL);
-//import city from "./API/teleport.js";
-//import getAirAndWeatherData from "./API/iqair.js";
-
-//const cityToSearch = "Rome";
-//getAirAndWeatherData(cityToSearch);

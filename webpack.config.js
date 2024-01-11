@@ -6,8 +6,9 @@ module.exports = {
   mode: "development",
   entry: {
     bundle: path.resolve(__dirname, "src/JS/index.js"),
-    teleport: path.resolve(__dirname, "src/JS/API/citySearch.js"),
+    teleport: path.resolve(__dirname, "src/JS/API/CitySearch.js"),
     defaultCity: path.resolve(__dirname, "src/JS/API/defaultCity.js"),
+    geolocation: path.resolve(__dirname, "src/JS/API/geolocation.js"),
   },
   output: {
     path: path.resolve(__dirname, "dist"),
