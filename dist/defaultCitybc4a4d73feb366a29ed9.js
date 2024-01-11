@@ -21441,9 +21441,9 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
 "use strict";
-/*!*******************************!*\
-  !*** ./src/JS/defaultCity.js ***!
-  \*******************************/
+/*!***********************************!*\
+  !*** ./src/JS/API/defaultCity.js ***!
+  \***********************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -21657,4 +21657,4 @@ function defaultCity() {
 
 /******/ })()
 ;
-//# sourceMappingURL=defaultCityd38a18c2bada434c19df.js.map
+//# sourceMappingURL=defaultCitybc4a4d73feb366a29ed9.js.map

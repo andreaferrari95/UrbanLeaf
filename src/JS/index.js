@@ -9,7 +9,7 @@ import humiditySvg from "../assets/img/humidity.png";
 import windSvg from "../assets/img/wind.png";
 import pressureSvg from "../assets/img/air-pressure.png";
 import windDirectionSvg from "../assets/img/wind-direction.png";
-import defaultCity from "./defaultCity";
+import defaultCity from "../JS/API/defaultCity.js";
 
 //logo and icons
 
@@ -78,6 +78,7 @@ const cityDetails = document.querySelector(".category-main");
 
 expandResultButton.addEventListener("click", () => {
   cityDetails.style.display = "grid";
+  cityDetails.scrollIntoView({ behavior: "smooth" });
 });
 
 //geolocation function
