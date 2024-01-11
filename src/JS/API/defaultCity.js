@@ -74,7 +74,7 @@ function defaultCity() {
 
           axios
             .get(
-              `https://api.airvisual.com/v2/city?city=Rome&state=Latium&country=Italy&key=4fb35cd8-01d9-4068-a090-0634e06a0e4a`
+              `https://api.airvisual.com/v2/city?city=Rome&state=Latium&country=Italy&key=${process.env.IQAIR_API_KEY}`
             )
 
             .then((response) => {
