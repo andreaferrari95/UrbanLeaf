@@ -25,10 +25,10 @@ pollutionSvgSrc.src = pollutionSvg;
 const airQualitySvgSrc = document.getElementById("air-quality-svg");
 airQualitySvgSrc.src = airQualitySvg;
 
-const windSvgSrc = document.getElementById("wind-svg");
+const windSvgSrc = document.getElementById("wind-speed-svg");
 windSvgSrc.src = windSvg;
 
-const pressureSvgSrc = document.getElementById("pressure-svg");
+const pressureSvgSrc = document.getElementById("air-pressure-svg");
 pressureSvgSrc.src = pressureSvg;
 
 const windDirectionSvgSrc = document.getElementById("wind-direction-svg");
