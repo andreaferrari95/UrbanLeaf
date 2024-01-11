@@ -30,7 +30,7 @@
       src="https://kit.fontawesome.com/6b71f57b8e.js"
       crossorigin="anonymous"
     ></script>
-  <script defer src="bundle229713406bfb9c1c2a38.js"></script><script defer src="teleport8d6c53d20fbe87e2ef2c.js"></script><script defer src="iqairc2a217263d42b31f81b1.js"></script><script defer src="defaultCityd38a18c2bada434c19df.js"></script></head>
+  <script defer src="bundled7bf73236c55959dd34d.js"></script><script defer src="teleport8d6c53d20fbe87e2ef2c.js"></script><script defer src="iqairc2a217263d42b31f81b1.js"></script><script defer src="defaultCityd38a18c2bada434c19df.js"></script></head>
   <body>
     <header class="header time-date degree-switch">
       <div class="date-time">
@@ -52,14 +52,16 @@
           </div>
         </div>
       </div>
-      <div class="celsius-switch">
-        <div class="celsius-text">°C</div>
-        <div class="switch-icon"><div class="ellipse"></div></div>
-        <div class="fahrenheit-text">°F</div>
+      <div class="container-logo">
+        <img id="logo" alt="UrbanLeaf Logo" />
+      </div>
+      <div class="container-location">
+        <div class="location-button">
+          Current Location<i class="fa-solid fa-location-crosshairs"></i>
+        </div>
       </div>
     </header>
-    <div class="container-logo-search">
-      <img id="logo" alt="UrbanLeaf Logo" />
+    <div class="container-search">
       <div class="search-box">
         <div class="row">
           <input
@@ -115,10 +117,12 @@
             </svg>
           </div>
         </div>
+        <button class="expand-result-button">Show More</button>
       </div>
 
       <div class="weather-details">
         <div class="humidity-container grid-item">
+          <img id="humidity-svg" alt="" />
           <div class="humidity">HUMIDITY</div>
           <div id="humidity-data"></div>
         </div>

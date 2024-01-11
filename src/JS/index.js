@@ -3,12 +3,36 @@ import _, { defer, head } from "lodash";
 import "../assets/styles/main.scss";
 import logo from "../assets/img/UrbanLeaf-Logo.png";
 import icon from "../assets/img/planet-earth.ico";
+import pollutionSvg from "../assets/img/pollutant.png";
+import airQualitySvg from "../assets/img/air-quality.png";
+import humiditySvg from "../assets/img/humidity.png";
+import windSvg from "../assets/img/wind.png";
+import pressureSvg from "../assets/img/air-pressure.png";
+import windDirectionSvg from "../assets/img/wind-direction.png";
 import defaultCity from "./defaultCity";
 
-//logo and icon
+//logo and icons
 
 const logoImg = document.getElementById("logo");
 logoImg.src = logo;
+
+const humiditySvgSrc = document.getElementById("humidity-svg");
+humiditySvgSrc.src = humiditySvg;
+
+const pollutionSvgSrc = document.getElementById("pollutant-svg");
+pollutionSvgSrc.src = pollutionSvg;
+
+const airQualitySvgSrc = document.getElementById("air-quality-svg");
+airQualitySvgSrc.src = airQualitySvg;
+
+const windSvgSrc = document.getElementById("wind-svg");
+windSvgSrc.src = windSvg;
+
+const pressureSvgSrc = document.getElementById("pressure-svg");
+pressureSvgSrc.src = pressureSvg;
+
+const windDirectionSvgSrc = document.getElementById("wind-direction-svg");
+windDirectionSvgSrc.src = windDirectionSvg;
 
 const iconImg = document.getElementById("icon");
 iconImg.href = icon;
