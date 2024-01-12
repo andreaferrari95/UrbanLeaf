@@ -1,6 +1,752 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/assets/styles/main.scss":
+/*!******************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/assets/styles/main.scss ***!
+  \******************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Poppins:300,500,400,600);"]);
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, `html {
+  /* For Firefox */
+  overflow-y: scroll;
+  scrollbar-color: var(--hover-color) var(--secon-bg-color);
+  scrollbar-width: thin; }
+
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 300;
+  color: #f5f5f5; }
+
+:root {
+  --text-color: #f5f5f5;
+  --hover-color: #8af037b3;
+  --bg-color: ##083700;
+  --big-font: 2.5rem;
+  --normal-font: 2rem;
+  --neon-box-shadow: 0 0 0.5rem #00c896;
+  --h2-font: 3rem;
+  --font-neon-text-shadow: 0 0 10px rgba(0, 200, 150, 0.3),
+    0 0 20px rgba(70, 200, 150, 0.3), 0 0 30px rgba(0, 200, 150, 0.3),
+    0 0 40px rgba(0, 200, 150, 0.3), 0 0 70px rgba(0, 200, 150, 0.3),
+    0 0 80px rgba(0, 200, 150, 0.3), 0 0 100px rgba(0, 200, 150, 0.3),
+    0 0 150px rgba(0, 200, 150, 0.3);
+  --bar-color: #e54d26;
+  --neon-box-shadow-bar: 0 0 0.5rem #e54d26;
+  --secon-bg-color: linear-gradient(
+    160deg,
+    rgba(89, 134, 76, 0.7) 0%,
+    rgba(130, 170, 119, 0.62) 100%
+  ); }
+
+a {
+  text-decoration: none; }
+
+body {
+  background: linear-gradient(181deg, #383838 0%, #555555b5 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column; }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  font-size: large;
+  margin: 2rem 2rem 0 2rem;
+  padding-bottom: 1rem; }
+
+#day,
+#date,
+#month,
+#year,
+#hrs,
+#min,
+#sec {
+  font-weight: bold; }
+
+.container-location {
+  display: flex;
+  align-items: center; }
+
+.location-button {
+  width: 13rem;
+  height: 3rem;
+  border-radius: 25px;
+  box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940, 0px 4px 4px #fcf5f540;
+  background: var(--secon-bg-color);
+  margin: 0 10px 0 10px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+
+.location-button:hover {
+  cursor: pointer;
+  background-color: var(--hover-color); }
+
+.container-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; }
+
+#logo {
+  width: 20rem; }
+
+.container-search {
+  display: flex;
+  justify-content: center; }
+
+.search-box {
+  margin: 20px 0;
+  width: 600px;
+  border: 1px solid #f4f4f4;
+  border-radius: 25px;
+  font-size: 16px;
+  background-color: rgba(144, 234, 150, 0.836); }
+
+.row {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px; }
+
+input {
+  flex: 1;
+  height: 50px;
+  border: none;
+  outline: none;
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  background-color: transparent; }
+
+button {
+  background: transparent;
+  border: none;
+  outline: none; }
+
+button .fa-solid {
+  width: 40px;
+  color: #555;
+  font-size: 30px;
+  cursor: pointer; }
+
+::placeholder {
+  color: #555; }
+
+.text-wrapper-3 {
+  position: absolute;
+  width: 174px;
+  top: 46px;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 600;
+  color: #f5f5f5;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal; }
+
+.text-wrapper-4 {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 600;
+  color: #f5f5f5;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal; }
+
+.search-bar {
+  position: absolute;
+  width: 614px;
+  height: 57px;
+  top: 160px;
+  left: 413px;
+  background-color: #d9d9d9;
+  border-radius: 25px; }
+
+.icon-search {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  top: 9px;
+  left: 558px; }
+
+.city-details-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding-block: 1.5rem;
+  gap: 1.5rem;
+  margin: 0 1.5rem;
+  color: #f5f5f5;
+  font-size: 2rem; }
+
+.city-temp {
+  height: fit-content;
+  background: var(--secon-bg-color);
+  border-radius: 32px;
+  box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940, 0px 4px 4px #fcf5f540;
+  grid-column: span 4; }
+
+.city-details {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem; }
+
+.icon-location {
+  width: 50px;
+  height: 50px;
+  color: #f5f5f5; }
+
+.row-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 1.5em; }
+
+.location,
+.temp-weather {
+  display: flex;
+  align-items: center;
+  margin: 1.2rem; }
+
+.temp-weather {
+  justify-content: flex-end; }
+
+#weather-icon {
+  width: 4em; }
+
+#temperature {
+  margin-right: 1.5rem;
+  font-size: 1.5em; }
+
+#city-description {
+  line-height: 1.2;
+  margin: 20px; }
+
+/* -----------------------------*/
+.weather-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1rem;
+  padding: 1.5rem;
+  padding-block: 1.5rem;
+  justify-items: center;
+  border-radius: 32px;
+  box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940, 0px 4px 4px #fcf5f540;
+  background: var(--secon-bg-color);
+  grid-column: span 5;
+  margin-bottom: auto; }
+
+.svgs {
+  width: 4rem; }
+
+.city-score {
+  background: var(--secon-bg-color);
+  border-radius: 32px;
+  box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940, 0px 4px 4px #fcf5f540;
+  display: flex;
+  justify-items: center;
+  flex-direction: column;
+  align-items: center; }
+
+#city-score-name {
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  font-weight: bold; }
+
+#score {
+  font-size: 1.2em; }
+
+.expand-result-button {
+  width: 10rem;
+  height: 2.5rem;
+  border-radius: 25px;
+  margin-top: 1rem;
+  border: 2px solid #e54d26;
+  outline: unset;
+  color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.3rem;
+  background: chocolate; }
+
+.expand-result-button:hover {
+  background: #e54d26;
+  cursor: pointer; }
+
+.humidity-container,
+.air-quality-container,
+.wind-speed-container,
+.air-pressure-container,
+.pollutant-container,
+.wind-direction-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.5rem;
+  border: 3px solid #cdcdcd;
+  border-radius: 25px;
+  width: -webkit-fill-available;
+  height: 4em;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem; }
+
+#humidity-data,
+#visibility-data,
+#air-quality-data,
+#wind-speed-data,
+#air-pressure-data,
+#pollen-data,
+#pollutant-data,
+#wind-direction-data {
+  font-size: 1.7rem; }
+
+/* category Section ---------*/
+.category-title {
+  display: flex;
+  justify-content: flex-start;
+  font-weight: bold; }
+
+#category-city {
+  display: flex;
+  justify-content: flex-end;
+  font-weight: bold;
+  margin-right: inherit; }
+
+.category-main {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: var(--secon-bg-color);
+  grid-column: span 5;
+  gap: 1.5rem;
+  border-radius: 32px; }
+
+.category-left,
+.category-right {
+  padding: 1.5rem; }
+
+.category-left {
+  margin: 1rem 0 1rem 1.5rem; }
+
+.category-right {
+  margin: 1rem 1.5rem 1rem 0; }
+
+.category-bar {
+  margin-bottom: 2.3rem; }
+
+.category-title,
+#category-city {
+  margin-bottom: 2rem;
+  font-size: var(--normal-font);
+  text-align: center; }
+
+.category-left .category-bar-left .info {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 2em; }
+
+.category-left .category-bar-left .info p {
+  font-weight: bold; }
+
+.category-left .category-bar-left .bar {
+  width: 100%;
+  height: 10px;
+  background-color: var(--bg-color);
+  border-radius: 25px;
+  margin-top: 10px;
+  position: relative; }
+
+.category-bar-left .bar span {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  border-radius: 25px; }
+
+.category-bar-left .bar .housing-bar {
+  width: 80%;
+  background: var(--bar-color);
+  box-shadow: var(--neon-box-shadow-bar);
+  animation: html 2.5s; }
+
+.category-bar-left .bar .safety-bar {
+  width: 70%;
+  background: var(--bar-color);
+  box-shadow: var(--neon-box-shadow-bar);
+  animation: css 2s; }
+
+.category-bar-left .bar .healtcare-bar {
+  width: 60%;
+  background: var(--bar-color);
+  box-shadow: var(--neon-box-shadow-bar);
+  animation: javascript 2s; }
+
+.category-bar-left .bar .environmental-quality-bar {
+  width: 70%;
+  background: var(--bar-color);
+  box-shadow: var(--neon-box-shadow-bar);
+  animation: premierepro 3.5s; }
+
+.category-bar-left .bar .taxation-bar {
+  width: 80%;
+  background: var(--bar-color);
+  box-shadow: var(--neon-box-shadow-bar);
+  animation: lightroom 4s; }
+
+.category-bar-left .bar .leisure-and-culture-bar {
+  width: 80%;
+  background: var(--bar-color);
+  box-shadow: var(--neon-box-shadow-bar);
+  animation: lightroom 4s; }
+
+.category-bar-left .bar .startups-bar {
+  width: 80%;
+  background: var(--bar-color);
+  box-shadow: var(--neon-box-shadow-bar);
+  animation: lightroom 4s; }
+
+/* Skills Right Section ---------*/
+.category-bar-right,
+.category-bar-left {
+  margin-bottom: 2.3rem; }
+
+.category-right .category-bar-right .info {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 2em; }
+
+.category-right .category-bar-right .info p {
+  font-weight: bold; }
+
+.category-right .category-bar-right .bar {
+  width: 100%;
+  height: 10px;
+  background-color: var(--bg-color);
+  border-radius: 25px;
+  margin-top: 10px;
+  position: relative; }
+
+.category-bar-right .bar span {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  border-radius: 25px; }
+
+.category-bar-right .bar .cost-of-living-bar {
+  width: 80%;
+  background: var(--bar-color);
+  box-shadow: var(--neon-box-shadow-bar);
+  animation: team-work 2.5s; }
+
+.category-bar-right .bar .travel-connectivity-bar {
+  width: 75%;
+  background: var(--bar-color);
+  box-shadow: var(--neon-box-shadow-bar);
+  animation: communication 3s; }
+
+.category-bar-right .bar .education-bar {
+  width: 85%;
+  background: var(--bar-color);
+  box-shadow: var(--neon-box-shadow-bar);
+  animation: motivation 3.5s; }
+
+.category-bar-right .bar .economy-bar {
+  width: 80%;
+  background: var(--bar-color);
+  box-shadow: var(--neon-box-shadow-bar);
+  animation: resilience 3s; }
+
+.category-bar-right .bar .internet-access-bar {
+  width: 75%;
+  background: var(--bar-color);
+  box-shadow: var(--neon-box-shadow-bar);
+  animation: creativity 3s; }
+
+.category-bar-right .bar .outdoors-bar {
+  width: 75%;
+  background: var(--bar-color);
+  box-shadow: var(--neon-box-shadow-bar);
+  animation: creativity 3s; }
+
+.category-bar-right .bar .business-freedom-bar {
+  width: 75%;
+  background: var(--bar-color);
+  box-shadow: var(--neon-box-shadow-bar);
+  animation: creativity 3s; }
+
+/*scrollbar */
+::-webkit-scrollbar {
+  height: 0;
+  width: 0.5rem; }
+
+::-webkit-scrollbar-track {
+  background: #252222; }
+
+::-webkit-scrollbar-thumb {
+  background: var(--hover-color);
+  border-radius: 5rem; }
+
+/*circular score bar */
+.circular-score-bar {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.outer {
+  height: 190px;
+  width: 190px;
+  padding: 20px;
+  box-shadow: 6px 6px 10px -1px rgba(54, 54, 54, 0.25), -6px -6px 10px -1px rgba(54, 54, 54, 0.25);
+  border-radius: 50%; }
+
+.inner {
+  height: 150px;
+  width: 150px;
+  box-shadow: inset 4px 4px 6px -1px rgba(47, 46, 46, 0.2), inset -4px -4px 6px -1px rgba(67, 67, 67, 0.25), -0.5px -0.5px 0px rgba(59, 59, 59, 0.29), 0.5px 0.5px 0px rgba(0, 0, 0, 0.15), 0px 12px 10px -10px rgba(121, 121, 121, 0.05);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+circle {
+  fill: none;
+  stroke: url(#GradientColor);
+  stroke-width: 21px;
+  stroke-dasharray: 550;
+  stroke-dashoffset: 550;
+  animation: score 2s linear forwards; }
+
+svg {
+  position: absolute;
+  width: 200px;
+  height: 200px; }
+
+/* Animation Keyframes-------------*/
+@keyframes score {
+  100% {
+    stroke-dashoffset: var(--dash-offset); } }
+
+/* category panel*/
+@keyframes html {
+  0% {
+    width: 0%; }
+  100% {
+    width: 80%; } }
+
+@keyframes css {
+  0% {
+    width: 0%; }
+  100% {
+    width: 70%; } }
+
+@keyframes javascript {
+  0% {
+    width: 0%; }
+  100% {
+    width: 60%; } }
+
+@keyframes premierepro {
+  0% {
+    width: 0%; }
+  100% {
+    width: 70%; } }
+
+@keyframes lightroom {
+  0% {
+    width: 0%; }
+  100% {
+    width: 80%; } }
+
+/*right panel*/
+@keyframes team-work {
+  0% {
+    width: 0%; }
+  100% {
+    width: 80%; } }
+
+@keyframes communication {
+  0% {
+    width: 0%; }
+  100% {
+    width: 75%; } }
+
+@keyframes motivation {
+  0% {
+    width: 0%; }
+  100% {
+    width: 85%; } }
+
+@keyframes resilience {
+  0% {
+    width: 0%; }
+  100% {
+    width: 80%; } }
+
+@keyframes creativity {
+  0% {
+    width: 0%; }
+  100% {
+    width: 75%; } }
+`, "",{"version":3,"sources":["webpack://./src/assets/styles/main.scss"],"names":[],"mappings":"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","sourcesContent":["@import url(\"https://fonts.googleapis.com/css?family=Poppins:300,500,400,600\");\r\n\r\nhtml {\r\n  /* For Firefox */\r\n  overflow-y: scroll;\r\n  scrollbar-color: var(--hover-color) var(--secon-bg-color);\r\n  scrollbar-width: thin;\r\n}\r\n\r\n* {\r\n  -webkit-font-smoothing: antialiased;\r\n  box-sizing: border-box;\r\n  margin: 0px;\r\n  padding: 0px;\r\n  font-family: \"Poppins\", Helvetica;\r\n  font-weight: 300;\r\n  color: #f5f5f5;\r\n}\r\n\r\n:root {\r\n  --text-color: #f5f5f5;\r\n  --hover-color: #8af037b3;\r\n  --bg-color: ##083700;\r\n  --big-font: 2.5rem;\r\n  --normal-font: 2rem;\r\n  --neon-box-shadow: 0 0 0.5rem #00c896;\r\n  --h2-font: 3rem;\r\n  --font-neon-text-shadow: 0 0 10px rgba(0, 200, 150, 0.3),\r\n    0 0 20px rgba(70, 200, 150, 0.3), 0 0 30px rgba(0, 200, 150, 0.3),\r\n    0 0 40px rgba(0, 200, 150, 0.3), 0 0 70px rgba(0, 200, 150, 0.3),\r\n    0 0 80px rgba(0, 200, 150, 0.3), 0 0 100px rgba(0, 200, 150, 0.3),\r\n    0 0 150px rgba(0, 200, 150, 0.3);\r\n\r\n  --bar-color: #e54d26;\r\n  --neon-box-shadow-bar: 0 0 0.5rem #e54d26;\r\n\r\n  --secon-bg-color: linear-gradient(\r\n    160deg,\r\n    rgba(89, 134, 76, 0.7) 0%,\r\n    rgba(130, 170, 119, 0.62) 100%\r\n  );\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n}\r\n\r\nbody {\r\n  background: linear-gradient(181deg, #383838 0%, #555555b5 100%);\r\n  min-height: 100vh;\r\n  display: flex;\r\n  align-items: stretch;\r\n  flex-direction: column;\r\n}\r\n.header {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  font-size: large;\r\n  margin: 2rem 2rem 0 2rem;\r\n  padding-bottom: 1rem;\r\n}\r\n\r\n#day,\r\n#date,\r\n#month,\r\n#year,\r\n#hrs,\r\n#min,\r\n#sec {\r\n  font-weight: bold;\r\n}\r\n.container-location {\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\n.location-button {\r\n  width: 13rem;\r\n  height: 3rem;\r\n  border-radius: 25px;\r\n  box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940,\r\n    0px 4px 4px #fcf5f540;\r\n  background: var(--secon-bg-color);\r\n  margin: 0 10px 0 10px;\r\n  font-weight: bold;\r\n  display: flex;\r\n  justify-content: space-around;\r\n  align-items: center;\r\n}\r\n\r\n.location-button:hover {\r\n  cursor: pointer;\r\n  background-color: var(--hover-color);\r\n}\r\n\r\n.container-logo {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: flex-start;\r\n}\r\n#logo {\r\n  width: 20rem;\r\n}\r\n\r\n.container-search {\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n\r\n.search-box {\r\n  margin: 20px 0;\r\n  width: 600px;\r\n  border: 1px solid #f4f4f4;\r\n  border-radius: 25px;\r\n  font-size: 16px;\r\n  background-color: rgba(144, 234, 150, 0.836);\r\n}\r\n\r\n.row {\r\n  display: flex;\r\n  align-items: center;\r\n  padding: 10px 20px;\r\n}\r\n\r\ninput {\r\n  flex: 1;\r\n  height: 50px;\r\n  border: none;\r\n  outline: none;\r\n  font-size: 22px;\r\n  font-weight: bold;\r\n  color: #333;\r\n  background-color: transparent;\r\n}\r\nbutton {\r\n  background: transparent;\r\n  border: none;\r\n  outline: none;\r\n}\r\n\r\nbutton .fa-solid {\r\n  width: 40px;\r\n  color: #555;\r\n  font-size: 30px;\r\n  cursor: pointer;\r\n}\r\n\r\n::placeholder {\r\n  color: #555;\r\n}\r\n\r\n.text-wrapper-3 {\r\n  position: absolute;\r\n  width: 174px;\r\n  top: 46px;\r\n  left: 0;\r\n  font-family: \"Poppins\", Helvetica;\r\n  font-weight: 600;\r\n  color: #f5f5f5;\r\n  font-size: 24px;\r\n  letter-spacing: 0;\r\n  line-height: normal;\r\n}\r\n\r\n.text-wrapper-4 {\r\n  position: absolute;\r\n  top: -1px;\r\n  left: 0;\r\n  font-family: \"Poppins\", Helvetica;\r\n  font-weight: 600;\r\n  color: #f5f5f5;\r\n  font-size: 24px;\r\n  letter-spacing: 0;\r\n  line-height: normal;\r\n}\r\n\r\n.search-bar {\r\n  position: absolute;\r\n  width: 614px;\r\n  height: 57px;\r\n  top: 160px;\r\n  left: 413px;\r\n  background-color: #d9d9d9;\r\n  border-radius: 25px;\r\n}\r\n\r\n.icon-search {\r\n  position: absolute;\r\n  width: 38px;\r\n  height: 38px;\r\n  top: 9px;\r\n  left: 558px;\r\n}\r\n\r\n.city-details-container {\r\n  display: grid;\r\n  grid-template-columns: repeat(5, 1fr);\r\n  padding-block: 1.5rem;\r\n  gap: 1.5rem;\r\n  margin: 0 1.5rem;\r\n  color: #f5f5f5;\r\n  font-size: 2rem;\r\n}\r\n\r\n.city-temp {\r\n  height: fit-content;\r\n  background: var(--secon-bg-color);\r\n  border-radius: 32px;\r\n  box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940,\r\n    0px 4px 4px #fcf5f540;\r\n  grid-column: span 4;\r\n}\r\n\r\n.city-details {\r\n  display: flex;\r\n  flex-direction: column;\r\n  font-size: 1.5rem;\r\n}\r\n\r\n.icon-location {\r\n  width: 50px;\r\n  height: 50px;\r\n  color: #f5f5f5;\r\n}\r\n\r\n.row-top {\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: space-between;\r\n  font-size: 1.5em;\r\n}\r\n\r\n.location,\r\n.temp-weather {\r\n  display: flex;\r\n  align-items: center;\r\n  margin: 1.2rem;\r\n}\r\n\r\n.temp-weather {\r\n  justify-content: flex-end;\r\n}\r\n\r\n#weather-icon {\r\n  width: 4em;\r\n}\r\n\r\n#temperature {\r\n  margin-right: 1.5rem;\r\n  font-size: 1.5em;\r\n}\r\n\r\n#city-description {\r\n  line-height: 1.2;\r\n  margin: 20px;\r\n}\r\n\r\n/* -----------------------------*/\r\n\r\n.weather-details {\r\n  display: grid;\r\n  grid-template-columns: repeat(auto-fit, minmax(min(30rem), 1fr));\r\n  gap: 1rem;\r\n  padding: 1.5rem;\r\n  padding-block: 1.5rem;\r\n  justify-items: center;\r\n  border-radius: 32px;\r\n  box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940,\r\n    0px 4px 4px #fcf5f540;\r\n  background: var(--secon-bg-color);\r\n  grid-column: span 5;\r\n  margin-bottom: auto;\r\n}\r\n\r\n.svgs {\r\n  width: 4rem;\r\n}\r\n\r\n.city-score {\r\n  background: var(--secon-bg-color);\r\n  border-radius: 32px;\r\n  box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940,\r\n    0px 4px 4px #fcf5f540;\r\n  display: flex;\r\n  justify-items: center;\r\n  flex-direction: column;\r\n  align-items: center;\r\n}\r\n\r\n#city-score-name {\r\n  font-size: 1em;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n  margin-top: 1rem;\r\n  font-weight: bold;\r\n}\r\n\r\n#score {\r\n  font-size: 1.2em;\r\n}\r\n\r\n.expand-result-button {\r\n  width: 10rem;\r\n  height: 2.5rem;\r\n  border-radius: 25px;\r\n  margin-top: 1rem;\r\n  border: 2px solid #e54d26;\r\n  outline: unset;\r\n  color: #f5f5f5;\r\n  font-weight: bold;\r\n  font-size: 1.3rem;\r\n  background: chocolate;\r\n}\r\n\r\n.expand-result-button:hover {\r\n  background: #e54d26;\r\n  cursor: pointer;\r\n}\r\n\r\n.humidity-container,\r\n.air-quality-container,\r\n.wind-speed-container,\r\n.air-pressure-container,\r\n.pollutant-container,\r\n.wind-direction-container {\r\n  display: flex;\r\n  flex-direction: row;\r\n  margin-top: 0.5rem;\r\n  border: 3px solid #cdcdcd;\r\n  border-radius: 25px;\r\n  width: -webkit-fill-available;\r\n  height: 4em;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  padding: 2rem;\r\n}\r\n\r\n#humidity-data,\r\n#visibility-data,\r\n#air-quality-data,\r\n#wind-speed-data,\r\n#air-pressure-data,\r\n#pollen-data,\r\n#pollutant-data,\r\n#wind-direction-data {\r\n  font-size: 1.7rem;\r\n}\r\n\r\n/* category Section ---------*/\r\n.category-title {\r\n  display: flex;\r\n  justify-content: flex-start;\r\n  font-weight: bold;\r\n}\r\n\r\n#category-city {\r\n  display: flex;\r\n  justify-content: flex-end;\r\n  font-weight: bold;\r\n  margin-right: inherit;\r\n}\r\n\r\n.category-main {\r\n  width: 100%;\r\n  display: grid;\r\n  grid-template-columns: repeat(2, 1fr);\r\n  background: var(--secon-bg-color);\r\n  grid-column: span 5;\r\n  gap: 1.5rem;\r\n  border-radius: 32px;\r\n}\r\n\r\n.category-left,\r\n.category-right {\r\n  padding: 1.5rem;\r\n}\r\n\r\n.category-left {\r\n  margin: 1rem 0 1rem 1.5rem;\r\n}\r\n\r\n.category-right {\r\n  margin: 1rem 1.5rem 1rem 0;\r\n}\r\n\r\n.category-bar {\r\n  margin-bottom: 2.3rem;\r\n}\r\n\r\n.category-title,\r\n#category-city {\r\n  margin-bottom: 2rem;\r\n  font-size: var(--normal-font);\r\n  text-align: center;\r\n}\r\n\r\n.category-left .category-bar-left .info {\r\n  display: flex;\r\n  align-items: center;\r\n  padding: 10px;\r\n  gap: 2em;\r\n}\r\n\r\n.category-left .category-bar-left .info p {\r\n  font-weight: bold;\r\n}\r\n\r\n.category-left .category-bar-left .bar {\r\n  width: 100%;\r\n  height: 10px;\r\n  background-color: var(--bg-color);\r\n  border-radius: 25px;\r\n  margin-top: 10px;\r\n  position: relative;\r\n}\r\n\r\n.category-bar-left .bar span {\r\n  width: 50%;\r\n  height: 100%;\r\n  position: absolute;\r\n  left: 0;\r\n  border-radius: 25px;\r\n}\r\n\r\n.category-bar-left .bar .housing-bar {\r\n  width: 80%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: html 2.5s;\r\n}\r\n\r\n.category-bar-left .bar .safety-bar {\r\n  width: 70%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: css 2s;\r\n}\r\n\r\n.category-bar-left .bar .healtcare-bar {\r\n  width: 60%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: javascript 2s;\r\n}\r\n\r\n.category-bar-left .bar .environmental-quality-bar {\r\n  width: 70%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: premierepro 3.5s;\r\n}\r\n\r\n.category-bar-left .bar .taxation-bar {\r\n  width: 80%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: lightroom 4s;\r\n}\r\n\r\n.category-bar-left .bar .leisure-and-culture-bar {\r\n  width: 80%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: lightroom 4s;\r\n}\r\n\r\n.category-bar-left .bar .startups-bar {\r\n  width: 80%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: lightroom 4s;\r\n}\r\n\r\n/* Skills Right Section ---------*/\r\n.category-bar-right,\r\n.category-bar-left {\r\n  margin-bottom: 2.3rem;\r\n}\r\n\r\n.category-right .category-bar-right .info {\r\n  display: flex;\r\n  align-items: center;\r\n  padding: 10px;\r\n  gap: 2em;\r\n}\r\n\r\n.category-right .category-bar-right .info p {\r\n  font-weight: bold;\r\n}\r\n\r\n.category-right .category-bar-right .bar {\r\n  width: 100%;\r\n  height: 10px;\r\n  background-color: var(--bg-color);\r\n  border-radius: 25px;\r\n  margin-top: 10px;\r\n  position: relative;\r\n}\r\n\r\n.category-bar-right .bar span {\r\n  width: 50%;\r\n  height: 100%;\r\n  position: absolute;\r\n  left: 0;\r\n  border-radius: 25px;\r\n}\r\n\r\n.category-bar-right .bar .cost-of-living-bar {\r\n  width: 80%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: team-work 2.5s;\r\n}\r\n\r\n.category-bar-right .bar .travel-connectivity-bar {\r\n  width: 75%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: communication 3s;\r\n}\r\n\r\n.category-bar-right .bar .education-bar {\r\n  width: 85%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: motivation 3.5s;\r\n}\r\n\r\n.category-bar-right .bar .economy-bar {\r\n  width: 80%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: resilience 3s;\r\n}\r\n\r\n.category-bar-right .bar .internet-access-bar {\r\n  width: 75%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: creativity 3s;\r\n}\r\n\r\n.category-bar-right .bar .outdoors-bar {\r\n  width: 75%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: creativity 3s;\r\n}\r\n\r\n.category-bar-right .bar .business-freedom-bar {\r\n  width: 75%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: creativity 3s;\r\n}\r\n\r\n/*scrollbar */\r\n\r\n::-webkit-scrollbar {\r\n  height: 0;\r\n  width: 0.5rem;\r\n}\r\n\r\n::-webkit-scrollbar-track {\r\n  background: #252222;\r\n}\r\n\r\n::-webkit-scrollbar-thumb {\r\n  background: var(--hover-color);\r\n  border-radius: 5rem;\r\n}\r\n\r\n/*circular score bar */\r\n\r\n.circular-score-bar {\r\n  width: 200px;\r\n  height: 200px;\r\n  position: relative;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.outer {\r\n  height: 190px;\r\n  width: 190px;\r\n  padding: 20px;\r\n  box-shadow: 6px 6px 10px -1px rgba(54, 54, 54, 0.25),\r\n    -6px -6px 10px -1px rgba(54, 54, 54, 0.25);\r\n\r\n  border-radius: 50%;\r\n}\r\n\r\n.inner {\r\n  height: 150px;\r\n  width: 150px;\r\n  box-shadow: inset 4px 4px 6px -1px rgba(47, 46, 46, 0.2),\r\n    inset -4px -4px 6px -1px rgba(67, 67, 67, 0.25),\r\n    -0.5px -0.5px 0px rgba(59, 59, 59, 0.29),\r\n    0.5px 0.5px 0px rgba(0, 0, 0, 0.15),\r\n    0px 12px 10px -10px rgba(121, 121, 121, 0.05);\r\n  border-radius: 50%;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n\r\ncircle {\r\n  fill: none;\r\n  stroke: url(#GradientColor);\r\n  stroke-width: 21px;\r\n  stroke-dasharray: 550;\r\n  stroke-dashoffset: 550;\r\n  animation: score 2s linear forwards;\r\n}\r\n\r\nsvg {\r\n  position: absolute;\r\n  width: 200px;\r\n  height: 200px;\r\n}\r\n\r\n/* Animation Keyframes-------------*/\r\n@keyframes score {\r\n  100% {\r\n    stroke-dashoffset: var(--dash-offset);\r\n  }\r\n}\r\n\r\n/* category panel*/\r\n\r\n@keyframes html {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 80%;\r\n  }\r\n}\r\n\r\n@keyframes css {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 70%;\r\n  }\r\n}\r\n\r\n@keyframes javascript {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 60%;\r\n  }\r\n}\r\n\r\n@keyframes premierepro {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 70%;\r\n  }\r\n}\r\n\r\n@keyframes lightroom {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 80%;\r\n  }\r\n}\r\n\r\n/*right panel*/\r\n\r\n@keyframes team-work {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 80%;\r\n  }\r\n}\r\n\r\n@keyframes communication {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 75%;\r\n  }\r\n}\r\n\r\n@keyframes motivation {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 85%;\r\n  }\r\n}\r\n\r\n@keyframes resilience {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 80%;\r\n  }\r\n}\r\n\r\n@keyframes creativity {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 75%;\r\n  }\r\n}\r\n"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/api.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
+  \*****************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+*/
+module.exports = function (cssWithMappingToString) {
+  var list = [];
+
+  // return the list of modules as css string
+  list.toString = function toString() {
+    return this.map(function (item) {
+      var content = "";
+      var needLayer = typeof item[5] !== "undefined";
+      if (item[4]) {
+        content += "@supports (".concat(item[4], ") {");
+      }
+      if (item[2]) {
+        content += "@media ".concat(item[2], " {");
+      }
+      if (needLayer) {
+        content += "@layer".concat(item[5].length > 0 ? " ".concat(item[5]) : "", " {");
+      }
+      content += cssWithMappingToString(item);
+      if (needLayer) {
+        content += "}";
+      }
+      if (item[2]) {
+        content += "}";
+      }
+      if (item[4]) {
+        content += "}";
+      }
+      return content;
+    }).join("");
+  };
+
+  // import a list of modules into the list
+  list.i = function i(modules, media, dedupe, supports, layer) {
+    if (typeof modules === "string") {
+      modules = [[null, modules, undefined]];
+    }
+    var alreadyImportedModules = {};
+    if (dedupe) {
+      for (var k = 0; k < this.length; k++) {
+        var id = this[k][0];
+        if (id != null) {
+          alreadyImportedModules[id] = true;
+        }
+      }
+    }
+    for (var _k = 0; _k < modules.length; _k++) {
+      var item = [].concat(modules[_k]);
+      if (dedupe && alreadyImportedModules[item[0]]) {
+        continue;
+      }
+      if (typeof layer !== "undefined") {
+        if (typeof item[5] === "undefined") {
+          item[5] = layer;
+        } else {
+          item[1] = "@layer".concat(item[5].length > 0 ? " ".concat(item[5]) : "", " {").concat(item[1], "}");
+          item[5] = layer;
+        }
+      }
+      if (media) {
+        if (!item[2]) {
+          item[2] = media;
+        } else {
+          item[1] = "@media ".concat(item[2], " {").concat(item[1], "}");
+          item[2] = media;
+        }
+      }
+      if (supports) {
+        if (!item[4]) {
+          item[4] = "".concat(supports);
+        } else {
+          item[1] = "@supports (".concat(item[4], ") {").concat(item[1], "}");
+          item[4] = supports;
+        }
+      }
+      list.push(item);
+    }
+  };
+  return list;
+};
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/sourceMaps.js":
+/*!************************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/sourceMaps.js ***!
+  \************************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+module.exports = function (item) {
+  var content = item[1];
+  var cssMapping = item[3];
+  if (!cssMapping) {
+    return content;
+  }
+  if (typeof btoa === "function") {
+    var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(cssMapping))));
+    var data = "sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(base64);
+    var sourceMapping = "/*# ".concat(data, " */");
+    return [content].concat([sourceMapping]).join("\n");
+  }
+  return [content].join("\n");
+};
+
+/***/ }),
+
 /***/ "./node_modules/lodash/lodash.js":
 /*!***************************************!*\
   !*** ./node_modules/lodash/lodash.js ***!
@@ -17213,6 +17959,641 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 /***/ }),
 
+/***/ "./src/assets/styles/main.scss":
+/*!*************************************!*\
+  !*** ./src/assets/styles/main.scss ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_main_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./main.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/assets/styles/main.scss");
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+
+      options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+    
+options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_main_scss__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+
+
+
+
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_main_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_main_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_main_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
+  \****************************************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+var stylesInDOM = [];
+function getIndexByIdentifier(identifier) {
+  var result = -1;
+  for (var i = 0; i < stylesInDOM.length; i++) {
+    if (stylesInDOM[i].identifier === identifier) {
+      result = i;
+      break;
+    }
+  }
+  return result;
+}
+function modulesToDom(list, options) {
+  var idCountMap = {};
+  var identifiers = [];
+  for (var i = 0; i < list.length; i++) {
+    var item = list[i];
+    var id = options.base ? item[0] + options.base : item[0];
+    var count = idCountMap[id] || 0;
+    var identifier = "".concat(id, " ").concat(count);
+    idCountMap[id] = count + 1;
+    var indexByIdentifier = getIndexByIdentifier(identifier);
+    var obj = {
+      css: item[1],
+      media: item[2],
+      sourceMap: item[3],
+      supports: item[4],
+      layer: item[5]
+    };
+    if (indexByIdentifier !== -1) {
+      stylesInDOM[indexByIdentifier].references++;
+      stylesInDOM[indexByIdentifier].updater(obj);
+    } else {
+      var updater = addElementStyle(obj, options);
+      options.byIndex = i;
+      stylesInDOM.splice(i, 0, {
+        identifier: identifier,
+        updater: updater,
+        references: 1
+      });
+    }
+    identifiers.push(identifier);
+  }
+  return identifiers;
+}
+function addElementStyle(obj, options) {
+  var api = options.domAPI(options);
+  api.update(obj);
+  var updater = function updater(newObj) {
+    if (newObj) {
+      if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap && newObj.supports === obj.supports && newObj.layer === obj.layer) {
+        return;
+      }
+      api.update(obj = newObj);
+    } else {
+      api.remove();
+    }
+  };
+  return updater;
+}
+module.exports = function (list, options) {
+  options = options || {};
+  list = list || [];
+  var lastIdentifiers = modulesToDom(list, options);
+  return function update(newList) {
+    newList = newList || [];
+    for (var i = 0; i < lastIdentifiers.length; i++) {
+      var identifier = lastIdentifiers[i];
+      var index = getIndexByIdentifier(identifier);
+      stylesInDOM[index].references--;
+    }
+    var newLastIdentifiers = modulesToDom(newList, options);
+    for (var _i = 0; _i < lastIdentifiers.length; _i++) {
+      var _identifier = lastIdentifiers[_i];
+      var _index = getIndexByIdentifier(_identifier);
+      if (stylesInDOM[_index].references === 0) {
+        stylesInDOM[_index].updater();
+        stylesInDOM.splice(_index, 1);
+      }
+    }
+    lastIdentifiers = newLastIdentifiers;
+  };
+};
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/insertBySelector.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/insertBySelector.js ***!
+  \********************************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+var memo = {};
+
+/* istanbul ignore next  */
+function getTarget(target) {
+  if (typeof memo[target] === "undefined") {
+    var styleTarget = document.querySelector(target);
+
+    // Special case to return head of iframe instead of iframe itself
+    if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
+      try {
+        // This will throw an exception if access to iframe is blocked
+        // due to cross-origin restrictions
+        styleTarget = styleTarget.contentDocument.head;
+      } catch (e) {
+        // istanbul ignore next
+        styleTarget = null;
+      }
+    }
+    memo[target] = styleTarget;
+  }
+  return memo[target];
+}
+
+/* istanbul ignore next  */
+function insertBySelector(insert, style) {
+  var target = getTarget(insert);
+  if (!target) {
+    throw new Error("Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.");
+  }
+  target.appendChild(style);
+}
+module.exports = insertBySelector;
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/insertStyleElement.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/insertStyleElement.js ***!
+  \**********************************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+/* istanbul ignore next  */
+function insertStyleElement(options) {
+  var element = document.createElement("style");
+  options.setAttributes(element, options.attributes);
+  options.insert(element, options.options);
+  return element;
+}
+module.exports = insertStyleElement;
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js ***!
+  \**********************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+/* istanbul ignore next  */
+function setAttributesWithoutAttributes(styleElement) {
+  var nonce =  true ? __webpack_require__.nc : 0;
+  if (nonce) {
+    styleElement.setAttribute("nonce", nonce);
+  }
+}
+module.exports = setAttributesWithoutAttributes;
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/styleDomAPI.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/styleDomAPI.js ***!
+  \***************************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+/* istanbul ignore next  */
+function apply(styleElement, options, obj) {
+  var css = "";
+  if (obj.supports) {
+    css += "@supports (".concat(obj.supports, ") {");
+  }
+  if (obj.media) {
+    css += "@media ".concat(obj.media, " {");
+  }
+  var needLayer = typeof obj.layer !== "undefined";
+  if (needLayer) {
+    css += "@layer".concat(obj.layer.length > 0 ? " ".concat(obj.layer) : "", " {");
+  }
+  css += obj.css;
+  if (needLayer) {
+    css += "}";
+  }
+  if (obj.media) {
+    css += "}";
+  }
+  if (obj.supports) {
+    css += "}";
+  }
+  var sourceMap = obj.sourceMap;
+  if (sourceMap && typeof btoa !== "undefined") {
+    css += "\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), " */");
+  }
+
+  // For old IE
+  /* istanbul ignore if  */
+  options.styleTagTransform(css, styleElement, options.options);
+}
+function removeStyleElement(styleElement) {
+  // istanbul ignore if
+  if (styleElement.parentNode === null) {
+    return false;
+  }
+  styleElement.parentNode.removeChild(styleElement);
+}
+
+/* istanbul ignore next  */
+function domAPI(options) {
+  if (typeof document === "undefined") {
+    return {
+      update: function update() {},
+      remove: function remove() {}
+    };
+  }
+  var styleElement = options.insertStyleElement(options);
+  return {
+    update: function update(obj) {
+      apply(styleElement, options, obj);
+    },
+    remove: function remove() {
+      removeStyleElement(styleElement);
+    }
+  };
+}
+module.exports = domAPI;
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/styleTagTransform.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/styleTagTransform.js ***!
+  \*********************************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+/* istanbul ignore next  */
+function styleTagTransform(css, styleElement) {
+  if (styleElement.styleSheet) {
+    styleElement.styleSheet.cssText = css;
+  } else {
+    while (styleElement.firstChild) {
+      styleElement.removeChild(styleElement.firstChild);
+    }
+    styleElement.appendChild(document.createTextNode(css));
+  }
+}
+module.exports = styleTagTransform;
+
+/***/ }),
+
+/***/ "./src/JS/API/defaultCity.js":
+/*!***********************************!*\
+  !*** ./src/JS/API/defaultCity.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+
+
+
+function defaultCity() {
+  const defcity = document.getElementById("city");
+  const defSummary = document.getElementById("city-description");
+  const defTemp = document.getElementById("temperature");
+  const defcityScore = document.getElementById("score");
+  const defPressure = document.getElementById("air-pressure-data");
+  const defHumidity = document.getElementById("humidity-data");
+  const defWind = document.getElementById("wind-speed-data");
+  const defWindDirection = document.getElementById("wind-direction-data");
+  const defWeatherIcon = document.getElementById("weather-icon");
+  const defAirQuality = document.getElementById("air-quality-data");
+  const defPollutant = document.getElementById("pollutant-data");
+
+  //Categories scores
+
+  const defCategoryCity = document.getElementById("category-city");
+  const defHousing = document.getElementById("housing");
+  const defHousingBar = document.querySelector(".housing-bar");
+  const defSafety = document.getElementById("safety");
+  const defSafetyBar = document.querySelector(".safety-bar");
+  const defHealthCare = document.getElementById("healthcare");
+  const defHealthCareBar = document.querySelector(".healthcare-bar");
+  const defEnvironmentalQuality = document.getElementById(
+    "environmental-quality"
+  );
+  const defEnvironmentalQualityBar = document.querySelector(
+    ".enviromental-quality-bar"
+  );
+  const defTaxation = document.getElementById("taxation");
+  const defTaxationBar = document.querySelector(".taxation-bar");
+  const defLeisureAndCulture = document.getElementById("leisure-and-culture");
+  const defLeisureAndCultureBar = document.querySelector(
+    ".leisure-and-culture-bar"
+  );
+  const defStartups = document.getElementById("startups");
+  const defStartupsBar = document.querySelector(".startups-bar");
+
+  const defCityostOfLiving = document.getElementById("cost-of-living");
+  const defCostOfLivingBar = document.querySelector(".cost-of-living-bar");
+  const defTravelConnectivity = document.getElementById("travel-connectivity");
+  const defTravelConnectivityBar = document.querySelector(
+    ".travel-connectivity-bar"
+  );
+  const defEducation = document.getElementById("education");
+  const defEducationBar = document.querySelector(".education-bar");
+  const defEconomy = document.getElementById("economy");
+  const defEconomyBar = document.querySelector(".economy-bar");
+  const defInternetAccess = document.getElementById("internet-access");
+  const defInternetAccessBar = document.querySelector(".internet-access-bar");
+  const defOutdoors = document.getElementById("outdoors");
+  const defOutdoorsBar = document.querySelector(".outdoors-bar");
+  const defBusinessFreedom = document.getElementById("business-freedom");
+  const defBusinessFreedomBar = document.querySelector(".business-freedom-bar");
+
+  axios__WEBPACK_IMPORTED_MODULE_1__["default"]
+    .get(`https://api.teleport.org/api/cities/?search=rome&limit=1`)
+    .then((response) => {
+      const data = response.data;
+
+      const defCityHref = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(
+        data,
+        '_embedded["city:search-results"][0]._links["city:item"].href'
+      );
+      axios__WEBPACK_IMPORTED_MODULE_1__["default"]
+        .get(defCityHref)
+        .then((response) => {
+          const cityData = response.data;
+
+          const fullName = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(cityData, "full_name");
+          defcity.innerHTML = fullName;
+
+          axios__WEBPACK_IMPORTED_MODULE_1__["default"]
+            .get(
+              `https://api.airvisual.com/v2/city?city=Rome&state=Latium&country=Italy&key=${"4fb35cd8-01d9-4068-a090-0634e06a0e4a"}`
+            )
+
+            .then((response) => {
+              const defWeatherData = response.data;
+
+              const temperature = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(
+                defWeatherData,
+                "data.current.weather.tp"
+              );
+              const pressure = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(defWeatherData, "data.current.weather.pr");
+              const humidity = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(defWeatherData, "data.current.weather.hu");
+              const windSpeed = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(
+                defWeatherData,
+                "data.current.weather.ws"
+              );
+              const windDirection = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(
+                defWeatherData,
+                "data.current.weather.wd"
+              );
+              const weatherIcon = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(
+                defWeatherData,
+                "data.current.weather.ic"
+              );
+              const airQuality = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(
+                defWeatherData,
+                "data.current.pollution.aqius"
+              );
+              const mainPollutant = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(
+                defWeatherData,
+                "data.current.pollution.mainus"
+              );
+
+              defTemp.innerHTML = temperature + "°C";
+              defPressure.innerHTML = pressure + " hPa";
+              defHumidity.innerHTML = humidity + "%";
+              defWind.innerHTML = windSpeed + " m/s";
+              defWindDirection.innerHTML = windDirection + "°";
+              defWeatherIcon.src = `https://www.airvisual.com/images/${weatherIcon}.png`;
+              defAirQuality.innerHTML = airQuality + " AQI";
+              defPollutant.innerHTML = mainPollutant;
+            });
+          axios__WEBPACK_IMPORTED_MODULE_1__["default"]
+            .get(`https://api.teleport.org/api/urban_areas/slug:rome/scores/`)
+            .then((response) => {
+              const defDescriptionData = response.data;
+
+              const summary = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(defDescriptionData, "summary");
+              const scores = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(defDescriptionData, "teleport_city_score");
+              const categories = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(defDescriptionData, "categories");
+              const roundedScores = Math.round(scores);
+              defSummary.innerHTML = summary;
+
+              const svgCircle = document.querySelector("circle");
+              const svgCircleRadius = 85;
+              const svgCircleCircumference = 2 * Math.PI * svgCircleRadius;
+              const percentage = (roundedScores / 100) * svgCircleCircumference;
+              const strokeDashoffset = svgCircleCircumference - percentage;
+              const animationDuration = 2000; // Specify the animation duration in milliseconds
+
+              svgCircle.style.setProperty("--dash-offset", strokeDashoffset);
+              svgCircle.style.animationDuration = `${animationDuration}ms`;
+
+              let counter = 0;
+              const intervalDuration = Math.floor(
+                animationDuration / roundedScores
+              ); // Calculate interval duration based on animation duration and rounded scores
+
+              const intervalId = setInterval(() => {
+                if (counter >= roundedScores) {
+                  clearInterval(intervalId);
+                } else {
+                  counter += 1;
+                  defcityScore.innerHTML = `${counter}%`;
+                }
+              }, intervalDuration);
+
+              console.log(categories);
+
+              const idMapping = {
+                housing: "housing",
+                education: "education",
+                economy: "economy",
+                healthcare: "healthcare",
+                safety: "safety",
+                outdoors: "outdoors",
+                startups: "startups",
+                taxation: "taxation",
+                "cost of living": "cost-of-living",
+                "travel connectivity": "travel-connectivity",
+                "environmental quality": "environmental-quality",
+                "internet access": "internet-access",
+                "business freedom": "business-freedom",
+                "leisure & culture": "leisure-and-culture",
+              };
+
+              categories.forEach((item) => {
+                const categoryId = idMapping[item.name.toLowerCase()];
+
+                if (categoryId) {
+                  const categoryElement = document.getElementById(categoryId);
+
+                  if (categoryElement) {
+                    categoryElement.textContent =
+                      item.score_out_of_10.toFixed(1) + "/10";
+                  } else {
+                    console.warn(
+                      `Element with id "${categoryId}" not found in HTML. Skipping.`
+                    );
+                  }
+                }
+              });
+            })
+
+            .catch((error) => {
+              console.error(error);
+            });
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    });
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (defaultCity);
+
+
+/***/ }),
+
+/***/ "./src/assets/img/UrbanLeaf-Logo.png":
+/*!*******************************************!*\
+  !*** ./src/assets/img/UrbanLeaf-Logo.png ***!
+  \*******************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "UrbanLeaf-Logo.png";
+
+/***/ }),
+
+/***/ "./src/assets/img/air-pressure.png":
+/*!*****************************************!*\
+  !*** ./src/assets/img/air-pressure.png ***!
+  \*****************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "air-pressure.png";
+
+/***/ }),
+
+/***/ "./src/assets/img/air-quality.png":
+/*!****************************************!*\
+  !*** ./src/assets/img/air-quality.png ***!
+  \****************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "air-quality.png";
+
+/***/ }),
+
+/***/ "./src/assets/img/humidity.png":
+/*!*************************************!*\
+  !*** ./src/assets/img/humidity.png ***!
+  \*************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "humidity.png";
+
+/***/ }),
+
+/***/ "./src/assets/img/planet-earth.ico":
+/*!*****************************************!*\
+  !*** ./src/assets/img/planet-earth.ico ***!
+  \*****************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "planet-earth.ico";
+
+/***/ }),
+
+/***/ "./src/assets/img/pollutant.png":
+/*!**************************************!*\
+  !*** ./src/assets/img/pollutant.png ***!
+  \**************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "pollutant.png";
+
+/***/ }),
+
+/***/ "./src/assets/img/wind-direction.png":
+/*!*******************************************!*\
+  !*** ./src/assets/img/wind-direction.png ***!
+  \*******************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "wind-direction.png";
+
+/***/ }),
+
+/***/ "./src/assets/img/wind.png":
+/*!*********************************!*\
+  !*** ./src/assets/img/wind.png ***!
+  \*********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "wind.png";
+
+/***/ }),
+
 /***/ "./node_modules/axios/lib/adapters/adapters.js":
 /*!*****************************************************!*\
   !*** ./node_modules/axios/lib/adapters/adapters.js ***!
@@ -21436,47 +22817,140 @@ const isThenable = (thing) =>
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src;
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) {
+/******/ 					var i = scripts.length - 1;
+/******/ 					while (i > -1 && !scriptUrl) scriptUrl = scripts[i--].src;
+/******/ 				}
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/nonce */
+/******/ 	(() => {
+/******/ 		__webpack_require__.nc = undefined;
+/******/ 	})();
+/******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
 "use strict";
-/*!***********************************!*\
-  !*** ./src/JS/API/geolocation.js ***!
-  \***********************************/
+/*!*************************!*\
+  !*** ./src/JS/index.js ***!
+  \*************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../assets/styles/main.scss */ "./src/assets/styles/main.scss");
+/* harmony import */ var _assets_img_UrbanLeaf_Logo_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/img/UrbanLeaf-Logo.png */ "./src/assets/img/UrbanLeaf-Logo.png");
+/* harmony import */ var _assets_img_planet_earth_ico__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../assets/img/planet-earth.ico */ "./src/assets/img/planet-earth.ico");
+/* harmony import */ var _assets_img_pollutant_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../assets/img/pollutant.png */ "./src/assets/img/pollutant.png");
+/* harmony import */ var _assets_img_air_quality_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../assets/img/air-quality.png */ "./src/assets/img/air-quality.png");
+/* harmony import */ var _assets_img_humidity_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../assets/img/humidity.png */ "./src/assets/img/humidity.png");
+/* harmony import */ var _assets_img_wind_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../assets/img/wind.png */ "./src/assets/img/wind.png");
+/* harmony import */ var _assets_img_air_pressure_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../assets/img/air-pressure.png */ "./src/assets/img/air-pressure.png");
+/* harmony import */ var _assets_img_wind_direction_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../assets/img/wind-direction.png */ "./src/assets/img/wind-direction.png");
+/* harmony import */ var _JS_API_defaultCity_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../JS/API/defaultCity.js */ "./src/JS/API/defaultCity.js");
 
 
 
-const geolocationButton = document.querySelector(".location-button");
 
-function getLocationAndRequest() {
-  navigator.geolocation.getCurrentPosition(function (position) {
-    const latitude = position.coords.latitude;
-    const longitude = position.coords.longitude;
 
-    // Call the other API with the latitude and longitude
-    // You can use Axios to make the API request
-    axios__WEBPACK_IMPORTED_MODULE_1__["default"]
-      .get(`https://api.teleport.org/api/locations/${latitude},${longitude}/`)
-      .then(function (response) {
-        // Handle the response
-        console.log(response.data);
-      })
-      .catch(function (error) {
-        // Handle the error
-        console.error(error);
-      });
-  });
-}
 
-geolocationButton.addEventListener("click", getLocationAndRequest);
+
+
+
+
+
+
+
+//logo and icons
+
+const elements = [
+  { id: "logo", src: _assets_img_UrbanLeaf_Logo_png__WEBPACK_IMPORTED_MODULE_2__ },
+  { id: "humidity-svg", src: _assets_img_humidity_png__WEBPACK_IMPORTED_MODULE_6__ },
+  { id: "pollutant-svg", src: _assets_img_pollutant_png__WEBPACK_IMPORTED_MODULE_4__ },
+  { id: "air-quality-svg", src: _assets_img_air_quality_png__WEBPACK_IMPORTED_MODULE_5__ },
+  { id: "wind-speed-svg", src: _assets_img_wind_png__WEBPACK_IMPORTED_MODULE_7__ },
+  { id: "air-pressure-svg", src: _assets_img_air_pressure_png__WEBPACK_IMPORTED_MODULE_8__ },
+  { id: "wind-direction-svg", src: _assets_img_wind_direction_png__WEBPACK_IMPORTED_MODULE_9__ },
+];
+
+elements.forEach((element) => {
+  const img = document.getElementById(element.id);
+  img.src = element.src;
+});
+
+const iconImg = document.getElementById("icon");
+iconImg.href = _assets_img_planet_earth_ico__WEBPACK_IMPORTED_MODULE_3__;
+
+//date and time function
+
+let hrs = document.getElementById("hrs");
+let min = document.getElementById("min");
+let sec = document.getElementById("sec");
+let day = document.getElementById("day");
+let date = document.getElementById("date");
+let month = document.getElementById("month");
+let year = document.getElementById("year");
+
+const daysOfWeek = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+
+setInterval(() => {
+  let currentTime = new Date();
+
+  hrs.innerHTML =
+    (currentTime.getHours() < 10 ? "0" : "") + currentTime.getHours();
+  min.innerHTML =
+    (currentTime.getMinutes() < 10 ? "0" : "") + currentTime.getMinutes();
+  sec.innerHTML =
+    (currentTime.getSeconds() < 10 ? "0" : "") + currentTime.getSeconds();
+
+  day.innerHTML = daysOfWeek[currentTime.getDay()];
+
+  date.innerHTML =
+    (currentTime.getDate() < 10 ? "0" : "") + currentTime.getDate();
+
+  month.innerHTML =
+    (currentTime.getMonth() + 1 < 10 ? "0" : "") + (currentTime.getMonth() + 1);
+  year.innerHTML = currentTime.getFullYear();
+}, 1000);
+
+(0,_JS_API_defaultCity_js__WEBPACK_IMPORTED_MODULE_10__["default"])();
+
+const expandResultButton = document.querySelector(".expand-result-button");
+const cityDetails = document.querySelector(".category-main");
+
+expandResultButton.addEventListener("click", () => {
+  cityDetails.style.display = "grid";
+  cityDetails.scrollIntoView({ behavior: "smooth" });
+});
 
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=geolocationb8b7fade43522d160a86.js.map
+//# sourceMappingURL=bundle20ab09d905e55cf45eca.js.map

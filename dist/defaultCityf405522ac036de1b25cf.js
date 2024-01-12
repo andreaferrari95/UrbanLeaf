@@ -21527,7 +21527,7 @@ function defaultCity() {
 
           axios__WEBPACK_IMPORTED_MODULE_1__["default"]
             .get(
-              `https://api.airvisual.com/v2/city?city=Rome&state=Latium&country=Italy&key=4fb35cd8-01d9-4068-a090-0634e06a0e4a`
+              `https://api.airvisual.com/v2/city?city=Rome&state=Latium&country=Italy&key=${"4fb35cd8-01d9-4068-a090-0634e06a0e4a"}`
             )
 
             .then((response) => {
@@ -21657,4 +21657,4 @@ function defaultCity() {
 
 /******/ })()
 ;
-//# sourceMappingURL=defaultCitybc4a4d73feb366a29ed9.js.map
+//# sourceMappingURL=defaultCityf405522ac036de1b25cf.js.map
