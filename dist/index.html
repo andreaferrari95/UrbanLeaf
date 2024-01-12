@@ -26,42 +26,277 @@
       property="og:image"
       content="https://andreaferrari95.github.io/Portfolio/assets/img/project-portfolio.png"
     />
-    <link rel="stylesheet" type="text/css" href="dist/style.css" />
-    <script src="https://kit.fontawesome.com/6b71f57b8e.js" crossorigin="anonymous"></script>
-  <script defer src="bundlee3e58433c6c39cb07241.js"></script><script defer src="teleport500249b684bd24766535.js"></script><script defer src="iqairc2a217263d42b31f81b1.js"></script></head>
+    <script
+      src="https://kit.fontawesome.com/6b71f57b8e.js"
+      crossorigin="anonymous"
+    ></script>
+  <script defer src="bundle762e9d5876e4b18dcef2.js"></script><script defer src="teleport49b5933cb5a363e6c6aa.js"></script><script defer src="defaultCity3ae4ca0161a2f4e0112c.js"></script><script defer src="geolocationcf839b342b68a9a9e18c.js"></script></head>
   <body>
-    <div class="container">
-      <img id="logo" alt="UrbanLeaf Logo" />
-      <div class="search-box"> 
+    <header class="header time-date degree-switch">
+      <div class="date-time">
+        <div class="date-container">
+          <span id="day"></span>
+          <span id="date"></span>
+          <span>/</span>
+          <span id="month"></span>
+          <span>/</span>
+          <span id="year"></span>
+        </div>
+        <div class="time-container">
+          <div class="clock">
+            <span id="hrs">00</span>
+            <span>:</span>
+            <span id="min">00</span>
+            <span>:</span>
+            <span id="sec">00</span>
+          </div>
+        </div>
+      </div>
+      <div class="container-logo">
+        <img id="logo" alt="UrbanLeaf Logo" />
+      </div>
+      <div class="container-location">
+        <div class="location-button">
+          Current Location<i class="fa-solid fa-location-crosshairs"></i>
+        </div>
+      </div>
+    </header>
+    <div class="container-search">
+      <div class="search-box">
         <div class="row">
-      <input
-        type="text"
-        class="my-input"
-        name="field"
-        tabindex="1"
-        id="searchInput"
-        placeholder="Enter a city"
-        autocomplete="off"
-      />
-      <button id="searchButton"><i class="fa-solid fa-magnifying-glass-location"></i></button>
+          <input
+            type="text"
+            class="my-input"
+            name="field"
+            tabindex="1"
+            id="searchInput"
+            placeholder="Search Location..."
+            autocomplete="off"
+          />
+          <button id="searchButton">
+            <i class="fa-solid fa-magnifying-glass-location"></i>
+          </button>
+        </div>
+      </div>
     </div>
-    <div class="result-box">
-    </div>
-    </div>
-  </div>
-  <h3>Result history:</h3>
-  <div class="results"></div>
-      <div id="search-results"></div>
-    </div>
-    <div id="weatherContainer"></div>
-    <div id="pollutionContainer"></div>
+    <section class="city-details-container">
+      <div class="city-temp">
+        <div class="city-details">
+          <div class="row-top">
+            <div class="location">
+              <i class="fa-solid fa-location-dot icon-location"></i>
+              <h3 id="city"></h3>
+            </div>
+            <div class="temp-weather">
+              <h3 id="temperature"></h3>
+              <img src="" alt="weather icon" id="weather-icon" />
+            </div>
+          </div>
+          <p id="city-description"></p>
+        </div>
+      </div>
+      <div class="city-score">
+        <div class="city-name-score">
+          <h3 id="city-score-name">CITY SCORE:</h3>
+        </div>
+        <div class="score-container">
+          <div class="circular-score-bar">
+            <div class="outer">
+              <div class="inner">
+                <div id="score"></div>
+              </div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+              <defs>
+                <linearGradient id="GradientColor">
+                  <stop offset="0%" stop-color="#e54d26" />
+                  <stop offset="100%" stop-color="#c86b00" />
+                </linearGradient>
+              </defs>
+              <circle cx="100" cy="100" r="85" stroke-linecap="round" />
+            </svg>
+          </div>
+        </div>
+        <button class="expand-result-button">Show More</button>
+      </div>
 
-    <script>
-      var $results = document.querySelector('.results');
-      var appendToResult = $results.insertAdjacentHTML.bind($results, 'afterend');
+      <div class="weather-details">
+        <div class="humidity-container grid-item">
+          <img id="humidity-svg" class="svgs" alt="" />
+          <div class="humidity">HUMIDITY:</div>
+          <div id="humidity-data"></div>
+        </div>
 
-      TeleportAutocomplete.init('.my-input').on('change', function(value) {
-        appendToResult('<pre>' + JSON.stringify(value, null, 2) + '</pre>');
-      });</script>
+        <div class="air-quality-container grid-item">
+          <img id="air-quality-svg" class="svgs" alt="" />
+          <div class="air-quality">AIR QUALITY:</div>
+          <div id="air-quality-data"></div>
+        </div>
+
+        <div class="wind-speed-container grid-item">
+          <img id="wind-speed-svg" class="svgs" alt="" />
+          <div class="wind-speed">WIND SPEED:</div>
+          <div id="wind-speed-data"></div>
+        </div>
+
+        <div class="air-pressure-container grid-item">
+          <img id="air-pressure-svg" class="svgs" alt="" />
+          <div class="air-pressure">AIR PRESSURE:</div>
+          <div id="air-pressure-data"></div>
+        </div>
+
+        <div class="pollutant-container grid-item">
+          <img id="pollutant-svg" class="svgs" alt="" />
+          <div class="pollutant">MAIN POLLUTANT:</div>
+          <div id="pollutant-data"></div>
+        </div>
+
+        <div class="wind-direction-container grid-item">
+          <img id="wind-direction-svg" class="svgs" alt="" />
+          <div class="wind-direction">WIND DIRECTION:</div>
+          <div id="wind-direction-data"></div>
+        </div>
+      </div>
+      <!-------------------------------------------------------------------------------------->
+
+      <div class="category-main" style="display: none">
+        <div class="category-left">
+          <h3 class="category-title">SCORES BY CATEGORY:</h3>
+          <div class="category-bar-left">
+            <div class="info">
+              <p>Housing:</p>
+              <p id="housing"></p>
+            </div>
+            <div class="bar">
+              <span class="housing-bar"></span>
+            </div>
+          </div>
+          <div class="category-bar-left">
+            <div class="info">
+              <p>Safety:</p>
+              <p id="safety"></p>
+            </div>
+            <div class="bar">
+              <span class="safety-bar"></span>
+            </div>
+          </div>
+          <div class="category-bar-left">
+            <div class="info">
+              <p>Healthcare:</p>
+              <p id="healthcare">/p></p>
+            </div>
+
+            <div class="bar">
+              <span class="healtcare-bar"></span>
+            </div>
+          </div>
+          <div class="category-bar-left">
+            <div class="info">
+              <p>Environmental Quality:</p>
+              <p id="environmental-quality"></p>
+            </div>
+            <div class="bar">
+              <span class="environmental-quality-bar"></span>
+            </div>
+          </div>
+          <div class="category-bar-left">
+            <div class="info">
+              <p>Taxation:</p>
+              <p id="taxation"></p>
+            </div>
+            <div class="bar">
+              <span class="taxation-bar"></span>
+            </div>
+          </div>
+          <div class="category-bar-left">
+            <div class="info">
+              <p>Leisure and Culture:</p>
+              <p id="leisure-and-culture"></p>
+            </div>
+            <div class="bar">
+              <span class="leisure-and-culture-bar"></span>
+            </div>
+          </div>
+          <div class="category-bar-left">
+            <div class="info">
+              <p>Startups:</p>
+              <p id="startups"></p>
+            </div>
+            <div class="bar">
+              <span class="startups-bar"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category Right -->
+
+        <div class="category-right">
+          <h3 id="category-city">CITY: ROME</h3>
+          <div class="category-bar-right">
+            <div class="info">
+              <p>Cost of Living:</p>
+              <p id="cost-of-living"></p>
+            </div>
+            <div class="bar">
+              <span class="cost-of-living-bar"></span>
+            </div>
+          </div>
+          <div class="category-bar-right">
+            <div class="info">
+              <p>Travel connectivity:</p>
+              <p id="travel-connectivity"></p>
+            </div>
+            <div class="bar">
+              <span class="travel-connectivity-bar"></span>
+            </div>
+          </div>
+          <div class="category-bar-right">
+            <div class="info">
+              <p>Education:</p>
+              <p id="education"></p>
+            </div>
+            <div class="bar">
+              <span class="education-bar"></span>
+            </div>
+          </div>
+          <div class="category-bar-right">
+            <div class="info">
+              <p>Economy:</p>
+              <p id="economy"></p>
+            </div>
+            <div class="bar">
+              <span class="economy-bar"></span>
+            </div>
+          </div>
+          <div class="category-bar-right">
+            <div class="info">
+              <p>Internet access:</p>
+              <p id="internet-access"></p>
+            </div>
+            <div class="bar">
+              <span class="internet-access-bar"></span>
+            </div>
+          </div>
+          <div class="category-bar-right">
+            <div class="info">
+              <p>Outdoors:</p>
+              <p id="outdoors"></p>
+            </div>
+            <div class="bar">
+              <span class="outdoors-bar"></span>
+            </div>
+          </div>
+          <div class="category-bar-right">
+            <div class="info">
+              <p>Business freedom:</p>
+              <p id="business-freedom"></p>
+            </div>
+            <div class="bar">
+              <span class="business-freedom-bar"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

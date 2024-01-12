@@ -1,0 +1,576 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,500,400,600");
+
+html {
+    /* For Firefox */
+    overflow-y: scroll;
+    scrollbar-color: var(--hover-color) var(--secon-bg-color);
+    scrollbar-width: thin;
+}
+
+* {
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+:root {
+    --text-color: #f5f5f5;
+    --hover-color: #8af037b3;
+    --bg-color: #050115;
+    --secon-bg-color: linear-gradient(160deg,
+            rgba(138, 240, 55, 0.7) 0%,
+            rgba(136, 158, 119, 0.54) 100%);
+    ;
+    --big-font: 2.5rem;
+    --normal-font: 2rem;
+    --neon-box-shadow: 0 0 .5rem #00c896;
+    --h2-font: 3rem;
+    --font-neon-text-shadow: 0 0 10px rgba(0, 200, 150, 0.3),
+        0 0 20px rgba(70, 200, 150, 0.3),
+        0 0 30px rgba(0, 200, 150, 0.3),
+        0 0 40px rgba(0, 200, 150, 0.3),
+        0 0 70px rgba(0, 200, 150, 0.3),
+        0 0 80px rgba(0, 200, 150, 0.3),
+        0 0 100px rgba(0, 200, 150, 0.3),
+        0 0 150px rgba(0, 200, 150, 0.3);
+
+    --bar-color: #e54d26;
+    --neon-box-shadow-bar: 0 0 .5rem #e54d26;
+}
+
+/* a blue color as a generic focus style */
+button:focus-visible {
+    outline: 2px solid #4a90e2 !important;
+    outline: -webkit-focus-ring-color auto 5px !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #252222;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.city-details-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-block: 2rem;
+    gap: 1.5rem;
+    width: min(100%, 115rem);
+    color: #f5f5f5;
+    font-size: 2rem;
+
+}
+
+.city-temp {
+    height: fit-content;
+    background: var(--secon-bg-color);
+    border-radius: 32px;
+    box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940,
+        0px 4px 4px #fcf5f540;
+    grid-column: span 4;
+}
+
+.city-details {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.icon-location {
+    width: 50px;
+    height: 50px;
+    color: #f5f5f5;
+}
+
+.row-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 3rem;
+}
+
+.location,
+.temp-weather {
+    display: flex;
+    align-items: center;
+    margin: 1.2rem;
+}
+
+.temp-weather {
+    justify-content: flex-end;
+}
+
+#weather-icon {
+    width: 40%;
+}
+
+#temperature {
+    margin-right: 1.5rem;
+    font-size: 1.5em;
+}
+
+#city-description {
+    line-height: 1.2;
+    margin: 20px;
+}
+
+/* -----------------------------*/
+
+.weather-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
+    gap: 1rem;
+    padding: 0.5rem;
+    padding-block: 1.5rem;
+    justify-items: center;
+    border-radius: 32px;
+    box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940, 0px 4px 4px #fcf5f540;
+    background: var(--secon-bg-color);
+    grid-column: span 4;
+}
+
+
+
+.city-score {
+    background: var(--secon-bg-color);
+    border-radius: 32px;
+    box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940, 0px 4px 4px #fcf5f540;
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#city-score-name {
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+#score {
+    font-size: 1.2em;
+}
+
+
+
+.humidity-container,
+.visibility-container,
+.air-quality-container,
+.wind-speed-container,
+.air-pressure-container,
+.pollen-container,
+.pollutant-container,
+.wind-direction-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0.5rem;
+    border: 3px solid #cdcdcd;
+    border-radius: 25px;
+    width: 310px;
+    height: 120px;
+    justify-content: center;
+}
+
+.humidity,
+.visibility,
+.air-quality,
+.wind-speed,
+.air-pressure,
+.pollen,
+.pollutant,
+.wind-direction {
+    margin-bottom: 1rem;
+}
+
+
+/* category Section ---------*/
+.category-title {
+    display: flex;
+    justify-content: flex-start;
+}
+
+#category-city {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.category-main {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background: var(--secon-bg-color);
+    grid-column: span 4;
+    gap: 1.5rem;
+    border-radius: 32px;
+
+}
+
+.category-left,
+.category-right {
+    padding: 1.5rem;
+}
+
+.category-left {
+    margin: 1rem 0 1rem 1.5rem;
+}
+
+.category-right {
+    margin: 1rem 1.5rem 1rem 0;
+}
+
+.category-bar {
+    margin-bottom: 2.3rem;
+}
+
+.category-title,
+#category-city {
+    margin-bottom: 2rem;
+    font-size: var(--normal-font);
+    text-align: center;
+}
+
+.category-left .category-bar-left .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.category-left .category-bar-left .bar {
+    width: 100%;
+    height: 10px;
+    background-color: var(--bg-color);
+    border-radius: 25px;
+    margin-top: 10px;
+    position: relative;
+}
+
+.category-bar-left .bar span {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    border-radius: 25px;
+}
+
+.category-bar-left .bar .housing-bar {
+    width: 80%;
+    background: var(--bar-color);
+    box-shadow: var(--neon-box-shadow-bar);
+    animation: html 2.5s;
+}
+
+.category-bar-left .bar .safety-bar {
+    width: 70%;
+    background: var(--bar-color);
+    box-shadow: var(--neon-box-shadow-bar);
+    animation: css 2s;
+}
+
+.category-bar-left .bar .healtcare-bar {
+    width: 60%;
+    background: var(--bar-color);
+    box-shadow: var(--neon-box-shadow-bar);
+    animation: javascript 2s;
+}
+
+.category-bar-left .bar .environmental-quality-bar {
+    width: 70%;
+    background: var(--bar-color);
+    box-shadow: var(--neon-box-shadow-bar);
+    animation: premierepro 3.5s;
+}
+
+.category-bar-left .bar .taxation-bar {
+    width: 80%;
+    background: var(--bar-color);
+    box-shadow: var(--neon-box-shadow-bar);
+    animation: lightroom 4s;
+}
+
+.category-bar-left .bar .leisure-and-culture-bar {
+    width: 80%;
+    background: var(--bar-color);
+    box-shadow: var(--neon-box-shadow-bar);
+    animation: lightroom 4s;
+}
+
+.category-bar-left .bar .startups-bar {
+    width: 80%;
+    background: var(--bar-color);
+    box-shadow: var(--neon-box-shadow-bar);
+    animation: lightroom 4s;
+}
+
+/* Skills Right Section ---------*/
+.category-bar-right,
+.category-bar-left {
+    margin-bottom: 2.3rem;
+}
+
+
+.category-right .category-bar-right .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.category-right .category-bar-right .bar {
+    width: 100%;
+    height: 10px;
+    background-color: var(--bg-color);
+    border-radius: 25px;
+    margin-top: 10px;
+    position: relative;
+}
+
+.category-bar-right .bar span {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    border-radius: 25px;
+}
+
+.category-bar-right .bar .cost-of-living-bar {
+    width: 80%;
+    background: var(--bar-color);
+    box-shadow: var(--neon-box-shadow-bar);
+    animation: team-work 2.5s;
+}
+
+.category-bar-right .bar .travel-connectivity-bar {
+    width: 75%;
+    background: var(--bar-color);
+    box-shadow: var(--neon-box-shadow-bar);
+    animation: communication 3s;
+}
+
+.category-bar-right .bar .education-bar {
+    width: 85%;
+    background: var(--bar-color);
+    box-shadow: var(--neon-box-shadow-bar);
+    animation: motivation 3.5s;
+}
+
+.category-bar-right .bar .economy-bar {
+    width: 80%;
+    background: var(--bar-color);
+    box-shadow: var(--neon-box-shadow-bar);
+    animation: resilience 3s;
+}
+
+.category-bar-right .bar .internet-access-bar {
+    width: 75%;
+    background: var(--bar-color);
+    box-shadow: var(--neon-box-shadow-bar);
+    animation: creativity 3s;
+}
+
+.category-bar-right .bar .outdoors-bar {
+    width: 75%;
+    background: var(--bar-color);
+    box-shadow: var(--neon-box-shadow-bar);
+    animation: creativity 3s;
+}
+
+.category-bar-right .bar .business-freedom-bar {
+    width: 75%;
+    background: var(--bar-color);
+    box-shadow: var(--neon-box-shadow-bar);
+    animation: creativity 3s;
+}
+
+/*scrollbar */
+
+::-webkit-scrollbar {
+    height: 0;
+    width: .5rem;
+}
+
+::-webkit-scrollbar-track {
+    background: #252222;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--hover-color);
+    border-radius: 5rem;
+}
+
+
+
+/*circular score bar */
+
+.skill {
+    width: 250px;
+    height: 250px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.outer {
+    height: 190px;
+    width: 190px;
+    padding: 20px;
+    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+        -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+
+    border-radius: 50%;
+}
+
+.inner {
+    height: 150px;
+    width: 150px;
+    box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+        inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+        -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+        0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
+        0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+circle {
+    fill: none;
+    stroke: url(#GradientColor);
+    stroke-width: 21px;
+    stroke-dasharray: 550;
+    stroke-dashoffset: 550;
+    animation: score 2s linear forwards;
+}
+
+svg {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+}
+
+/* Animation Keyframes-------------*/
+
+/* Left panel*/
+
+@keyframes score {
+    100% {
+        stroke-dashoffset: 247.5;
+    }
+}
+
+@keyframes html {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 80%;
+    }
+}
+
+@keyframes css {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 70%;
+    }
+}
+
+@keyframes javascript {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 60%;
+    }
+}
+
+@keyframes premierepro {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 70%;
+    }
+}
+
+@keyframes lightroom {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 80%;
+    }
+}
+
+/*right panel*/
+
+@keyframes team-work {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 80%;
+    }
+}
+
+@keyframes communication {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 75%;
+    }
+}
+
+@keyframes motivation {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 85%;
+    }
+}
+
+@keyframes resilience {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 80%;
+    }
+}
+
+@keyframes creativity {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 75%;
+    }
+}

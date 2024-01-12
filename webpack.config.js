@@ -6,8 +6,9 @@ module.exports = {
   mode: "development",
   entry: {
     bundle: path.resolve(__dirname, "src/JS/index.js"),
-    teleport: path.resolve(__dirname, "src/JS/API/teleport.js"),
-    iqair: path.resolve(__dirname, "src/JS/API/iqair.js"),
+    teleport: path.resolve(__dirname, "src/JS/API/CitySearch.js"),
+    defaultCity: path.resolve(__dirname, "src/JS/API/defaultCity.js"),
+    geolocation: path.resolve(__dirname, "src/JS/API/geolocation.js"),
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -30,6 +31,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      title: "UrbanLeaf",
+      filename: "index.html",
       template: "./index.html",
     }),
     new Dotenv(),

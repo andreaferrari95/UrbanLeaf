@@ -2,170 +2,120 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="description"
-      content="UrbanLeaf: Your guide to sustainable city living. Explore eco-conscious amenities, vibrant green spaces, and the balance between city life and environmental harmony. Elevate your urban experience with a breath of fresh air."
-    />
-    <meta name="keywords" content="quality of life, weather, air pollution" />
-    <meta name="author" content="Andrea Ferrari" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= htmlWebpackPlugin.options.title %></title>
-    <link rel="icon" type="image/x-icon" id="icon" />
-    <meta property="og:title" content="UrbanLeaf" />
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:url"
-      content="https://andreaferrari95.github.io/Portfolio/"
-    />
-    <meta
-      property="og:description"
-      content="UrbanLeaf: Your guide to sustainable city living. Explore eco-conscious amenities, vibrant green spaces, and the balance between city life and environmental harmony. Elevate your urban experience with a breath of fresh air."
-    />
-    <meta
-      property="og:image"
-      content="https://andreaferrari95.github.io/Portfolio/assets/img/project-portfolio.png"
-    />
+    <title>Document</title>
+    <link rel="stylesheet" href="src/assets/styles/style2.css" />
     <script
       src="https://kit.fontawesome.com/6b71f57b8e.js"
       crossorigin="anonymous"
     ></script>
   </head>
   <body>
-    <header class="header time-date degree-switch">
-      <div class="date-time">
-        <div class="date-container">
-          <span id="day"></span>
-          <span id="date"></span>
-          <span>/</span>
-          <span id="month"></span>
-          <span>/</span>
-          <span id="year"></span>
-        </div>
-        <div class="time-container">
-          <div class="clock">
-            <span id="hrs">00</span>
-            <span>:</span>
-            <span id="min">00</span>
-            <span>:</span>
-            <span id="sec">00</span>
-          </div>
-        </div>
-      </div>
-      <div class="container-logo">
-        <img id="logo" alt="UrbanLeaf Logo" />
-      </div>
-      <div class="container-location">
-        <div class="location-button">
-          Current Location<i class="fa-solid fa-location-crosshairs"></i>
-        </div>
-      </div>
-    </header>
-    <div class="container-search">
-      <div class="search-box">
-        <div class="row">
-          <input
-            type="text"
-            class="my-input"
-            name="field"
-            tabindex="1"
-            id="searchInput"
-            placeholder="Search Location..."
-            autocomplete="off"
-          />
-          <button id="searchButton">
-            <i class="fa-solid fa-magnifying-glass-location"></i>
-          </button>
-        </div>
-      </div>
-    </div>
     <section class="city-details-container">
       <div class="city-temp">
         <div class="city-details">
           <div class="row-top">
             <div class="location">
               <i class="fa-solid fa-location-dot icon-location"></i>
-              <h3 id="city"></h3>
+              <h3 id="city">Rome, Latium, Italy</h3>
             </div>
             <div class="temp-weather">
-              <h3 id="temperature"></h3>
-              <img src="" alt="weather icon" id="weather-icon" />
+              <h3 id="temperature">27°C</h3>
+              <img
+                src="https://www.airvisual.com/images/01d.png"
+                alt="weather icon"
+                id="weather-icon"
+              />
             </div>
           </div>
-          <p id="city-description"></p>
+          <p id="city-description">
+            Rome, <br />the Eternal City, is a historic marvel with great travel
+            connections mild Mediterranean climate and intense urban energy.
+            Its outgoing society is known for its style, fondness for football
+            and the world-famous restaurants and cafes that can be sampled on
+            every corner. Rome also hosts an independent country—Vatican
+            City—within its borders. Its long history and modern achievements
+            make Rome one of the most visited cities in the world.
+          </p>
         </div>
       </div>
+      <!-------------------------------------------------------------------------------------->
       <div class="city-score">
         <div class="city-name-score">
-          <h3 id="city-score-name">CITY SCORE:</h3>
+          <h3 id="city-score-name">ROME CITY SCORE</h3>
         </div>
         <div class="score-container">
           <div class="circular-score-bar">
             <div class="outer">
               <div class="inner">
-                <div id="score"></div>
+                <div id="score">55.08%</div>
               </div>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
               <defs>
                 <linearGradient id="GradientColor">
-                  <stop offset="0%" stop-color="#e54d26" />
-                  <stop offset="100%" stop-color="#c86b00" />
+                  <stop offset="0%" stop-color="#e91e63" />
+                  <stop offset="100%" stop-color="#673ab7" />
                 </linearGradient>
               </defs>
               <circle cx="100" cy="100" r="85" stroke-linecap="round" />
             </svg>
           </div>
         </div>
-        <button class="expand-result-button">Show More</button>
       </div>
 
+      <!-------------------------------------------------------------------------------------->
+
       <div class="weather-details">
-        <div class="humidity-container grid-item">
-          <img id="humidity-svg" class="svgs" alt="" />
-          <div class="humidity">HUMIDITY:</div>
-          <div id="humidity-data"></div>
+        <div class="humidity-container">
+          <div class="humidity">HUMIDITY</div>
+          <div id="humidity-data">99%</div>
         </div>
 
-        <div class="air-quality-container grid-item">
-          <img id="air-quality-svg" class="svgs" alt="" />
-          <div class="air-quality">AIR QUALITY:</div>
-          <div id="air-quality-data"></div>
+        <div class="visibility-container">
+          <div class="visibility">VISIBILITY</div>
+          <div id="visibility-data">50%</div>
         </div>
 
-        <div class="wind-speed-container grid-item">
-          <img id="wind-speed-svg" class="svgs" alt="" />
-          <div class="wind-speed">WIND SPEED:</div>
-          <div id="wind-speed-data"></div>
+        <div class="air-quality-container">
+          <div class="air-quality">AIR QUALITY</div>
+          <div id="air-quality-data">2mph</div>
         </div>
 
-        <div class="air-pressure-container grid-item">
-          <img id="air-pressure-svg" class="svgs" alt="" />
-          <div class="air-pressure">AIR PRESSURE:</div>
-          <div id="air-pressure-data"></div>
+        <div class="wind-speed-container">
+          <div class="wind-speed">WIND SPEED</div>
+          <div id="wind-speed-data">2mph</div>
         </div>
 
-        <div class="pollutant-container grid-item">
-          <img id="pollutant-svg" class="svgs" alt="" />
-          <div class="pollutant">MAIN POLLUTANT:</div>
-          <div id="pollutant-data"></div>
+        <div class="air-pressure-container">
+          <div class="air-pressure">AIR PRESSURE</div>
+          <div id="air-pressure-data">1005hPa</div>
         </div>
 
-        <div class="wind-direction-container grid-item">
-          <img id="wind-direction-svg" class="svgs" alt="" />
-          <div class="wind-direction">WIND DIRECTION:</div>
-          <div id="wind-direction-data"></div>
+        <div class="pollen-container">
+          <div class="pollen">POLLEN</div>
+          <div id="pollen-data">2mph</div>
+        </div>
+
+        <div class="pollutant-container">
+          <div class="pollutant">MAIN POLLUTANT</div>
+          <div id="pollutant-data">2mph</div>
+        </div>
+
+        <div class="wind-direction-container">
+          <div class="wind-direction">WIND DIRECTION</div>
+          <div id="wind-direction-data">2mph</div>
         </div>
       </div>
       <!-------------------------------------------------------------------------------------->
 
-      <div class="category-main" style="display: none">
+      <div class="category-main">
         <div class="category-left">
           <h3 class="category-title">SCORES BY CATEGORY:</h3>
           <div class="category-bar-left">
             <div class="info">
               <p>Housing:</p>
-              <p id="housing"></p>
+              <p id="housing">5.6/10</p>
             </div>
             <div class="bar">
               <span class="housing-bar"></span>
@@ -174,7 +124,7 @@
           <div class="category-bar-left">
             <div class="info">
               <p>Safety:</p>
-              <p id="safety"></p>
+              <p id="safety">6.6/10</p>
             </div>
             <div class="bar">
               <span class="safety-bar"></span>
@@ -183,9 +133,8 @@
           <div class="category-bar-left">
             <div class="info">
               <p>Healthcare:</p>
-              <p id="healthcare">/p></p>
+              <p id="healthcare">8.1/10</p>
             </div>
-
             <div class="bar">
               <span class="healtcare-bar"></span>
             </div>
@@ -193,7 +142,7 @@
           <div class="category-bar-left">
             <div class="info">
               <p>Environmental Quality:</p>
-              <p id="environmental-quality"></p>
+              <p id="environmental-quality">4.2/10</p>
             </div>
             <div class="bar">
               <span class="environmental-quality-bar"></span>
@@ -202,7 +151,7 @@
           <div class="category-bar-left">
             <div class="info">
               <p>Taxation:</p>
-              <p id="taxation"></p>
+              <p id="taxation">2.4/10</p>
             </div>
             <div class="bar">
               <span class="taxation-bar"></span>
@@ -211,7 +160,7 @@
           <div class="category-bar-left">
             <div class="info">
               <p>Leisure and Culture:</p>
-              <p id="leisure-and-culture"></p>
+              <p id="leisure-and-culture">9.1/10</p>
             </div>
             <div class="bar">
               <span class="leisure-and-culture-bar"></span>
@@ -220,7 +169,7 @@
           <div class="category-bar-left">
             <div class="info">
               <p>Startups:</p>
-              <p id="startups"></p>
+              <p id="startups">4.6/10</p>
             </div>
             <div class="bar">
               <span class="startups-bar"></span>
@@ -228,14 +177,14 @@
           </div>
         </div>
 
-        <!-- Category Right -->
+        <!-- Skills Right -->
 
         <div class="category-right">
-          <h3 id="category-city"></h3>
+          <h3 id="category-city">CITY: ROME</h3>
           <div class="category-bar-right">
             <div class="info">
               <p>Cost of Living:</p>
-              <p id="cost-of-living"></p>
+              <p id="cost-of-living">5.3/10</p>
             </div>
             <div class="bar">
               <span class="cost-of-living-bar"></span>
@@ -244,7 +193,7 @@
           <div class="category-bar-right">
             <div class="info">
               <p>Travel connectivity:</p>
-              <p id="travel-connectivity"></p>
+              <p id="travel-connectivity">6.4/10</p>
             </div>
             <div class="bar">
               <span class="travel-connectivity-bar"></span>
@@ -253,7 +202,7 @@
           <div class="category-bar-right">
             <div class="info">
               <p>Education:</p>
-              <p id="education"></p>
+              <p id="education">4.1/10</p>
             </div>
             <div class="bar">
               <span class="education-bar"></span>
@@ -262,7 +211,7 @@
           <div class="category-bar-right">
             <div class="info">
               <p>Economy:</p>
-              <p id="economy"></p>
+              <p id="economy">3.3/10</p>
             </div>
             <div class="bar">
               <span class="economy-bar"></span>
@@ -271,7 +220,7 @@
           <div class="category-bar-right">
             <div class="info">
               <p>Internet access:</p>
-              <p id="internet-access"></p>
+              <p id="internet-access">4.4/10</p>
             </div>
             <div class="bar">
               <span class="internet-access-bar"></span>
@@ -280,7 +229,7 @@
           <div class="category-bar-right">
             <div class="info">
               <p>Outdoors:</p>
-              <p id="outdoors"></p>
+              <p id="outdoors">6.3/10</p>
             </div>
             <div class="bar">
               <span class="outdoors-bar"></span>
@@ -289,7 +238,7 @@
           <div class="category-bar-right">
             <div class="info">
               <p>Business freedom:</p>
-              <p id="business-freedom"></p>
+              <p id="business-freedom">6.1/10</p>
             </div>
             <div class="bar">
               <span class="business-freedom-bar"></span>
