@@ -15,7 +15,7 @@ function defaultCity() {
   const defPollutant = document.getElementById("pollutant-data");
 
   //Categories scores
-
+  const defCityName = document.getElementById("category-city");
   const defCategoryCity = document.getElementById("category-city");
   const defHousing = document.getElementById("housing");
   const defHousingBar = document.querySelector(".housing-bar");
@@ -70,7 +70,9 @@ function defaultCity() {
           const cityData = response.data;
 
           const fullName = _.get(cityData, "full_name");
+          const cityName = _.get(cityData, "name");
           defcity.innerHTML = fullName;
+          defCityName.innerHTML = "CITY: " + cityName;
 
           axios
             .get(

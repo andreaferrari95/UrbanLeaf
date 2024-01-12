@@ -16,44 +16,26 @@ const defAirQuality = document.getElementById("air-quality-data");
 const defPollutant = document.getElementById("pollutant-data");
 
 //Categories scores
-
-const defCategoryCity = document.getElementById("category-city");
-const defHousing = document.getElementById("housing");
+const defCityName = document.getElementById("category-city");
 const defHousingBar = document.querySelector(".housing-bar");
-const defSafety = document.getElementById("safety");
 const defSafetyBar = document.querySelector(".safety-bar");
-const defHealthCare = document.getElementById("healthcare");
 const defHealthCareBar = document.querySelector(".healthcare-bar");
-const defEnvironmentalQuality = document.getElementById(
-  "environmental-quality"
-);
 const defEnvironmentalQualityBar = document.querySelector(
   ".enviromental-quality-bar"
 );
-const defTaxation = document.getElementById("taxation");
 const defTaxationBar = document.querySelector(".taxation-bar");
-const defLeisureAndCulture = document.getElementById("leisure-and-culture");
 const defLeisureAndCultureBar = document.querySelector(
   ".leisure-and-culture-bar"
 );
-const defStartups = document.getElementById("startups");
 const defStartupsBar = document.querySelector(".startups-bar");
-
-const defCityostOfLiving = document.getElementById("cost-of-living");
 const defCostOfLivingBar = document.querySelector(".cost-of-living-bar");
-const defTravelConnectivity = document.getElementById("travel-connectivity");
 const defTravelConnectivityBar = document.querySelector(
   ".travel-connectivity-bar"
 );
-const defEducation = document.getElementById("education");
 const defEducationBar = document.querySelector(".education-bar");
-const defEconomy = document.getElementById("economy");
 const defEconomyBar = document.querySelector(".economy-bar");
-const defInternetAccess = document.getElementById("internet-access");
 const defInternetAccessBar = document.querySelector(".internet-access-bar");
-const defOutdoors = document.getElementById("outdoors");
 const defOutdoorsBar = document.querySelector(".outdoors-bar");
-const defBusinessFreedom = document.getElementById("business-freedom");
 const defBusinessFreedomBar = document.querySelector(".business-freedom-bar");
 function getCurrentPosition() {
   return new Promise((resolve, reject) => {
@@ -89,7 +71,7 @@ function getLocationAndRequest() {
       const fullName = _.get(cityData, "full_name");
       const cityName = _.get(cityData, "name");
       defcity.innerHTML = fullName;
-      console.log(cityName);
+      defCityName.innerHTML = "CITY: " + cityName;
 
       return axios.get(
         `https://api.teleport.org/api/urban_areas/slug:berlin/scores/`
