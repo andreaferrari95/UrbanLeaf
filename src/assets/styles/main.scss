@@ -429,49 +429,49 @@ button .fa-solid {
   width: 80%;
   background: var(--bar-color);
   box-shadow: var(--neon-box-shadow-bar);
-  animation: html 2.5s;
+  animation: housing 2.5s;
 }
 
 .category-bar-left .bar .safety-bar {
   width: 70%;
   background: var(--bar-color);
   box-shadow: var(--neon-box-shadow-bar);
-  animation: css 2s;
+  animation: safety 2s;
 }
 
 .category-bar-left .bar .healtcare-bar {
   width: 60%;
   background: var(--bar-color);
   box-shadow: var(--neon-box-shadow-bar);
-  animation: javascript 2s;
+  animation: healthcare 2s;
 }
 
 .category-bar-left .bar .environmental-quality-bar {
   width: 70%;
   background: var(--bar-color);
   box-shadow: var(--neon-box-shadow-bar);
-  animation: premierepro 3.5s;
+  animation: environmental-quality 3.5s;
 }
 
 .category-bar-left .bar .taxation-bar {
   width: 80%;
   background: var(--bar-color);
   box-shadow: var(--neon-box-shadow-bar);
-  animation: lightroom 4s;
+  animation: taxation 4s;
 }
 
 .category-bar-left .bar .leisure-and-culture-bar {
   width: 80%;
   background: var(--bar-color);
   box-shadow: var(--neon-box-shadow-bar);
-  animation: lightroom 4s;
+  animation: leisure-and-culture 4s;
 }
 
 .category-bar-left .bar .startups-bar {
   width: 80%;
   background: var(--bar-color);
   box-shadow: var(--neon-box-shadow-bar);
-  animation: lightroom 4s;
+  animation: startups 4s;
 }
 
 /* Skills Right Section ---------*/
@@ -512,49 +512,49 @@ button .fa-solid {
   width: 80%;
   background: var(--bar-color);
   box-shadow: var(--neon-box-shadow-bar);
-  animation: team-work 2.5s;
+  animation: cost-of-living 2.5s;
 }
 
 .category-bar-right .bar .travel-connectivity-bar {
   width: 75%;
   background: var(--bar-color);
   box-shadow: var(--neon-box-shadow-bar);
-  animation: communication 3s;
+  animation: travel-connectivity 3s;
 }
 
 .category-bar-right .bar .education-bar {
   width: 85%;
   background: var(--bar-color);
   box-shadow: var(--neon-box-shadow-bar);
-  animation: motivation 3.5s;
+  animation: education 3.5s;
 }
 
 .category-bar-right .bar .economy-bar {
   width: 80%;
   background: var(--bar-color);
   box-shadow: var(--neon-box-shadow-bar);
-  animation: resilience 3s;
+  animation: economy 3s;
 }
 
 .category-bar-right .bar .internet-access-bar {
   width: 75%;
   background: var(--bar-color);
   box-shadow: var(--neon-box-shadow-bar);
-  animation: creativity 3s;
+  animation: internet-access 3s;
 }
 
 .category-bar-right .bar .outdoors-bar {
   width: 75%;
   background: var(--bar-color);
   box-shadow: var(--neon-box-shadow-bar);
-  animation: creativity 3s;
+  animation: outdoors 3s;
 }
 
 .category-bar-right .bar .business-freedom-bar {
   width: 75%;
   background: var(--bar-color);
   box-shadow: var(--neon-box-shadow-bar);
-  animation: creativity 3s;
+  animation: business-freedom 3s;
 }
 
 /*scrollbar */
@@ -632,7 +632,7 @@ svg {
 
 /* category panel*/
 
-@keyframes html {
+@keyframes housing {
   0% {
     width: 0%;
   }
@@ -642,7 +642,7 @@ svg {
   }
 }
 
-@keyframes css {
+@keyframes safety {
   0% {
     width: 0%;
   }
@@ -652,7 +652,7 @@ svg {
   }
 }
 
-@keyframes javascript {
+@keyframes healthcare {
   0% {
     width: 0%;
   }
@@ -662,7 +662,7 @@ svg {
   }
 }
 
-@keyframes premierepro {
+@keyframes environmental-quality {
   0% {
     width: 0%;
   }
@@ -672,7 +672,7 @@ svg {
   }
 }
 
-@keyframes lightroom {
+@keyframes taxation {
   0% {
     width: 0%;
   }
@@ -684,7 +684,7 @@ svg {
 
 /*right panel*/
 
-@keyframes team-work {
+@keyframes leisure-and-culture {
   0% {
     width: 0%;
   }
@@ -694,7 +694,7 @@ svg {
   }
 }
 
-@keyframes communication {
+@keyframes startups {
   0% {
     width: 0%;
   }
@@ -704,7 +704,7 @@ svg {
   }
 }
 
-@keyframes motivation {
+@keyframes cost-of-living {
   0% {
     width: 0%;
   }
@@ -714,7 +714,7 @@ svg {
   }
 }
 
-@keyframes resilience {
+@keyframes travel-connectivity {
   0% {
     width: 0%;
   }
@@ -724,7 +724,46 @@ svg {
   }
 }
 
-@keyframes creativity {
+@keyframes education {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 75%;
+  }
+}
+
+@keyframes economy {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 80%;
+  }
+}
+
+@keyframes internet-access {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 75%;
+  }
+}
+
+@keyframes outdoors {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 75%;
+  }
+}
+@keyframes business-freedom {
   0% {
     width: 0%;
   }

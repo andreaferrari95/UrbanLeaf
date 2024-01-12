@@ -151,8 +151,6 @@ function defaultCity() {
                 }
               }, intervalDuration);
 
-              console.log(categories);
-
               const idMapping = {
                 housing: "housing",
                 education: "education",
