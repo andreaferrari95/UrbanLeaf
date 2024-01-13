@@ -38,7 +38,10 @@ function searchCity() {
       return getWeatherData({ lat, lon });
     })
     .then(updateWeatherInfo)
-    .catch(handleError);
+    .catch(handleError)
+    .finally(() => {
+      searchInput.value = "";
+    });
 }
 
 function getCity(city) {
