@@ -25,7 +25,7 @@ function getCurrentPosition() {
 }
 
 function getLocationAndRequest() {
-  let latitude, longitude, cityName;
+  let latitude, longitude;
   getCurrentPosition()
     .then((position) => {
       const latitude = position.coords.latitude;
