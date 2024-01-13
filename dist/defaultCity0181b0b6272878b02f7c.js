@@ -21469,44 +21469,6 @@ function defaultCity() {
 
   //Categories scores
   const defCityName = document.getElementById("category-city");
-  const defCategoryCity = document.getElementById("category-city");
-  const defHousing = document.getElementById("housing");
-  const defHousingBar = document.querySelector(".housing-bar");
-  const defSafety = document.getElementById("safety");
-  const defSafetyBar = document.querySelector(".safety-bar");
-  const defHealthCare = document.getElementById("healthcare");
-  const defHealthCareBar = document.querySelector(".healthcare-bar");
-  const defEnvironmentalQuality = document.getElementById(
-    "environmental-quality"
-  );
-  const defEnvironmentalQualityBar = document.querySelector(
-    ".enviromental-quality-bar"
-  );
-  const defTaxation = document.getElementById("taxation");
-  const defTaxationBar = document.querySelector(".taxation-bar");
-  const defLeisureAndCulture = document.getElementById("leisure-and-culture");
-  const defLeisureAndCultureBar = document.querySelector(
-    ".leisure-and-culture-bar"
-  );
-  const defStartups = document.getElementById("startups");
-  const defStartupsBar = document.querySelector(".startups-bar");
-
-  const defCityostOfLiving = document.getElementById("cost-of-living");
-  const defCostOfLivingBar = document.querySelector(".cost-of-living-bar");
-  const defTravelConnectivity = document.getElementById("travel-connectivity");
-  const defTravelConnectivityBar = document.querySelector(
-    ".travel-connectivity-bar"
-  );
-  const defEducation = document.getElementById("education");
-  const defEducationBar = document.querySelector(".education-bar");
-  const defEconomy = document.getElementById("economy");
-  const defEconomyBar = document.querySelector(".economy-bar");
-  const defInternetAccess = document.getElementById("internet-access");
-  const defInternetAccessBar = document.querySelector(".internet-access-bar");
-  const defOutdoors = document.getElementById("outdoors");
-  const defOutdoorsBar = document.querySelector(".outdoors-bar");
-  const defBusinessFreedom = document.getElementById("business-freedom");
-  const defBusinessFreedomBar = document.querySelector(".business-freedom-bar");
 
   axios__WEBPACK_IMPORTED_MODULE_1__["default"]
     .get(`https://api.teleport.org/api/cities/?search=rome&limit=1`)
@@ -21639,6 +21601,73 @@ function defaultCity() {
                   }
                 }
               });
+              const idMappingBar = {
+                housing: "housing-bar",
+                education: "education-bar",
+                economy: "economy-bar",
+                healthcare: "healthcare-bar",
+                safety: "safety-bar",
+                outdoors: "outdoors-bar",
+                startups: "startups-bar",
+                taxation: "taxation-bar",
+                "cost of living": "cost-of-living-bar",
+                "travel connectivity": "travel-connectivity-bar",
+                "environmental quality": "environmental-quality-bar",
+                "internet access": "internet-access-bar",
+                "business freedom": "business-freedom-bar",
+                "leisure & culture": "leisure-and-culture-bar",
+              };
+
+              categories.forEach((item) => {
+                const categoryClass = idMappingBar[item.name.toLowerCase()];
+
+                if (categoryClass) {
+                  const categoryElement = document.querySelector(
+                    `.${categoryClass}`
+                  );
+                  const categoryScore = Math.floor(item.score_out_of_10 * 10); // Multiply by 10
+
+                  if (categoryElement) {
+                    categoryElement.style.width = `${categoryScore}%`; // Update bar width
+
+                    // Update keyframes dynamically
+                    const keyframeName = categoryClass;
+                    const keyframeDuration = categoryScore / 25; // Adjust duration based on the new score
+                    const keyframesStyle = document.styleSheets[0];
+                    let keyframeExists = false;
+
+                    // Check if the keyframes rule already exists
+                    for (let i = 0; i < keyframesStyle.cssRules.length; i++) {
+                      if (keyframesStyle.cssRules[i].name === keyframeName) {
+                        keyframeExists = true;
+                        break;
+                      }
+                    }
+
+                    // If not, add it
+                    if (!keyframeExists) {
+                      keyframesStyle.insertRule(
+                        `@keyframes ${keyframeName} {
+                        0% {
+                          width: 0%;
+                        }
+                        100% {
+                          width: ${categoryScore}%;
+                        }
+                      }`,
+                        keyframesStyle.cssRules.length
+                      );
+                    }
+
+                    // Apply the updated keyframe duration to the animation
+                    categoryElement.style.animation = `${keyframeName} ${keyframeDuration}s`;
+                  } else {
+                    console.warn(
+                      `Element with class "${categoryClass}" not found in HTML. Skipping.`
+                    );
+                  }
+                }
+              });
             })
 
             .catch((error) => {
@@ -21657,4 +21686,4 @@ function defaultCity() {
 
 /******/ })()
 ;
-//# sourceMappingURL=defaultCityb5e3dbe78b69ddd3b224.js.map
+//# sourceMappingURL=defaultCity0181b0b6272878b02f7c.js.map

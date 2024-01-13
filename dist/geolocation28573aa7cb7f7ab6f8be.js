@@ -21464,29 +21464,7 @@ const defWindDirection = document.getElementById("wind-direction-data");
 const defWeatherIcon = document.getElementById("weather-icon");
 const defAirQuality = document.getElementById("air-quality-data");
 const defPollutant = document.getElementById("pollutant-data");
-
-//Categories scores
 const defCityName = document.getElementById("category-city");
-const defHousingBar = document.querySelector(".housing-bar");
-const defSafetyBar = document.querySelector(".safety-bar");
-const defHealthCareBar = document.querySelector(".healthcare-bar");
-const defEnvironmentalQualityBar = document.querySelector(
-  ".enviromental-quality-bar"
-);
-const defTaxationBar = document.querySelector(".taxation-bar");
-const defLeisureAndCultureBar = document.querySelector(
-  ".leisure-and-culture-bar"
-);
-const defStartupsBar = document.querySelector(".startups-bar");
-const defCostOfLivingBar = document.querySelector(".cost-of-living-bar");
-const defTravelConnectivityBar = document.querySelector(
-  ".travel-connectivity-bar"
-);
-const defEducationBar = document.querySelector(".education-bar");
-const defEconomyBar = document.querySelector(".economy-bar");
-const defInternetAccessBar = document.querySelector(".internet-access-bar");
-const defOutdoorsBar = document.querySelector(".outdoors-bar");
-const defBusinessFreedomBar = document.querySelector(".business-freedom-bar");
 function getCurrentPosition() {
   return new Promise((resolve, reject) => {
     navigator.geolocation.getCurrentPosition(
@@ -21524,8 +21502,7 @@ function getLocationAndRequest() {
       defCityName.innerHTML = "CITY: " + cityName;
 
       return axios__WEBPACK_IMPORTED_MODULE_1__["default"].get(
-        `https://api.teleport.org/api/urban_areas/slug:berlin/scores/`
-        // `https://api.teleport.org/api/urban_areas/slug:${cityName}/scores/`
+        `https://api.teleport.org/api/urban_areas/slug:${cityName}/scores/`
       );
     })
     .then((response) => {
@@ -21559,8 +21536,6 @@ function getLocationAndRequest() {
         }
       }, intervalDuration);
 
-      console.log(categories);
-
       const idMapping = {
         housing: "housing",
         education: "education",
@@ -21590,6 +21565,72 @@ function getLocationAndRequest() {
           } else {
             console.warn(
               `Element with id "${categoryId}" not found in HTML. Skipping.`
+            );
+          }
+        }
+      });
+
+      const idMappingBar = {
+        housing: "housing-bar",
+        education: "education-bar",
+        economy: "economy-bar",
+        healthcare: "healthcare-bar",
+        safety: "safety-bar",
+        outdoors: "outdoors-bar",
+        startups: "startups-bar",
+        taxation: "taxation-bar",
+        "cost of living": "cost-of-living-bar",
+        "travel connectivity": "travel-connectivity-bar",
+        "environmental quality": "environmental-quality-bar",
+        "internet access": "internet-access-bar",
+        "business freedom": "business-freedom-bar",
+        "leisure & culture": "leisure-and-culture-bar",
+      };
+
+      categories.forEach((item) => {
+        const categoryClass = idMappingBar[item.name.toLowerCase()];
+
+        if (categoryClass) {
+          const categoryElement = document.querySelector(`.${categoryClass}`);
+          const categoryScore = Math.floor(item.score_out_of_10 * 10); // Multiply by 10
+
+          if (categoryElement) {
+            categoryElement.style.width = `${categoryScore}%`; // Update bar width
+
+            // Update keyframes dynamically
+            const keyframeName = categoryClass;
+            const keyframeDuration = categoryScore / 25; // Adjust duration based on the new score
+            const keyframesStyle = document.styleSheets[0];
+            let keyframeExists = false;
+
+            // Check if the keyframes rule already exists
+            for (let i = 0; i < keyframesStyle.cssRules.length; i++) {
+              if (keyframesStyle.cssRules[i].name === keyframeName) {
+                keyframeExists = true;
+                break;
+              }
+            }
+
+            // If not, add it
+            if (!keyframeExists) {
+              keyframesStyle.insertRule(
+                `@keyframes ${keyframeName} {
+                0% {
+                  width: 0%;
+                }
+                100% {
+                  width: ${categoryScore}%;
+                }
+              }`,
+                keyframesStyle.cssRules.length
+              );
+            }
+
+            // Apply the updated keyframe duration to the animation
+            categoryElement.style.animation = `${keyframeName} ${keyframeDuration}s`;
+          } else {
+            console.warn(
+              `Element with class "${categoryClass}" not found in HTML. Skipping.`
             );
           }
         }
@@ -21636,4 +21677,4 @@ geolocationButton.addEventListener("click", getLocationAndRequest);
 
 /******/ })()
 ;
-//# sourceMappingURL=geolocation4166b42f12932c619992.js.map
+//# sourceMappingURL=geolocation28573aa7cb7f7ab6f8be.js.map

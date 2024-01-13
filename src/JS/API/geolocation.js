@@ -14,29 +14,7 @@ const defWindDirection = document.getElementById("wind-direction-data");
 const defWeatherIcon = document.getElementById("weather-icon");
 const defAirQuality = document.getElementById("air-quality-data");
 const defPollutant = document.getElementById("pollutant-data");
-
-//Categories scores
 const defCityName = document.getElementById("category-city");
-const defHousingBar = document.querySelector(".housing-bar");
-const defSafetyBar = document.querySelector(".safety-bar");
-const defHealthCareBar = document.querySelector(".healthcare-bar");
-const defEnvironmentalQualityBar = document.querySelector(
-  ".enviromental-quality-bar"
-);
-const defTaxationBar = document.querySelector(".taxation-bar");
-const defLeisureAndCultureBar = document.querySelector(
-  ".leisure-and-culture-bar"
-);
-const defStartupsBar = document.querySelector(".startups-bar");
-const defCostOfLivingBar = document.querySelector(".cost-of-living-bar");
-const defTravelConnectivityBar = document.querySelector(
-  ".travel-connectivity-bar"
-);
-const defEducationBar = document.querySelector(".education-bar");
-const defEconomyBar = document.querySelector(".economy-bar");
-const defInternetAccessBar = document.querySelector(".internet-access-bar");
-const defOutdoorsBar = document.querySelector(".outdoors-bar");
-const defBusinessFreedomBar = document.querySelector(".business-freedom-bar");
 function getCurrentPosition() {
   return new Promise((resolve, reject) => {
     navigator.geolocation.getCurrentPosition(
@@ -74,8 +52,7 @@ function getLocationAndRequest() {
       defCityName.innerHTML = "CITY: " + cityName;
 
       return axios.get(
-        `https://api.teleport.org/api/urban_areas/slug:berlin/scores/`
-        // `https://api.teleport.org/api/urban_areas/slug:${cityName}/scores/`
+        `https://api.teleport.org/api/urban_areas/slug:${cityName}/scores/`
       );
     })
     .then((response) => {
@@ -108,8 +85,6 @@ function getLocationAndRequest() {
           defcityScore.innerHTML = `${counter}%`;
         }
       }, intervalDuration);
-
-      console.log(categories);
 
       const idMapping = {
         housing: "housing",
@@ -210,7 +185,62 @@ function getLocationAndRequest() {
           }
         }
       });
+    })
+    .catch((error) => {
+      // Handle the error
+      if (error.response && error.response.status === 404) {
+        // Display a message for city not found
+        showErrorMessage(
+          "City not found. Please try searching for a different city."
+        );
+      } else {
+        // Handle other errors (you might want to log or display a generic error message)
+        console.error(error);
+      }
     });
+
+  function showErrorMessage(message) {
+    const errorMessageContainer = document.createElement("div");
+    errorMessageContainer.className = "error-message";
+    errorMessageContainer.innerHTML = `
+        <p>${message}</p>
+        <button id="okButton">OK</button>
+      `;
+
+    // Customize your error message style with CSS
+    errorMessageContainer.style.backgroundColor = "#ff6666";
+    errorMessageContainer.style.color = "#ffffff";
+    errorMessageContainer.style.padding = "10px";
+    errorMessageContainer.style.borderRadius = "5px";
+    errorMessageContainer.style.position = "fixed";
+    errorMessageContainer.style.top = "3%";
+    errorMessageContainer.style.left = "50%";
+    errorMessageContainer.style.transform = "translateX(-50%)";
+    errorMessageContainer.style.fontSize = "1.5rem";
+
+    document.body.appendChild(errorMessageContainer);
+
+    const okButton = document.getElementById("okButton");
+
+    if (okButton) {
+      okButton.style.padding = "8px 16px"; // Add padding to make the button bigger
+      okButton.style.fontWeight = "bold"; // Make the button text bold
+      okButton.style.marginTop = "10px";
+      okButton.style.fontSize = "2rem"; // Add margin to the top for more space
+
+      // Add event listener for the OK button
+      okButton.addEventListener("click", () => {
+        errorMessageContainer.remove();
+      });
+    }
+
+    // Remove the error message when Enter key is pressed
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        errorMessageContainer.remove();
+      }
+    });
+  }
 
   return axios
     .get(
