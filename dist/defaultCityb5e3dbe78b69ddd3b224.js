@@ -21442,216 +21442,219 @@ var __webpack_exports__ = {};
 (() => {
 "use strict";
 /*!***********************************!*\
-  !*** ./src/JS/API/geolocation.js ***!
+  !*** ./src/JS/API/defaultCity.js ***!
   \***********************************/
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
 
 
 
-const geolocationButton = document.querySelector(".location-button");
+function defaultCity() {
+  const defcity = document.getElementById("city");
+  const defSummary = document.getElementById("city-description");
+  const defTemp = document.getElementById("temperature");
+  const defcityScore = document.getElementById("score");
+  const defPressure = document.getElementById("air-pressure-data");
+  const defHumidity = document.getElementById("humidity-data");
+  const defWind = document.getElementById("wind-speed-data");
+  const defWindDirection = document.getElementById("wind-direction-data");
+  const defWeatherIcon = document.getElementById("weather-icon");
+  const defAirQuality = document.getElementById("air-quality-data");
+  const defPollutant = document.getElementById("pollutant-data");
 
-const defcity = document.getElementById("city");
-const defSummary = document.getElementById("city-description");
-const defTemp = document.getElementById("temperature");
-const defcityScore = document.getElementById("score");
-const defPressure = document.getElementById("air-pressure-data");
-const defHumidity = document.getElementById("humidity-data");
-const defWind = document.getElementById("wind-speed-data");
-const defWindDirection = document.getElementById("wind-direction-data");
-const defWeatherIcon = document.getElementById("weather-icon");
-const defAirQuality = document.getElementById("air-quality-data");
-const defPollutant = document.getElementById("pollutant-data");
+  //Categories scores
+  const defCityName = document.getElementById("category-city");
+  const defCategoryCity = document.getElementById("category-city");
+  const defHousing = document.getElementById("housing");
+  const defHousingBar = document.querySelector(".housing-bar");
+  const defSafety = document.getElementById("safety");
+  const defSafetyBar = document.querySelector(".safety-bar");
+  const defHealthCare = document.getElementById("healthcare");
+  const defHealthCareBar = document.querySelector(".healthcare-bar");
+  const defEnvironmentalQuality = document.getElementById(
+    "environmental-quality"
+  );
+  const defEnvironmentalQualityBar = document.querySelector(
+    ".enviromental-quality-bar"
+  );
+  const defTaxation = document.getElementById("taxation");
+  const defTaxationBar = document.querySelector(".taxation-bar");
+  const defLeisureAndCulture = document.getElementById("leisure-and-culture");
+  const defLeisureAndCultureBar = document.querySelector(
+    ".leisure-and-culture-bar"
+  );
+  const defStartups = document.getElementById("startups");
+  const defStartupsBar = document.querySelector(".startups-bar");
 
-//Categories scores
+  const defCityostOfLiving = document.getElementById("cost-of-living");
+  const defCostOfLivingBar = document.querySelector(".cost-of-living-bar");
+  const defTravelConnectivity = document.getElementById("travel-connectivity");
+  const defTravelConnectivityBar = document.querySelector(
+    ".travel-connectivity-bar"
+  );
+  const defEducation = document.getElementById("education");
+  const defEducationBar = document.querySelector(".education-bar");
+  const defEconomy = document.getElementById("economy");
+  const defEconomyBar = document.querySelector(".economy-bar");
+  const defInternetAccess = document.getElementById("internet-access");
+  const defInternetAccessBar = document.querySelector(".internet-access-bar");
+  const defOutdoors = document.getElementById("outdoors");
+  const defOutdoorsBar = document.querySelector(".outdoors-bar");
+  const defBusinessFreedom = document.getElementById("business-freedom");
+  const defBusinessFreedomBar = document.querySelector(".business-freedom-bar");
 
-const defCategoryCity = document.getElementById("category-city");
-const defHousing = document.getElementById("housing");
-const defHousingBar = document.querySelector(".housing-bar");
-const defSafety = document.getElementById("safety");
-const defSafetyBar = document.querySelector(".safety-bar");
-const defHealthCare = document.getElementById("healthcare");
-const defHealthCareBar = document.querySelector(".healthcare-bar");
-const defEnvironmentalQuality = document.getElementById(
-  "environmental-quality"
-);
-const defEnvironmentalQualityBar = document.querySelector(
-  ".enviromental-quality-bar"
-);
-const defTaxation = document.getElementById("taxation");
-const defTaxationBar = document.querySelector(".taxation-bar");
-const defLeisureAndCulture = document.getElementById("leisure-and-culture");
-const defLeisureAndCultureBar = document.querySelector(
-  ".leisure-and-culture-bar"
-);
-const defStartups = document.getElementById("startups");
-const defStartupsBar = document.querySelector(".startups-bar");
-
-const defCityostOfLiving = document.getElementById("cost-of-living");
-const defCostOfLivingBar = document.querySelector(".cost-of-living-bar");
-const defTravelConnectivity = document.getElementById("travel-connectivity");
-const defTravelConnectivityBar = document.querySelector(
-  ".travel-connectivity-bar"
-);
-const defEducation = document.getElementById("education");
-const defEducationBar = document.querySelector(".education-bar");
-const defEconomy = document.getElementById("economy");
-const defEconomyBar = document.querySelector(".economy-bar");
-const defInternetAccess = document.getElementById("internet-access");
-const defInternetAccessBar = document.querySelector(".internet-access-bar");
-const defOutdoors = document.getElementById("outdoors");
-const defOutdoorsBar = document.querySelector(".outdoors-bar");
-const defBusinessFreedom = document.getElementById("business-freedom");
-const defBusinessFreedomBar = document.querySelector(".business-freedom-bar");
-function getCurrentPosition() {
-  return new Promise((resolve, reject) => {
-    navigator.geolocation.getCurrentPosition(
-      (position) => resolve(position),
-      (error) => reject(error)
-    );
-  });
-}
-
-function getLocationAndRequest() {
-  let latitude, longitude, cityName;
-  getCurrentPosition()
-    .then((position) => {
-      const latitude = position.coords.latitude;
-      const longitude = position.coords.longitude;
-
-      return axios__WEBPACK_IMPORTED_MODULE_1__["default"].get(
-        `https://api.teleport.org/api/locations/${latitude},${longitude}/`
-      );
-    })
+  axios__WEBPACK_IMPORTED_MODULE_1__["default"]
+    .get(`https://api.teleport.org/api/cities/?search=rome&limit=1`)
     .then((response) => {
       const data = response.data;
-      const geoloCityHref = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(
+
+      const defCityHref = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(
         data,
-        '_embedded["location:nearest-cities"][0]._links["location:nearest-city"].href'
+        '_embedded["city:search-results"][0]._links["city:item"].href'
       );
+      axios__WEBPACK_IMPORTED_MODULE_1__["default"]
+        .get(defCityHref)
+        .then((response) => {
+          const cityData = response.data;
 
-      return axios__WEBPACK_IMPORTED_MODULE_1__["default"].get(geoloCityHref);
-    })
-    .then((response) => {
-      const cityData = response.data;
-      const fullName = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(cityData, "full_name");
-      const cityName = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(cityData, "name");
-      defcity.innerHTML = fullName;
-      console.log(cityName);
+          const fullName = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(cityData, "full_name");
+          const cityName = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(cityData, "name");
+          defcity.innerHTML = fullName;
+          defCityName.innerHTML = "CITY: " + cityName;
 
-      return axios__WEBPACK_IMPORTED_MODULE_1__["default"].get(
-        `https://api.teleport.org/api/urban_areas/slug:berlin/scores/`
-        // `https://api.teleport.org/api/urban_areas/slug:${cityName}/scores/`
-      );
-    })
-    .then((response) => {
-      const DescriptionData = response.data;
+          axios__WEBPACK_IMPORTED_MODULE_1__["default"]
+            .get(
+              `https://api.airvisual.com/v2/city?city=Rome&state=Latium&country=Italy&key=${"4fb35cd8-01d9-4068-a090-0634e06a0e4a"}`
+            )
 
-      const summary = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(DescriptionData, "summary");
-      const scores = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(DescriptionData, "teleport_city_score");
-      const categories = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(DescriptionData, "categories");
-      const roundedScores = Math.round(scores);
-      defSummary.innerHTML = summary;
+            .then((response) => {
+              const defWeatherData = response.data;
 
-      const svgCircle = document.querySelector("circle");
-      const svgCircleRadius = 85;
-      const svgCircleCircumference = 2 * Math.PI * svgCircleRadius;
-      const percentage = (roundedScores / 100) * svgCircleCircumference;
-      const strokeDashoffset = svgCircleCircumference - percentage;
-      const animationDuration = 2000; // Specify the animation duration in milliseconds
+              const temperature = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(
+                defWeatherData,
+                "data.current.weather.tp"
+              );
+              const pressure = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(defWeatherData, "data.current.weather.pr");
+              const humidity = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(defWeatherData, "data.current.weather.hu");
+              const windSpeed = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(
+                defWeatherData,
+                "data.current.weather.ws"
+              );
+              const windDirection = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(
+                defWeatherData,
+                "data.current.weather.wd"
+              );
+              const weatherIcon = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(
+                defWeatherData,
+                "data.current.weather.ic"
+              );
+              const airQuality = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(
+                defWeatherData,
+                "data.current.pollution.aqius"
+              );
+              const mainPollutant = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(
+                defWeatherData,
+                "data.current.pollution.mainus"
+              );
 
-      svgCircle.style.setProperty("--dash-offset", strokeDashoffset);
-      svgCircle.style.animationDuration = `${animationDuration}ms`;
+              defTemp.innerHTML = temperature + "°C";
+              defPressure.innerHTML = pressure + " hPa";
+              defHumidity.innerHTML = humidity + "%";
+              defWind.innerHTML = windSpeed + " m/s";
+              defWindDirection.innerHTML = windDirection + "°";
+              defWeatherIcon.src = `https://www.airvisual.com/images/${weatherIcon}.png`;
+              defAirQuality.innerHTML = airQuality + " AQI";
+              defPollutant.innerHTML = mainPollutant;
+            });
+          axios__WEBPACK_IMPORTED_MODULE_1__["default"]
+            .get(`https://api.teleport.org/api/urban_areas/slug:rome/scores/`)
+            .then((response) => {
+              const defDescriptionData = response.data;
 
-      let counter = 0;
-      const intervalDuration = Math.floor(animationDuration / roundedScores); // Calculate interval duration based on animation duration and rounded scores
+              const summary = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(defDescriptionData, "summary");
+              const scores = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(defDescriptionData, "teleport_city_score");
+              const categories = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(defDescriptionData, "categories");
+              const roundedScores = Math.round(scores);
+              defSummary.innerHTML = summary;
 
-      const intervalId = setInterval(() => {
-        if (counter >= roundedScores) {
-          clearInterval(intervalId);
-        } else {
-          counter += 1;
-          defcityScore.innerHTML = `${counter}%`;
-        }
-      }, intervalDuration);
+              const svgCircle = document.querySelector("circle");
+              const svgCircleRadius = 85;
+              const svgCircleCircumference = 2 * Math.PI * svgCircleRadius;
+              const percentage = (roundedScores / 100) * svgCircleCircumference;
+              const strokeDashoffset = svgCircleCircumference - percentage;
+              const animationDuration = 2000; // Specify the animation duration in milliseconds
 
-      console.log(categories);
+              svgCircle.style.setProperty("--dash-offset", strokeDashoffset);
+              svgCircle.style.animationDuration = `${animationDuration}ms`;
 
-      const idMapping = {
-        housing: "housing",
-        education: "education",
-        economy: "economy",
-        healthcare: "healthcare",
-        safety: "safety",
-        outdoors: "outdoors",
-        startups: "startups",
-        taxation: "taxation",
-        "cost of living": "cost-of-living",
-        "travel connectivity": "travel-connectivity",
-        "environmental quality": "environmental-quality",
-        "internet access": "internet-access",
-        "business freedom": "business-freedom",
-        "leisure & culture": "leisure-and-culture",
-      };
+              let counter = 0;
+              const intervalDuration = Math.floor(
+                animationDuration / roundedScores
+              ); // Calculate interval duration based on animation duration and rounded scores
 
-      categories.forEach((item) => {
-        const categoryId = idMapping[item.name.toLowerCase()];
+              const intervalId = setInterval(() => {
+                if (counter >= roundedScores) {
+                  clearInterval(intervalId);
+                } else {
+                  counter += 1;
+                  defcityScore.innerHTML = `${counter}%`;
+                }
+              }, intervalDuration);
 
-        if (categoryId) {
-          const categoryElement = document.getElementById(categoryId);
+              const idMapping = {
+                housing: "housing",
+                education: "education",
+                economy: "economy",
+                healthcare: "healthcare",
+                safety: "safety",
+                outdoors: "outdoors",
+                startups: "startups",
+                taxation: "taxation",
+                "cost of living": "cost-of-living",
+                "travel connectivity": "travel-connectivity",
+                "environmental quality": "environmental-quality",
+                "internet access": "internet-access",
+                "business freedom": "business-freedom",
+                "leisure & culture": "leisure-and-culture",
+              };
 
-          if (categoryElement) {
-            categoryElement.textContent =
-              item.score_out_of_10.toFixed(1) + "/10";
-          } else {
-            console.warn(
-              `Element with id "${categoryId}" not found in HTML. Skipping.`
-            );
-          }
-        }
-      });
-    });
+              categories.forEach((item) => {
+                const categoryId = idMapping[item.name.toLowerCase()];
 
-  return axios__WEBPACK_IMPORTED_MODULE_1__["default"]
-    .get(
-      `http://api.airvisual.com/v2/nearest_city?lat=${latitude}&lon=${longitude}&key=${"4fb35cd8-01d9-4068-a090-0634e06a0e4a"}`
-    )
+                if (categoryId) {
+                  const categoryElement = document.getElementById(categoryId);
 
-    .then((response) => {
-      const weatherData = response.data;
-      console.log(weatherData);
+                  if (categoryElement) {
+                    categoryElement.textContent =
+                      item.score_out_of_10.toFixed(1) + "/10";
+                  } else {
+                    console.warn(
+                      `Element with id "${categoryId}" not found in HTML. Skipping.`
+                    );
+                  }
+                }
+              });
+            })
 
-      const temperature = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(weatherData, "data.current.weather.tp");
-      const pressure = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(weatherData, "data.current.weather.pr");
-      const humidity = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(weatherData, "data.current.weather.hu");
-      const windSpeed = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(weatherData, "data.current.weather.ws");
-      const windDirection = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(weatherData, "data.current.weather.wd");
-      const weatherIcon = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(weatherData, "data.current.weather.ic");
-      const airQuality = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(weatherData, "data.current.pollution.aqius");
-      const mainPollutant = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(weatherData, "data.current.pollution.mainus");
-
-      defTemp.innerHTML = temperature + "°C";
-      defPressure.innerHTML = pressure + " hPa";
-      defHumidity.innerHTML = humidity + "%";
-      defWind.innerHTML = windSpeed + " m/s";
-      defWindDirection.innerHTML = windDirection + "°";
-      defWeatherIcon.src = `https://www.airvisual.com/images/${weatherIcon}.png`;
-      defAirQuality.innerHTML = airQuality + " AQI";
-      defPollutant.innerHTML = mainPollutant;
-    })
-
-    .catch((error) => {
-      // Handle the error
-      console.error(error);
+            .catch((error) => {
+              console.error(error);
+            });
+        })
+        .catch((error) => {
+          console.error(error);
+        });
     });
 }
 
-geolocationButton.addEventListener("click", getLocationAndRequest);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (defaultCity);
 
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=geolocationcf839b342b68a9a9e18c.js.map
+//# sourceMappingURL=defaultCityb5e3dbe78b69ddd3b224.js.map

@@ -144,6 +144,72 @@ function getLocationAndRequest() {
           }
         }
       });
+
+      const idMappingBar = {
+        housing: "housing-bar",
+        education: "education-bar",
+        economy: "economy-bar",
+        healthcare: "healthcare-bar",
+        safety: "safety-bar",
+        outdoors: "outdoors-bar",
+        startups: "startups-bar",
+        taxation: "taxation-bar",
+        "cost of living": "cost-of-living-bar",
+        "travel connectivity": "travel-connectivity-bar",
+        "environmental quality": "environmental-quality-bar",
+        "internet access": "internet-access-bar",
+        "business freedom": "business-freedom-bar",
+        "leisure & culture": "leisure-and-culture-bar",
+      };
+
+      categories.forEach((item) => {
+        const categoryClass = idMappingBar[item.name.toLowerCase()];
+
+        if (categoryClass) {
+          const categoryElement = document.querySelector(`.${categoryClass}`);
+          const categoryScore = Math.floor(item.score_out_of_10 * 10); // Multiply by 10
+
+          if (categoryElement) {
+            categoryElement.style.width = `${categoryScore}%`; // Update bar width
+
+            // Update keyframes dynamically
+            const keyframeName = categoryClass;
+            const keyframeDuration = categoryScore / 25; // Adjust duration based on the new score
+            const keyframesStyle = document.styleSheets[0];
+            let keyframeExists = false;
+
+            // Check if the keyframes rule already exists
+            for (let i = 0; i < keyframesStyle.cssRules.length; i++) {
+              if (keyframesStyle.cssRules[i].name === keyframeName) {
+                keyframeExists = true;
+                break;
+              }
+            }
+
+            // If not, add it
+            if (!keyframeExists) {
+              keyframesStyle.insertRule(
+                `@keyframes ${keyframeName} {
+                0% {
+                  width: 0%;
+                }
+                100% {
+                  width: ${categoryScore}%;
+                }
+              }`,
+                keyframesStyle.cssRules.length
+              );
+            }
+
+            // Apply the updated keyframe duration to the animation
+            categoryElement.style.animation = `${keyframeName} ${keyframeDuration}s`;
+          } else {
+            console.warn(
+              `Element with class "${categoryClass}" not found in HTML. Skipping.`
+            );
+          }
+        }
+      });
     });
 
   return axios
