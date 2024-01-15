@@ -56,7 +56,6 @@ function getCity(city) {
       // Update UI with location information
       defcity.innerHTML = fullName;
       defCityName.innerHTML = "CITY: " + cityName;
-      console.log(lat, lon);
       return { lat, lon, cityNameForCalling };
     });
 }
@@ -194,7 +193,6 @@ function getWeatherData({ lat, lon }) {
 
 function updateWeatherInfo(weatherData) {
   // Update UI with weather information
-  console.log(weatherData);
 
   const temperature = _.get(weatherData, "data.current.weather.tp");
   const pressure = _.get(weatherData, "data.current.weather.pr");
