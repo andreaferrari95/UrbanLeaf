@@ -6,7 +6,6 @@ html {
   scrollbar-color: #4d7542;
   scrollbar-width: thin;
 }
-
 * {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
@@ -16,35 +15,20 @@ html {
   font-weight: 300;
   color: var(--text-color);
 }
-
 :root {
   --text-color: #f5f5f5;
   --hover-color: #8af037b3;
-  --bg-color: ##083700;
-  --big-font: 2.5rem;
-  --normal-font: 2rem;
-  --neon-box-shadow: 0 0 0.5rem #00c896;
-  --h2-font: 3rem;
-  --font-neon-text-shadow: 0 0 10px rgba(0, 200, 150, 0.3),
-    0 0 20px rgba(70, 200, 150, 0.3), 0 0 30px rgba(0, 200, 150, 0.3),
-    0 0 40px rgba(0, 200, 150, 0.3), 0 0 70px rgba(0, 200, 150, 0.3),
-    0 0 80px rgba(0, 200, 150, 0.3), 0 0 100px rgba(0, 200, 150, 0.3),
-    0 0 150px rgba(0, 200, 150, 0.3);
-
   --bar-color: #e54d26;
   --neon-box-shadow-bar: 0 0 0.5rem #e54d26;
-
   --secon-bg-color: linear-gradient(
     160deg,
     rgba(89, 134, 76, 0.7) 0%,
     rgba(130, 170, 119, 0.62) 100%
   );
 }
-
 a {
   text-decoration: none;
 }
-
 body {
   background: linear-gradient(181deg, #383838 0%, #555555b5 100%);
   min-height: 100vh;
@@ -59,7 +43,6 @@ body {
   margin: 2rem 2rem 0 2rem;
   padding-bottom: 1rem;
 }
-
 #day,
 #date,
 #month,
@@ -73,7 +56,6 @@ body {
   display: flex;
   align-items: center;
 }
-
 .location-button {
   width: 13rem;
   height: 3rem;
@@ -87,12 +69,10 @@ body {
   justify-content: space-around;
   align-items: center;
 }
-
 .location-button:hover {
   cursor: pointer;
   background-color: var(--hover-color);
 }
-
 .container-logo {
   display: flex;
   flex-direction: column;
@@ -102,12 +82,10 @@ body {
 #logo {
   width: 20rem;
 }
-
 .container-search {
   display: flex;
   justify-content: center;
 }
-
 .search-box {
   margin: 20px 0;
   width: 600px;
@@ -116,13 +94,11 @@ body {
   font-size: 16px;
   background-color: rgba(144, 234, 150, 0.836);
 }
-
 .row {
   display: flex;
   align-items: center;
   padding: 10px 20px;
 }
-
 input {
   flex: 1;
   height: 50px;
@@ -138,71 +114,24 @@ button {
   border: none;
   outline: none;
 }
-
 button .fa-solid {
   width: 40px;
   color: #555;
   font-size: 30px;
   cursor: pointer;
 }
-
 ::placeholder {
   color: #555;
 }
-
-.text-wrapper-3 {
-  position: absolute;
-  width: 174px;
-  top: 46px;
-  left: 0;
-  font-family: "Poppins", Helvetica;
-  font-weight: 600;
-  color: #f5f5f5;
-  font-size: 24px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.text-wrapper-4 {
-  position: absolute;
-  top: -1px;
-  left: 0;
-  font-family: "Poppins", Helvetica;
-  font-weight: 600;
-  color: #f5f5f5;
-  font-size: 24px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.search-bar {
-  position: absolute;
-  width: 614px;
-  height: 57px;
-  top: 160px;
-  left: 413px;
-  background-color: #d9d9d9;
-  border-radius: 25px;
-}
-
-.icon-search {
-  position: absolute;
-  width: 38px;
-  height: 38px;
-  top: 9px;
-  left: 558px;
-}
-
 .city-details-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   padding-block: 1.5rem;
   gap: 1.5rem;
   margin: 0 1.5rem;
-  color: #f5f5f5;
+  color: var(--text-color);
   font-size: 2rem;
 }
-
 .city-temp {
   min-height: 325px;
   background: var(--secon-bg-color);
@@ -211,53 +140,42 @@ button .fa-solid {
     0px 4px 4px #fcf5f540;
   grid-column: span 4;
 }
-
 .city-details {
   display: flex;
   flex-direction: column;
   font-size: 1.5rem;
 }
-
 .icon-location {
   width: 50px;
   height: 50px;
-  color: #f5f5f5;
+  color: var(--text-color);
 }
-
 .row-top {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   font-size: 1.5em;
 }
-
 .location,
 .temp-weather {
   display: flex;
   align-items: center;
   margin: 1.2rem;
 }
-
 .temp-weather {
   justify-content: flex-end;
 }
-
 #weather-icon {
   width: 4em;
 }
-
 #temperature {
   margin-right: 1.5rem;
   font-size: 1.5em;
 }
-
 #city-description {
   line-height: 1.2;
   margin: 20px;
 }
-
-/* -----------------------------*/
-
 .weather-details {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(30rem), 1fr));
@@ -272,11 +190,9 @@ button .fa-solid {
   grid-column: span 5;
   margin-bottom: auto;
 }
-
 .svgs {
   width: 4rem;
 }
-
 .city-score {
   background: var(--secon-bg-color);
   border-radius: 32px;
@@ -287,7 +203,6 @@ button .fa-solid {
   flex-direction: column;
   align-items: center;
 }
-
 #city-score-name {
   font-size: 1em;
   display: flex;
@@ -297,11 +212,9 @@ button .fa-solid {
   margin-top: 1rem;
   font-weight: bold;
 }
-
 #score {
   font-size: 1.2em;
 }
-
 .expand-result-button {
   width: 10rem;
   height: 2.5rem;
@@ -309,17 +222,15 @@ button .fa-solid {
   margin-top: 1rem;
   border: 2px solid #e54d26;
   outline: unset;
-  color: #f5f5f5;
+  color: var(--text-color);
   font-weight: bold;
   font-size: 1.3rem;
   background: chocolate;
 }
-
 .expand-result-button:hover {
   background: #e54d26;
   cursor: pointer;
 }
-
 .humidity-container,
 .air-quality-container,
 .wind-speed-container,
@@ -337,7 +248,6 @@ button .fa-solid {
   align-items: center;
   padding: 2rem;
 }
-
 #humidity-data,
 #visibility-data,
 #air-quality-data,
@@ -348,21 +258,17 @@ button .fa-solid {
 #wind-direction-data {
   font-size: 1.7rem;
 }
-
-/* category Section ---------*/
 .category-title {
   display: flex;
   justify-content: flex-start;
   font-weight: bold;
 }
-
 #category-city {
   display: flex;
   justify-content: flex-end;
   font-weight: bold;
   margin-right: inherit;
 }
-
 .category-main {
   width: 100%;
   display: grid;
@@ -372,52 +278,42 @@ button .fa-solid {
   gap: 1.5rem;
   border-radius: 32px;
 }
-
 .category-left,
 .category-right {
   padding: 1.5rem;
 }
-
 .category-left {
   margin: 1rem 0 1rem 1.5rem;
 }
-
 .category-right {
   margin: 1rem 1.5rem 1rem 0;
 }
-
 .category-bar {
   margin-bottom: 2.3rem;
 }
-
 .category-title,
 #category-city {
   margin-bottom: 2rem;
-  font-size: var(--normal-font);
+  font-size: 2rem;
   text-align: center;
 }
-
 .category-left .category-bar-left .info {
   display: flex;
   align-items: center;
   padding: 10px;
   gap: 2em;
 }
-
 .category-left .category-bar-left .info p {
   font-weight: bold;
 }
-
 .category-left .category-bar-left .bar {
   width: 100%;
   height: 15px;
   border: 3px solid chocolate;
-  background-color: var(--bg-color);
   border-radius: 25px;
   margin-top: 10px;
   position: relative;
 }
-
 .category-bar-left .bar span {
   width: 50%;
   height: 100%;
@@ -425,83 +321,69 @@ button .fa-solid {
   left: 0;
   border-radius: 25px;
 }
-
 .category-bar-left .bar .housing-bar {
   width: 80%;
   background: var(--bar-color);
   box-shadow: var(--neon-box-shadow-bar);
   animation: housing 2.5s;
 }
-
 .category-bar-left .bar .safety-bar {
   width: 70%;
   background: var(--bar-color);
   box-shadow: var(--neon-box-shadow-bar);
   animation: safety 2s;
 }
-
 .category-bar-left .bar .healthcare-bar {
   width: 60%;
   background: var(--bar-color);
   box-shadow: var(--neon-box-shadow-bar);
   animation: healthcare 2s;
 }
-
 .category-bar-left .bar .environmental-quality-bar {
   width: 70%;
   background: var(--bar-color);
   box-shadow: var(--neon-box-shadow-bar);
   animation: environmental-quality 3.5s;
 }
-
 .category-bar-left .bar .taxation-bar {
   width: 80%;
   background: var(--bar-color);
   box-shadow: var(--neon-box-shadow-bar);
   animation: taxation 4s;
 }
-
 .category-bar-left .bar .leisure-and-culture-bar {
   width: 80%;
   background: var(--bar-color);
   box-shadow: var(--neon-box-shadow-bar);
   animation: leisure-and-culture 4s;
 }
-
 .category-bar-left .bar .startups-bar {
   width: 80%;
   background: var(--bar-color);
   box-shadow: var(--neon-box-shadow-bar);
   animation: startups 4s;
 }
-
-/* Skills Right Section ---------*/
 .category-bar-right,
 .category-bar-left {
   margin-bottom: 2.3rem;
 }
-
 .category-right .category-bar-right .info {
   display: flex;
   align-items: center;
   padding: 10px;
   gap: 2em;
 }
-
 .category-right .category-bar-right .info p {
   font-weight: bold;
 }
-
 .category-right .category-bar-right .bar {
   width: 100%;
   height: 15px;
   border: 3px solid chocolate;
-  background-color: var(--bg-color);
   border-radius: 25px;
   margin-top: 10px;
   position: relative;
 }
-
 .category-bar-right .bar span {
   width: 50%;
   height: 100%;
@@ -509,63 +391,52 @@ button .fa-solid {
   left: 0;
   border-radius: 25px;
 }
-
 .category-bar-right .bar .cost-of-living-bar {
   width: 80%;
   background: var(--bar-color);
   box-shadow: var(--neon-box-shadow-bar);
   animation: cost-of-living 2.5s;
 }
-
 .category-bar-right .bar .travel-connectivity-bar {
   width: 75%;
   background: var(--bar-color);
   box-shadow: var(--neon-box-shadow-bar);
   animation: travel-connectivity 3s;
 }
-
 .category-bar-right .bar .education-bar {
   width: 85%;
   background: var(--bar-color);
   box-shadow: var(--neon-box-shadow-bar);
   animation: education 3.5s;
 }
-
 .category-bar-right .bar .economy-bar {
   width: 80%;
   background: var(--bar-color);
   box-shadow: var(--neon-box-shadow-bar);
   animation: economy 3s;
 }
-
 .category-bar-right .bar .internet-access-bar {
   width: 75%;
   background: var(--bar-color);
   box-shadow: var(--neon-box-shadow-bar);
   animation: internet-access 3s;
 }
-
 .category-bar-right .bar .outdoors-bar {
   width: 75%;
   background: var(--bar-color);
   box-shadow: var(--neon-box-shadow-bar);
   animation: outdoors 3s;
 }
-
 .category-bar-right .bar .business-freedom-bar {
   width: 75%;
   background: var(--bar-color);
   box-shadow: var(--neon-box-shadow-bar);
   animation: business-freedom 3s;
 }
-
-/*scrollbar */
-
 ::-webkit-scrollbar {
   height: 0;
   width: 0.5rem;
 }
-
 ::-webkit-scrollbar-track {
   background: #252222;
 }
@@ -574,9 +445,6 @@ button .fa-solid {
   background: #4d7542;
   border-radius: 5rem;
 }
-
-/*circular score bar */
-
 .circular-score-bar {
   width: 200px;
   height: 200px;
@@ -585,17 +453,14 @@ button .fa-solid {
   justify-content: center;
   align-items: center;
 }
-
 .outer {
   height: 190px;
   width: 190px;
   padding: 20px;
   box-shadow: 6px 6px 10px -1px rgba(54, 54, 54, 0.25),
     -6px -6px 10px -1px rgba(54, 54, 54, 0.25);
-
   border-radius: 50%;
 }
-
 .inner {
   height: 150px;
   width: 150px;
@@ -609,7 +474,6 @@ button .fa-solid {
   align-items: center;
   justify-content: center;
 }
-
 circle {
   fill: none;
   stroke: url(#GradientColor);
@@ -618,153 +482,120 @@ circle {
   stroke-dashoffset: 550;
   animation: score 2s linear forwards;
 }
-
 svg {
   position: absolute;
   width: 200px;
   height: 200px;
 }
-
 footer p {
   text-align: end;
 }
-
 /* Animation Keyframes-------------*/
 @keyframes score {
   100% {
     stroke-dashoffset: var(--dash-offset);
   }
 }
-
-/* category panel*/
-
 @keyframes housing {
   0% {
     width: 0%;
   }
-
   100% {
     width: 80%;
   }
 }
-
 @keyframes safety {
   0% {
     width: 0%;
   }
-
   100% {
     width: 70%;
   }
 }
-
 @keyframes healthcare {
   0% {
     width: 0%;
   }
-
   100% {
     width: 60%;
   }
 }
-
 @keyframes environmental-quality {
   0% {
     width: 0%;
   }
-
   100% {
     width: 70%;
   }
 }
-
 @keyframes taxation {
   0% {
     width: 0%;
   }
-
   100% {
     width: 80%;
   }
 }
-
-/*right panel*/
-
 @keyframes leisure-and-culture {
   0% {
     width: 0%;
   }
-
   100% {
     width: 80%;
   }
 }
-
 @keyframes startups {
   0% {
     width: 0%;
   }
-
   100% {
     width: 75%;
   }
 }
-
 @keyframes cost-of-living {
   0% {
     width: 0%;
   }
-
   100% {
     width: 85%;
   }
 }
-
 @keyframes travel-connectivity {
   0% {
     width: 0%;
   }
-
   100% {
     width: 80%;
   }
 }
-
 @keyframes education {
   0% {
     width: 0%;
   }
-
   100% {
     width: 75%;
   }
 }
-
 @keyframes economy {
   0% {
     width: 0%;
   }
-
   100% {
     width: 80%;
   }
 }
-
 @keyframes internet-access {
   0% {
     width: 0%;
   }
-
   100% {
     width: 75%;
   }
 }
-
 @keyframes outdoors {
   0% {
     width: 0%;
   }
-
   100% {
     width: 75%;
   }
@@ -773,7 +604,6 @@ footer p {
   0% {
     width: 0%;
   }
-
   100% {
     width: 75%;
   }
