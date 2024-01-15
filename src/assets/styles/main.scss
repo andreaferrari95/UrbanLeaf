@@ -32,9 +32,7 @@ a {
 body {
   background: linear-gradient(181deg, #383838 0%, #555555b5 100%);
   min-height: 100vh;
-  display: flex;
-  align-items: stretch;
-  flex-direction: column;
+  font-size: 16px;
 }
 .header {
   display: flex;
@@ -607,4 +605,52 @@ footer p {
   100% {
     width: 75%;
   }
+}
+
+/* Tablet styles */
+@media only screen and (max-width: 768px) {
+  body {
+  }
+  .city-temp {
+    grid-column: span 5;
+  }
+}
+
+/* Mobile styles */
+@media only screen and (max-width: 480px) {
+  body {
+  }
+  .city-temp {
+    grid-column: span 5;
+  }
+  .container-location,
+  .date-time {
+    display: none;
+  }
+
+  .temp-weather {
+    flex-direction: column-reverse;
+  }
+  .row-top {
+    font-size: 1rem;
+  }
+
+  #city-description {
+    font-size: large;
+  }
+
+  /* Adjust other styles for better mobile experience */
+  .container-logo {
+    margin-top: 1rem;
+  }
+
+  .header {
+    font-size: medium;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  /* Add any other mobile-specific styles here */
 }
