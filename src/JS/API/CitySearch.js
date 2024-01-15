@@ -294,7 +294,7 @@ function updateScoreCircleAnimation(roundedScores) {
   svgCircle.style.animationDuration = `${animationDuration}ms`;
 
   let counter = 0;
-  const intervalDuration = Math.floor(animationDuration / roundedScores); // Calculate interval duration based on animation duration and rounded scores
+  const intervalDuration = animationDuration / roundedScores; // Calculate interval duration based on animation duration and rounded scores
 
   const intervalId = setInterval(() => {
     if (counter >= roundedScores) {
