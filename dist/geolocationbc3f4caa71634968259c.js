@@ -21442,18 +21442,16 @@ var __webpack_exports__ = {};
 (() => {
 "use strict";
 /*!***********************************!*\
-  !*** ./src/JS/API/defaultCity.js ***!
+  !*** ./src/JS/API/geolocation.js ***!
   \***********************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
 
 
 
+const geolocationButton = document.querySelector(".location-button");
 const defcity = document.getElementById("city");
 const defSummary = document.getElementById("city-description");
 const defTemp = document.getElementById("temperature");
@@ -21467,192 +21465,208 @@ const defAirQuality = document.getElementById("air-quality-data");
 const defPollutant = document.getElementById("pollutant-data");
 const defCityName = document.getElementById("category-city");
 
-function defaultCity() {
-  axios__WEBPACK_IMPORTED_MODULE_1__["default"]
-    .get(`https://api.teleport.org/api/cities/?search=rome&limit=1`)
-    .then(({ data }) => {
-      const defCityHref = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(
-        data,
-        '_embedded["city:search-results"][0]._links["city:item"].href'
-      );
-      return axios__WEBPACK_IMPORTED_MODULE_1__["default"].get(defCityHref);
-    })
-    .then(({ data: cityData }) => {
-      const fullName = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(cityData, "full_name");
-      const cityName = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(cityData, "name");
-      defcity.innerHTML = fullName;
-      defCityName.innerHTML = "CITY: " + cityName;
-
-      return axios__WEBPACK_IMPORTED_MODULE_1__["default"].get(
-        `https://api.airvisual.com/v2/city?city=Rome&state=Latium&country=Italy&key=${"4fb35cd8-01d9-4068-a090-0634e06a0e4a"}`
-      );
-    })
-    .then(({ data: defWeatherData }) => {
-      const temperature = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(defWeatherData, "data.current.weather.tp");
-      const pressure = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(defWeatherData, "data.current.weather.pr");
-      const humidity = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(defWeatherData, "data.current.weather.hu");
-      const windSpeed = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(defWeatherData, "data.current.weather.ws");
-      const windDirection = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(defWeatherData, "data.current.weather.wd");
-      const weatherIcon = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(defWeatherData, "data.current.weather.ic");
-      const airQuality = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(defWeatherData, "data.current.pollution.aqius");
-      const mainPollutant = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(
-        defWeatherData,
-        "data.current.pollution.mainus"
-      );
-
-      defTemp.innerHTML = temperature + "°C";
-      defPressure.innerHTML = pressure + " hPa";
-      defHumidity.innerHTML = humidity + "%";
-      defWind.innerHTML = windSpeed + " m/s";
-      defWindDirection.innerHTML = windDirection + "°";
-      defWeatherIcon.src = `https://www.airvisual.com/images/${weatherIcon}.png`;
-      defAirQuality.innerHTML = airQuality + " AQI";
-      defPollutant.innerHTML = mainPollutant;
-
-      return axios__WEBPACK_IMPORTED_MODULE_1__["default"].get(
-        `https://api.teleport.org/api/urban_areas/slug:rome/scores/`
-      );
-    })
-    .then(({ data: defDescriptionData }) => {
-      const summary = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(defDescriptionData, "summary");
-      const scores = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(defDescriptionData, "teleport_city_score");
-      const categories = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(defDescriptionData, "categories");
-      const roundedScores = Math.round(scores);
-      defSummary.innerHTML = summary;
-
-      const svgCircle = document.querySelector("circle");
-      const svgCircleRadius = 85;
-      const svgCircleCircumference = 2 * Math.PI * svgCircleRadius;
-      const percentage = (roundedScores / 100) * svgCircleCircumference;
-      const strokeDashoffset = svgCircleCircumference - percentage;
-      const animationDuration = 2000; // Specify the animation duration in milliseconds
-
-      svgCircle.style.setProperty("--dash-offset", strokeDashoffset);
-      svgCircle.style.animationDuration = `${animationDuration}ms`;
-
-      let counter = 0;
-      const intervalDuration = Math.floor(animationDuration / roundedScores); // Calculate interval duration based on animation duration and rounded scores
-
-      const intervalId = setInterval(() => {
-        if (counter >= roundedScores) {
-          clearInterval(intervalId);
-        } else {
-          counter += 1;
-          defcityScore.innerHTML = `${counter}%`;
-        }
-      }, intervalDuration);
-
-      const idMapping = {
-        housing: "housing",
-        education: "education",
-        economy: "economy",
-        healthcare: "healthcare",
-        safety: "safety",
-        outdoors: "outdoors",
-        startups: "startups",
-        taxation: "taxation",
-        "cost of living": "cost-of-living",
-        "travel connectivity": "travel-connectivity",
-        "environmental quality": "environmental-quality",
-        "internet access": "internet-access",
-        "business freedom": "business-freedom",
-        "leisure & culture": "leisure-and-culture",
-      };
-
-      categories.forEach((item) => {
-        const categoryId = idMapping[item.name.toLowerCase()];
-
-        if (categoryId) {
-          const categoryElement = document.getElementById(categoryId);
-
-          if (categoryElement) {
-            categoryElement.textContent =
-              item.score_out_of_10.toFixed(1) + "/10";
-          } else {
-            console.warn(
-              `Element with id "${categoryId}" not found in HTML. Skipping.`
-            );
-          }
-        }
-      });
-
-      const idMappingBar = {
-        housing: "housing-bar",
-        education: "education-bar",
-        economy: "economy-bar",
-        healthcare: "healthcare-bar",
-        safety: "safety-bar",
-        outdoors: "outdoors-bar",
-        startups: "startups-bar",
-        taxation: "taxation-bar",
-        "cost of living": "cost-of-living-bar",
-        "travel connectivity": "travel-connectivity-bar",
-        "environmental quality": "environmental-quality-bar",
-        "internet access": "internet-access-bar",
-        "business freedom": "business-freedom-bar",
-        "leisure & culture": "leisure-and-culture-bar",
-      };
-
-      categories.forEach((item) => {
-        const categoryClass = idMappingBar[item.name.toLowerCase()];
-
-        if (categoryClass) {
-          const categoryElement = document.querySelector(`.${categoryClass}`);
-          const categoryScore = Math.floor(item.score_out_of_10 * 10); // Multiply by 10
-
-          if (categoryElement) {
-            categoryElement.style.width = `${categoryScore}%`; // Update bar width
-
-            // Update keyframes dynamically
-            const keyframeName = categoryClass;
-            const keyframeDuration = categoryScore / 25; // Adjust duration based on the new score
-            const keyframesStyle = document.styleSheets[0];
-            let keyframeExists = false;
-
-            // Check if the keyframes rule already exists
-            for (let i = 0; i < keyframesStyle.cssRules.length; i++) {
-              if (keyframesStyle.cssRules[i].name === keyframeName) {
-                keyframeExists = true;
-                break;
-              }
-            }
-
-            // If not, add it
-            if (!keyframeExists) {
-              keyframesStyle.insertRule(
-                `@keyframes ${keyframeName} {
-                0% {
-                  width: 0%;
-                }
-                100% {
-                  width: ${categoryScore}%;
-                }
-              }`,
-                keyframesStyle.cssRules.length
-              );
-            }
-
-            // Apply the updated keyframe duration to the animation
-            categoryElement.style.animation = `${keyframeName} ${keyframeDuration}s`;
-          } else {
-            console.warn(
-              `Element with class "${categoryClass}" not found in HTML. Skipping.`
-            );
-          }
-        }
-      });
-    })
-    .catch((error) => {
-      console.error(error);
-    });
+function getCurrentPosition() {
+  return new Promise((resolve, reject) => {
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
 }
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (defaultCity);
+function getLocationAndRequest() {
+  getCurrentPosition()
+    .then((position) => {
+      const { latitude, longitude } = position.coords;
+      return axios__WEBPACK_IMPORTED_MODULE_1__["default"].get(
+        `https://api.teleport.org/api/locations/${latitude},${longitude}/`
+      );
+    })
+    .then((response) => {
+      const geoloCityHref =
+        response.data._embedded["location:nearest-cities"][0]._links[
+          "location:nearest-city"
+        ].href;
+      return axios__WEBPACK_IMPORTED_MODULE_1__["default"].get(geoloCityHref);
+    })
+    .then((response) => getCityDetails(response.data))
+    .then((cityDetails) => getCityScores(cityDetails))
+    .then((cityScores) => {
+      // Now cityScores is defined in this scope
+      updateCityInfo(cityScores);
+      const { lat, lon } = cityScores;
+      return getWeatherData(lat, lon);
+    })
+    .then((weatherData) => updateWeatherInfo(weatherData))
+    .catch(handleError);
+}
 
+function getCityDetails(cityData) {
+  const fullName = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(cityData, "full_name");
+  const cityName = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(cityData, "name");
 
+  defcity.innerHTML = fullName;
+  defCityName.innerHTML = "CITY: " + cityName;
+
+  const lat = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(cityData, "location.latlon.latitude");
+  const lon = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(cityData, "location.latlon.longitude");
+  const cityNameForCalling = cityName.toLowerCase();
+
+  return {
+    lat,
+    lon,
+    cityNameForCalling,
+  };
+}
+
+async function getCityScores(cityDetails) {
+  const url = `https://api.teleport.org/api/urban_areas/slug:${cityDetails.cityNameForCalling}/scores/`;
+  const response = await axios__WEBPACK_IMPORTED_MODULE_1__["default"].get(url);
+  const descriptionData = response.data;
+  const summary = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(descriptionData, "summary");
+  const scores = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(descriptionData, "teleport_city_score");
+  const categories = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(descriptionData, "categories");
+  const roundedScores = Math.round(scores);
+
+  defSummary.innerHTML = summary;
+  updateScoreCircleAnimation(Math.round(scores));
+
+  return {
+    lat: cityDetails.lat,
+    lon: cityDetails.lon,
+    categories,
+    roundedScores,
+  };
+}
+
+function updateCityInfo(cityScores) {
+  const idMapping = {
+    // ... (same as the previous code)
+  };
+
+  cityScores.categories.forEach((item) => {
+    const categoryId = idMapping[item.name.toLowerCase()];
+    const categoryElement = document.getElementById(categoryId);
+
+    if (categoryElement) {
+      categoryElement.textContent = `${item.score_out_of_10.toFixed(1)}/10`;
+    } else {
+      console.warn(
+        `Element with id "${categoryId}" not found in HTML. Skipping.`
+      );
+    }
+  });
+
+  // ... (same as the previous code)
+
+  return Promise.resolve({ lat: cityScores.lat, lon: cityScores.lon });
+}
+
+async function getWeatherData(latitude, longitude) {
+  const url = `http://api.airvisual.com/v2/nearest_city?lat=${latitude}&lon=${longitude}&key=${"4fb35cd8-01d9-4068-a090-0634e06a0e4a"}`;
+  const response = await axios__WEBPACK_IMPORTED_MODULE_1__["default"].get(url);
+  return response.data;
+}
+
+function updateWeatherInfo(weatherData) {
+  const {
+    tp: temperature,
+    pr: pressure,
+    hu: humidity,
+    ws: windSpeed,
+    wd: windDirection,
+    ic: weatherIcon,
+    aqius: airQuality,
+    mainus: mainPollutant,
+  } = lodash__WEBPACK_IMPORTED_MODULE_0___default().get(weatherData, "data.current.weather");
+
+  defTemp.innerHTML = `${temperature}°C`;
+  defPressure.innerHTML = `${pressure} hPa`;
+  defHumidity.innerHTML = `${humidity}%`;
+  defWind.innerHTML = `${windSpeed} m/s`;
+  defWindDirection.innerHTML = `${windDirection}°`;
+  defWeatherIcon.src = `https://www.airvisual.com/images/${weatherIcon}.png`;
+  defAirQuality.innerHTML = `${airQuality} AQI`;
+  defPollutant.innerHTML = mainPollutant;
+
+  return Promise.resolve();
+}
+
+function handleError(error) {
+  if (error.response && error.response.status === 404) {
+    showErrorMessage(
+      "City not found. Please try searching for a different city."
+    );
+  } else {
+    console.error("Error:", error);
+  }
+}
+
+function showErrorMessage(message) {
+  const errorMessageContainer = document.createElement("div");
+  errorMessageContainer.className = "error-message";
+  errorMessageContainer.innerHTML = `
+    <p>${message}</p>
+    <button id="okButton">OK</button>
+  `;
+
+  errorMessageContainer.style.backgroundColor = "#ff6666";
+  errorMessageContainer.style.color = "#ffffff";
+  errorMessageContainer.style.padding = "10px";
+  errorMessageContainer.style.borderRadius = "5px";
+  errorMessageContainer.style.position = "fixed";
+  errorMessageContainer.style.top = "3%";
+  errorMessageContainer.style.left = "50%";
+  errorMessageContainer.style.transform = "translateX(-50%)";
+  errorMessageContainer.style.fontSize = "1.5rem";
+
+  document.body.appendChild(errorMessageContainer);
+
+  const okButton = document.getElementById("okButton");
+
+  if (okButton) {
+    okButton.style.padding = "8px 16px";
+    okButton.style.fontWeight = "bold";
+    okButton.style.marginTop = "10px";
+    okButton.style.fontSize = "2rem";
+
+    okButton.addEventListener("click", () => {
+      errorMessageContainer.remove();
+    });
+  }
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      errorMessageContainer.remove();
+    }
+  });
+}
+
+function updateScoreCircleAnimation(roundedScores) {
+  const svgCircle = document.querySelector("circle");
+  const svgCircleRadius = 85;
+  const svgCircleCircumference = 2 * Math.PI * svgCircleRadius;
+  const percentage = (roundedScores / 100) * svgCircleCircumference;
+  const strokeDashoffset = svgCircleCircumference - percentage;
+  const animationDuration = 2000;
+
+  svgCircle.style.setProperty("--dash-offset", strokeDashoffset);
+  svgCircle.style.animationDuration = `${animationDuration}ms`;
+
+  let counter = 0;
+  const intervalDuration = animationDuration / roundedScores;
+
+  const intervalId = setInterval(() => {
+    if (counter >= roundedScores) {
+      clearInterval(intervalId);
+    } else {
+      counter += 1;
+      defcityScore.innerHTML = `${counter}%`;
+    }
+  }, intervalDuration);
+}
+
+geolocationButton.addEventListener("click", getLocationAndRequest);
 
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=defaultCity3ff6449b88ebdc12f816.js.map
+//# sourceMappingURL=geolocationbc3f4caa71634968259c.js.map
