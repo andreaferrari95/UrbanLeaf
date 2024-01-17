@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   entry: {
     bundle: path.resolve(__dirname, "src/JS/index.js"),
     teleport: path.resolve(__dirname, "src/JS/API/CitySearch.js"),

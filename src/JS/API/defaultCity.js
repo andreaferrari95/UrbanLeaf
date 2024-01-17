@@ -273,4 +273,4 @@ function updateScoreCircleAnimation(roundedScores) {
   }, intervalDuration);
 }
 
-export default defaultCity;
+defaultCity();

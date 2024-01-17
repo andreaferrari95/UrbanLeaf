@@ -9,7 +9,6 @@ import humiditySvg from "../assets/img/humidity.png";
 import windSvg from "../assets/img/wind.png";
 import pressureSvg from "../assets/img/air-pressure.png";
 import windDirectionSvg from "../assets/img/wind-direction.png";
-import defaultCity from "../JS/API/defaultCity.js";
 
 //logo and icons
 
@@ -70,8 +69,6 @@ setInterval(() => {
     (currentTime.getMonth() + 1 < 10 ? "0" : "") + (currentTime.getMonth() + 1);
   year.innerHTML = currentTime.getFullYear();
 }, 1000);
-
-defaultCity();
 
 const expandResultButton = document.querySelector(".expand-result-button");
 const cityDetails = document.querySelector(".category-main");
