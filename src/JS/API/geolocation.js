@@ -39,7 +39,6 @@ function getLocationAndRequest() {
     .then((response) => getCityDetails(response.data))
     .then((cityDetails) => getCityScores(cityDetails))
     .then((cityScores) => {
-      // Now cityScores is defined in this scope
       updateCityInfo(cityScores);
       const { lat, lon } = cityScores;
       return getWeatherData(lat, lon);
@@ -88,7 +87,20 @@ async function getCityScores(cityDetails) {
 
 function updateCityInfo(cityScores) {
   const idMapping = {
-    // ... (same as the previous code)
+    housing: "housing",
+    education: "education",
+    economy: "economy",
+    healthcare: "healthcare",
+    safety: "safety",
+    outdoors: "outdoors",
+    startups: "startups",
+    taxation: "taxation",
+    "cost of living": "cost-of-living",
+    "travel connectivity": "travel-connectivity",
+    "environmental quality": "environmental-quality",
+    "internet access": "internet-access",
+    "business freedom": "business-freedom",
+    "leisure & culture": "leisure-and-culture",
   };
 
   cityScores.categories.forEach((item) => {
@@ -104,7 +116,67 @@ function updateCityInfo(cityScores) {
     }
   });
 
-  // ... (same as the previous code)
+  const idMappingBar = {
+    housing: "housing-bar",
+    education: "education-bar",
+    economy: "economy-bar",
+    healthcare: "healthcare-bar",
+    safety: "safety-bar",
+    outdoors: "outdoors-bar",
+    startups: "startups-bar",
+    taxation: "taxation-bar",
+    "cost of living": "cost-of-living-bar",
+    "travel connectivity": "travel-connectivity-bar",
+    "environmental quality": "environmental-quality-bar",
+    "internet access": "internet-access-bar",
+    "business freedom": "business-freedom-bar",
+    "leisure & culture": "leisure-and-culture-bar",
+  };
+
+  categories.forEach((item) => {
+    const categoryClass = idMappingBar[item.name.toLowerCase()];
+
+    if (categoryClass) {
+      const categoryElement = document.querySelector(`.${categoryClass}`);
+      const categoryScore = Math.floor(item.score_out_of_10 * 10);
+
+      if (categoryElement) {
+        categoryElement.style.width = `${categoryScore}%`;
+
+        const keyframeName = categoryClass;
+        const keyframeDuration = categoryScore / 25;
+        const keyframesStyle = document.styleSheets[0];
+        let keyframeExists = false;
+
+        for (let i = 0; i < keyframesStyle.cssRules.length; i++) {
+          if (keyframesStyle.cssRules[i].name === keyframeName) {
+            keyframeExists = true;
+            break;
+          }
+        }
+
+        if (!keyframeExists) {
+          keyframesStyle.insertRule(
+            `@keyframes ${keyframeName} {
+              0% {
+                width: 0%;
+              }
+              100% {
+                width: ${categoryScore}%;
+              }
+            }`,
+            keyframesStyle.cssRules.length
+          );
+        }
+
+        categoryElement.style.animation = `${keyframeName} ${keyframeDuration}s`;
+      } else {
+        console.warn(
+          `Element with class "${categoryClass}" not found in HTML. Skipping.`
+        );
+      }
+    }
+  });
 
   return Promise.resolve({ lat: cityScores.lat, lon: cityScores.lon });
 }

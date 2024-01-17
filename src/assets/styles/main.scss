@@ -609,23 +609,35 @@ footer p {
 
 /* Tablet styles */
 @media only screen and (max-width: 768px) {
-  body {
-  }
-  .city-temp {
-    grid-column: span 5;
-  }
-}
-
-/* Mobile styles */
-@media only screen and (max-width: 480px) {
-  body {
-  }
   .city-temp {
     grid-column: span 5;
   }
   .container-location,
   .date-time {
     display: none;
+  }
+  .header {
+    justify-content: center;
+  }
+  .city-score {
+    grid-column: span 2;
+  }
+}
+
+/* Mobile styles */
+@media only screen and (max-width: 480px) {
+  .city-temp {
+    grid-column: span 5;
+  }
+  .container-location,
+  .date-time {
+    display: none;
+  }
+  .container-search {
+    margin: 0 1rem;
+  }
+  .my-input {
+    width: 250px;
   }
 
   .temp-weather {
@@ -638,8 +650,17 @@ footer p {
   #city-description {
     font-size: large;
   }
+  .weather-details {
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    padding: 1rem;
+  }
+  .city-score {
+    grid-column: span 5;
+  }
+  .category-title {
+    text-align: start;
+  }
 
-  /* Adjust other styles for better mobile experience */
   .container-logo {
     margin-top: 1rem;
   }
@@ -652,5 +673,33 @@ footer p {
     width: 100%;
   }
 
-  /* Add any other mobile-specific styles here */
+  .category-main {
+    grid-template-columns: auto;
+    justify-content: center;
+  }
+  .category-right,
+  .category-left {
+    margin: 1rem 0 1rem 0rem;
+  }
+  .category-bar-left,
+  .category-bar-right {
+    width: 300px;
+  }
+  .humidity-container,
+  .air-quality-container,
+  .wind-speed-container,
+  .air-pressure-container,
+  .pollutant-container,
+  .wind-direction-container {
+    padding: 1rem;
+    justify-content: center;
+  }
+  .humidity,
+  .air-quality,
+  .wind-speed,
+  .air-pressure,
+  .pollutant,
+  .wind-direction {
+    font-size: 1.5rem;
+  }
 }

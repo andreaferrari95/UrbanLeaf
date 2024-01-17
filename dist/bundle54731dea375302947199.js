@@ -25,7 +25,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.c
 ___CSS_LOADER_EXPORT___.push([module.id, `html {
   /* For Firefox */
   overflow-y: scroll;
-  scrollbar-color: #3f5e36;
+  scrollbar-color: #4d7542;
   scrollbar-width: thin; }
 
 * {
@@ -35,21 +35,11 @@ ___CSS_LOADER_EXPORT___.push([module.id, `html {
   padding: 0px;
   font-family: "Poppins", Helvetica;
   font-weight: 300;
-  color: #f5f5f5; }
+  color: var(--text-color); }
 
 :root {
   --text-color: #f5f5f5;
   --hover-color: #8af037b3;
-  --bg-color: ##083700;
-  --big-font: 2.5rem;
-  --normal-font: 2rem;
-  --neon-box-shadow: 0 0 0.5rem #00c896;
-  --h2-font: 3rem;
-  --font-neon-text-shadow: 0 0 10px rgba(0, 200, 150, 0.3),
-    0 0 20px rgba(70, 200, 150, 0.3), 0 0 30px rgba(0, 200, 150, 0.3),
-    0 0 40px rgba(0, 200, 150, 0.3), 0 0 70px rgba(0, 200, 150, 0.3),
-    0 0 80px rgba(0, 200, 150, 0.3), 0 0 100px rgba(0, 200, 150, 0.3),
-    0 0 150px rgba(0, 200, 150, 0.3);
   --bar-color: #e54d26;
   --neon-box-shadow-bar: 0 0 0.5rem #e54d26;
   --secon-bg-color: linear-gradient(
@@ -64,9 +54,7 @@ a {
 body {
   background: linear-gradient(181deg, #383838 0%, #555555b5 100%);
   min-height: 100vh;
-  display: flex;
-  align-items: stretch;
-  flex-direction: column; }
+  font-size: 16px; }
 
 .header {
   display: flex;
@@ -154,56 +142,17 @@ button .fa-solid {
 ::placeholder {
   color: #555; }
 
-.text-wrapper-3 {
-  position: absolute;
-  width: 174px;
-  top: 46px;
-  left: 0;
-  font-family: "Poppins", Helvetica;
-  font-weight: 600;
-  color: #f5f5f5;
-  font-size: 24px;
-  letter-spacing: 0;
-  line-height: normal; }
-
-.text-wrapper-4 {
-  position: absolute;
-  top: -1px;
-  left: 0;
-  font-family: "Poppins", Helvetica;
-  font-weight: 600;
-  color: #f5f5f5;
-  font-size: 24px;
-  letter-spacing: 0;
-  line-height: normal; }
-
-.search-bar {
-  position: absolute;
-  width: 614px;
-  height: 57px;
-  top: 160px;
-  left: 413px;
-  background-color: #d9d9d9;
-  border-radius: 25px; }
-
-.icon-search {
-  position: absolute;
-  width: 38px;
-  height: 38px;
-  top: 9px;
-  left: 558px; }
-
 .city-details-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   padding-block: 1.5rem;
   gap: 1.5rem;
   margin: 0 1.5rem;
-  color: #f5f5f5;
+  color: var(--text-color);
   font-size: 2rem; }
 
 .city-temp {
-  height: fit-content;
+  min-height: 325px;
   background: var(--secon-bg-color);
   border-radius: 32px;
   box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940, 0px 4px 4px #fcf5f540;
@@ -217,7 +166,7 @@ button .fa-solid {
 .icon-location {
   width: 50px;
   height: 50px;
-  color: #f5f5f5; }
+  color: var(--text-color); }
 
 .row-top {
   display: flex;
@@ -245,7 +194,6 @@ button .fa-solid {
   line-height: 1.2;
   margin: 20px; }
 
-/* -----------------------------*/
 .weather-details {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
@@ -290,7 +238,7 @@ button .fa-solid {
   margin-top: 1rem;
   border: 2px solid #e54d26;
   outline: unset;
-  color: #f5f5f5;
+  color: var(--text-color);
   font-weight: bold;
   font-size: 1.3rem;
   background: chocolate; }
@@ -326,7 +274,6 @@ button .fa-solid {
 #wind-direction-data {
   font-size: 1.7rem; }
 
-/* category Section ---------*/
 .category-title {
   display: flex;
   justify-content: flex-start;
@@ -363,7 +310,7 @@ button .fa-solid {
 .category-title,
 #category-city {
   margin-bottom: 2rem;
-  font-size: var(--normal-font);
+  font-size: 2rem;
   text-align: center; }
 
 .category-left .category-bar-left .info {
@@ -379,7 +326,6 @@ button .fa-solid {
   width: 100%;
   height: 15px;
   border: 3px solid chocolate;
-  background-color: var(--bg-color);
   border-radius: 25px;
   margin-top: 10px;
   position: relative; }
@@ -433,7 +379,6 @@ button .fa-solid {
   box-shadow: var(--neon-box-shadow-bar);
   animation: startups 4s; }
 
-/* Skills Right Section ---------*/
 .category-bar-right,
 .category-bar-left {
   margin-bottom: 2.3rem; }
@@ -451,7 +396,6 @@ button .fa-solid {
   width: 100%;
   height: 15px;
   border: 3px solid chocolate;
-  background-color: var(--bg-color);
   border-radius: 25px;
   margin-top: 10px;
   position: relative; }
@@ -505,7 +449,6 @@ button .fa-solid {
   box-shadow: var(--neon-box-shadow-bar);
   animation: business-freedom 3s; }
 
-/*scrollbar */
 ::-webkit-scrollbar {
   height: 0;
   width: 0.5rem; }
@@ -514,10 +457,9 @@ button .fa-solid {
   background: #252222; }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--hover-color);
+  background: #4d7542;
   border-radius: 5rem; }
 
-/*circular score bar */
 .circular-score-bar {
   width: 200px;
   height: 200px;
@@ -555,12 +497,14 @@ svg {
   width: 200px;
   height: 200px; }
 
+footer p {
+  text-align: end; }
+
 /* Animation Keyframes-------------*/
 @keyframes score {
   100% {
     stroke-dashoffset: var(--dash-offset); } }
 
-/* category panel*/
 @keyframes housing {
   0% {
     width: 0%; }
@@ -591,7 +535,6 @@ svg {
   100% {
     width: 80%; } }
 
-/*right panel*/
 @keyframes leisure-and-culture {
   0% {
     width: 0%; }
@@ -645,7 +588,34 @@ svg {
     width: 0%; }
   100% {
     width: 75%; } }
-`, "",{"version":3,"sources":["webpack://./src/assets/styles/main.scss"],"names":[],"mappings":"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","sourcesContent":["@import url(\"https://fonts.googleapis.com/css?family=Poppins:300,500,400,600\");\r\n\r\nhtml {\r\n  /* For Firefox */\r\n  overflow-y: scroll;\r\n  scrollbar-color: #3f5e36;\r\n  scrollbar-width: thin;\r\n}\r\n\r\n* {\r\n  -webkit-font-smoothing: antialiased;\r\n  box-sizing: border-box;\r\n  margin: 0px;\r\n  padding: 0px;\r\n  font-family: \"Poppins\", Helvetica;\r\n  font-weight: 300;\r\n  color: #f5f5f5;\r\n}\r\n\r\n:root {\r\n  --text-color: #f5f5f5;\r\n  --hover-color: #8af037b3;\r\n  --bg-color: ##083700;\r\n  --big-font: 2.5rem;\r\n  --normal-font: 2rem;\r\n  --neon-box-shadow: 0 0 0.5rem #00c896;\r\n  --h2-font: 3rem;\r\n  --font-neon-text-shadow: 0 0 10px rgba(0, 200, 150, 0.3),\r\n    0 0 20px rgba(70, 200, 150, 0.3), 0 0 30px rgba(0, 200, 150, 0.3),\r\n    0 0 40px rgba(0, 200, 150, 0.3), 0 0 70px rgba(0, 200, 150, 0.3),\r\n    0 0 80px rgba(0, 200, 150, 0.3), 0 0 100px rgba(0, 200, 150, 0.3),\r\n    0 0 150px rgba(0, 200, 150, 0.3);\r\n\r\n  --bar-color: #e54d26;\r\n  --neon-box-shadow-bar: 0 0 0.5rem #e54d26;\r\n\r\n  --secon-bg-color: linear-gradient(\r\n    160deg,\r\n    rgba(89, 134, 76, 0.7) 0%,\r\n    rgba(130, 170, 119, 0.62) 100%\r\n  );\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n}\r\n\r\nbody {\r\n  background: linear-gradient(181deg, #383838 0%, #555555b5 100%);\r\n  min-height: 100vh;\r\n  display: flex;\r\n  align-items: stretch;\r\n  flex-direction: column;\r\n}\r\n.header {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  font-size: large;\r\n  margin: 2rem 2rem 0 2rem;\r\n  padding-bottom: 1rem;\r\n}\r\n\r\n#day,\r\n#date,\r\n#month,\r\n#year,\r\n#hrs,\r\n#min,\r\n#sec {\r\n  font-weight: bold;\r\n}\r\n.container-location {\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\n.location-button {\r\n  width: 13rem;\r\n  height: 3rem;\r\n  border-radius: 25px;\r\n  box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940,\r\n    0px 4px 4px #fcf5f540;\r\n  background: var(--secon-bg-color);\r\n  margin: 0 10px 0 10px;\r\n  font-weight: bold;\r\n  display: flex;\r\n  justify-content: space-around;\r\n  align-items: center;\r\n}\r\n\r\n.location-button:hover {\r\n  cursor: pointer;\r\n  background-color: var(--hover-color);\r\n}\r\n\r\n.container-logo {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: flex-start;\r\n}\r\n#logo {\r\n  width: 20rem;\r\n}\r\n\r\n.container-search {\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n\r\n.search-box {\r\n  margin: 20px 0;\r\n  width: 600px;\r\n  border: 1px solid #f4f4f4;\r\n  border-radius: 25px;\r\n  font-size: 16px;\r\n  background-color: rgba(144, 234, 150, 0.836);\r\n}\r\n\r\n.row {\r\n  display: flex;\r\n  align-items: center;\r\n  padding: 10px 20px;\r\n}\r\n\r\ninput {\r\n  flex: 1;\r\n  height: 50px;\r\n  border: none;\r\n  outline: none;\r\n  font-size: 22px;\r\n  font-weight: bold;\r\n  color: #333;\r\n  background-color: transparent;\r\n}\r\nbutton {\r\n  background: transparent;\r\n  border: none;\r\n  outline: none;\r\n}\r\n\r\nbutton .fa-solid {\r\n  width: 40px;\r\n  color: #555;\r\n  font-size: 30px;\r\n  cursor: pointer;\r\n}\r\n\r\n::placeholder {\r\n  color: #555;\r\n}\r\n\r\n.text-wrapper-3 {\r\n  position: absolute;\r\n  width: 174px;\r\n  top: 46px;\r\n  left: 0;\r\n  font-family: \"Poppins\", Helvetica;\r\n  font-weight: 600;\r\n  color: #f5f5f5;\r\n  font-size: 24px;\r\n  letter-spacing: 0;\r\n  line-height: normal;\r\n}\r\n\r\n.text-wrapper-4 {\r\n  position: absolute;\r\n  top: -1px;\r\n  left: 0;\r\n  font-family: \"Poppins\", Helvetica;\r\n  font-weight: 600;\r\n  color: #f5f5f5;\r\n  font-size: 24px;\r\n  letter-spacing: 0;\r\n  line-height: normal;\r\n}\r\n\r\n.search-bar {\r\n  position: absolute;\r\n  width: 614px;\r\n  height: 57px;\r\n  top: 160px;\r\n  left: 413px;\r\n  background-color: #d9d9d9;\r\n  border-radius: 25px;\r\n}\r\n\r\n.icon-search {\r\n  position: absolute;\r\n  width: 38px;\r\n  height: 38px;\r\n  top: 9px;\r\n  left: 558px;\r\n}\r\n\r\n.city-details-container {\r\n  display: grid;\r\n  grid-template-columns: repeat(5, 1fr);\r\n  padding-block: 1.5rem;\r\n  gap: 1.5rem;\r\n  margin: 0 1.5rem;\r\n  color: #f5f5f5;\r\n  font-size: 2rem;\r\n}\r\n\r\n.city-temp {\r\n  height: fit-content;\r\n  background: var(--secon-bg-color);\r\n  border-radius: 32px;\r\n  box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940,\r\n    0px 4px 4px #fcf5f540;\r\n  grid-column: span 4;\r\n}\r\n\r\n.city-details {\r\n  display: flex;\r\n  flex-direction: column;\r\n  font-size: 1.5rem;\r\n}\r\n\r\n.icon-location {\r\n  width: 50px;\r\n  height: 50px;\r\n  color: #f5f5f5;\r\n}\r\n\r\n.row-top {\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: space-between;\r\n  font-size: 1.5em;\r\n}\r\n\r\n.location,\r\n.temp-weather {\r\n  display: flex;\r\n  align-items: center;\r\n  margin: 1.2rem;\r\n}\r\n\r\n.temp-weather {\r\n  justify-content: flex-end;\r\n}\r\n\r\n#weather-icon {\r\n  width: 4em;\r\n}\r\n\r\n#temperature {\r\n  margin-right: 1.5rem;\r\n  font-size: 1.5em;\r\n}\r\n\r\n#city-description {\r\n  line-height: 1.2;\r\n  margin: 20px;\r\n}\r\n\r\n/* -----------------------------*/\r\n\r\n.weather-details {\r\n  display: grid;\r\n  grid-template-columns: repeat(auto-fit, minmax(min(30rem), 1fr));\r\n  gap: 1rem;\r\n  padding: 1.5rem;\r\n  padding-block: 1.5rem;\r\n  justify-items: center;\r\n  border-radius: 32px;\r\n  box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940,\r\n    0px 4px 4px #fcf5f540;\r\n  background: var(--secon-bg-color);\r\n  grid-column: span 5;\r\n  margin-bottom: auto;\r\n}\r\n\r\n.svgs {\r\n  width: 4rem;\r\n}\r\n\r\n.city-score {\r\n  background: var(--secon-bg-color);\r\n  border-radius: 32px;\r\n  box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940,\r\n    0px 4px 4px #fcf5f540;\r\n  display: flex;\r\n  justify-items: center;\r\n  flex-direction: column;\r\n  align-items: center;\r\n}\r\n\r\n#city-score-name {\r\n  font-size: 1em;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n  margin-top: 1rem;\r\n  font-weight: bold;\r\n}\r\n\r\n#score {\r\n  font-size: 1.2em;\r\n}\r\n\r\n.expand-result-button {\r\n  width: 10rem;\r\n  height: 2.5rem;\r\n  border-radius: 25px;\r\n  margin-top: 1rem;\r\n  border: 2px solid #e54d26;\r\n  outline: unset;\r\n  color: #f5f5f5;\r\n  font-weight: bold;\r\n  font-size: 1.3rem;\r\n  background: chocolate;\r\n}\r\n\r\n.expand-result-button:hover {\r\n  background: #e54d26;\r\n  cursor: pointer;\r\n}\r\n\r\n.humidity-container,\r\n.air-quality-container,\r\n.wind-speed-container,\r\n.air-pressure-container,\r\n.pollutant-container,\r\n.wind-direction-container {\r\n  display: flex;\r\n  flex-direction: row;\r\n  margin-top: 0.5rem;\r\n  border: 3px solid #cdcdcd;\r\n  border-radius: 25px;\r\n  width: -webkit-fill-available;\r\n  height: 4em;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  padding: 2rem;\r\n}\r\n\r\n#humidity-data,\r\n#visibility-data,\r\n#air-quality-data,\r\n#wind-speed-data,\r\n#air-pressure-data,\r\n#pollen-data,\r\n#pollutant-data,\r\n#wind-direction-data {\r\n  font-size: 1.7rem;\r\n}\r\n\r\n/* category Section ---------*/\r\n.category-title {\r\n  display: flex;\r\n  justify-content: flex-start;\r\n  font-weight: bold;\r\n}\r\n\r\n#category-city {\r\n  display: flex;\r\n  justify-content: flex-end;\r\n  font-weight: bold;\r\n  margin-right: inherit;\r\n}\r\n\r\n.category-main {\r\n  width: 100%;\r\n  display: grid;\r\n  grid-template-columns: repeat(2, 1fr);\r\n  background: var(--secon-bg-color);\r\n  grid-column: span 5;\r\n  gap: 1.5rem;\r\n  border-radius: 32px;\r\n}\r\n\r\n.category-left,\r\n.category-right {\r\n  padding: 1.5rem;\r\n}\r\n\r\n.category-left {\r\n  margin: 1rem 0 1rem 1.5rem;\r\n}\r\n\r\n.category-right {\r\n  margin: 1rem 1.5rem 1rem 0;\r\n}\r\n\r\n.category-bar {\r\n  margin-bottom: 2.3rem;\r\n}\r\n\r\n.category-title,\r\n#category-city {\r\n  margin-bottom: 2rem;\r\n  font-size: var(--normal-font);\r\n  text-align: center;\r\n}\r\n\r\n.category-left .category-bar-left .info {\r\n  display: flex;\r\n  align-items: center;\r\n  padding: 10px;\r\n  gap: 2em;\r\n}\r\n\r\n.category-left .category-bar-left .info p {\r\n  font-weight: bold;\r\n}\r\n\r\n.category-left .category-bar-left .bar {\r\n  width: 100%;\r\n  height: 15px;\r\n  border: 3px solid chocolate;\r\n  background-color: var(--bg-color);\r\n  border-radius: 25px;\r\n  margin-top: 10px;\r\n  position: relative;\r\n}\r\n\r\n.category-bar-left .bar span {\r\n  width: 50%;\r\n  height: 100%;\r\n  position: absolute;\r\n  left: 0;\r\n  border-radius: 25px;\r\n}\r\n\r\n.category-bar-left .bar .housing-bar {\r\n  width: 80%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: housing 2.5s;\r\n}\r\n\r\n.category-bar-left .bar .safety-bar {\r\n  width: 70%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: safety 2s;\r\n}\r\n\r\n.category-bar-left .bar .healthcare-bar {\r\n  width: 60%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: healthcare 2s;\r\n}\r\n\r\n.category-bar-left .bar .environmental-quality-bar {\r\n  width: 70%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: environmental-quality 3.5s;\r\n}\r\n\r\n.category-bar-left .bar .taxation-bar {\r\n  width: 80%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: taxation 4s;\r\n}\r\n\r\n.category-bar-left .bar .leisure-and-culture-bar {\r\n  width: 80%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: leisure-and-culture 4s;\r\n}\r\n\r\n.category-bar-left .bar .startups-bar {\r\n  width: 80%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: startups 4s;\r\n}\r\n\r\n/* Skills Right Section ---------*/\r\n.category-bar-right,\r\n.category-bar-left {\r\n  margin-bottom: 2.3rem;\r\n}\r\n\r\n.category-right .category-bar-right .info {\r\n  display: flex;\r\n  align-items: center;\r\n  padding: 10px;\r\n  gap: 2em;\r\n}\r\n\r\n.category-right .category-bar-right .info p {\r\n  font-weight: bold;\r\n}\r\n\r\n.category-right .category-bar-right .bar {\r\n  width: 100%;\r\n  height: 15px;\r\n  border: 3px solid chocolate;\r\n  background-color: var(--bg-color);\r\n  border-radius: 25px;\r\n  margin-top: 10px;\r\n  position: relative;\r\n}\r\n\r\n.category-bar-right .bar span {\r\n  width: 50%;\r\n  height: 100%;\r\n  position: absolute;\r\n  left: 0;\r\n  border-radius: 25px;\r\n}\r\n\r\n.category-bar-right .bar .cost-of-living-bar {\r\n  width: 80%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: cost-of-living 2.5s;\r\n}\r\n\r\n.category-bar-right .bar .travel-connectivity-bar {\r\n  width: 75%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: travel-connectivity 3s;\r\n}\r\n\r\n.category-bar-right .bar .education-bar {\r\n  width: 85%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: education 3.5s;\r\n}\r\n\r\n.category-bar-right .bar .economy-bar {\r\n  width: 80%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: economy 3s;\r\n}\r\n\r\n.category-bar-right .bar .internet-access-bar {\r\n  width: 75%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: internet-access 3s;\r\n}\r\n\r\n.category-bar-right .bar .outdoors-bar {\r\n  width: 75%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: outdoors 3s;\r\n}\r\n\r\n.category-bar-right .bar .business-freedom-bar {\r\n  width: 75%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: business-freedom 3s;\r\n}\r\n\r\n/*scrollbar */\r\n\r\n::-webkit-scrollbar {\r\n  height: 0;\r\n  width: 0.5rem;\r\n}\r\n\r\n::-webkit-scrollbar-track {\r\n  background: #252222;\r\n}\r\n\r\n::-webkit-scrollbar-thumb {\r\n  background: var(--hover-color);\r\n  border-radius: 5rem;\r\n}\r\n\r\n/*circular score bar */\r\n\r\n.circular-score-bar {\r\n  width: 200px;\r\n  height: 200px;\r\n  position: relative;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.outer {\r\n  height: 190px;\r\n  width: 190px;\r\n  padding: 20px;\r\n  box-shadow: 6px 6px 10px -1px rgba(54, 54, 54, 0.25),\r\n    -6px -6px 10px -1px rgba(54, 54, 54, 0.25);\r\n\r\n  border-radius: 50%;\r\n}\r\n\r\n.inner {\r\n  height: 150px;\r\n  width: 150px;\r\n  box-shadow: inset 4px 4px 6px -1px rgba(47, 46, 46, 0.2),\r\n    inset -4px -4px 6px -1px rgba(67, 67, 67, 0.25),\r\n    -0.5px -0.5px 0px rgba(59, 59, 59, 0.29),\r\n    0.5px 0.5px 0px rgba(0, 0, 0, 0.15),\r\n    0px 12px 10px -10px rgba(121, 121, 121, 0.05);\r\n  border-radius: 50%;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n\r\ncircle {\r\n  fill: none;\r\n  stroke: url(#GradientColor);\r\n  stroke-width: 21px;\r\n  stroke-dasharray: 550;\r\n  stroke-dashoffset: 550;\r\n  animation: score 2s linear forwards;\r\n}\r\n\r\nsvg {\r\n  position: absolute;\r\n  width: 200px;\r\n  height: 200px;\r\n}\r\n\r\n/* Animation Keyframes-------------*/\r\n@keyframes score {\r\n  100% {\r\n    stroke-dashoffset: var(--dash-offset);\r\n  }\r\n}\r\n\r\n/* category panel*/\r\n\r\n@keyframes housing {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 80%;\r\n  }\r\n}\r\n\r\n@keyframes safety {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 70%;\r\n  }\r\n}\r\n\r\n@keyframes healthcare {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 60%;\r\n  }\r\n}\r\n\r\n@keyframes environmental-quality {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 70%;\r\n  }\r\n}\r\n\r\n@keyframes taxation {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 80%;\r\n  }\r\n}\r\n\r\n/*right panel*/\r\n\r\n@keyframes leisure-and-culture {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 80%;\r\n  }\r\n}\r\n\r\n@keyframes startups {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 75%;\r\n  }\r\n}\r\n\r\n@keyframes cost-of-living {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 85%;\r\n  }\r\n}\r\n\r\n@keyframes travel-connectivity {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 80%;\r\n  }\r\n}\r\n\r\n@keyframes education {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 75%;\r\n  }\r\n}\r\n\r\n@keyframes economy {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 80%;\r\n  }\r\n}\r\n\r\n@keyframes internet-access {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 75%;\r\n  }\r\n}\r\n\r\n@keyframes outdoors {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 75%;\r\n  }\r\n}\r\n@keyframes business-freedom {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n\r\n  100% {\r\n    width: 75%;\r\n  }\r\n}\r\n"],"sourceRoot":""}]);
+
+/* Tablet styles */
+@media only screen and (max-width: 768px) {
+  .city-temp {
+    grid-column: span 5; } }
+
+/* Mobile styles */
+@media only screen and (max-width: 480px) {
+  .city-temp {
+    grid-column: span 5; }
+  .container-location,
+  .date-time {
+    display: none; }
+  .temp-weather {
+    flex-direction: column-reverse; }
+  .row-top {
+    font-size: 1rem; }
+  #city-description {
+    font-size: large; }
+  /* Adjust other styles for better mobile experience */
+  .container-logo {
+    margin-top: 1rem; }
+  .header {
+    font-size: medium; }
+  .search-box {
+    width: 100%; }
+  /* Add any other mobile-specific styles here */ }
+`, "",{"version":3,"sources":["webpack://./src/assets/styles/main.scss"],"names":[],"mappings":"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","sourcesContent":["@import url(\"https://fonts.googleapis.com/css?family=Poppins:300,500,400,600\");\r\n\r\nhtml {\r\n  /* For Firefox */\r\n  overflow-y: scroll;\r\n  scrollbar-color: #4d7542;\r\n  scrollbar-width: thin;\r\n}\r\n* {\r\n  -webkit-font-smoothing: antialiased;\r\n  box-sizing: border-box;\r\n  margin: 0px;\r\n  padding: 0px;\r\n  font-family: \"Poppins\", Helvetica;\r\n  font-weight: 300;\r\n  color: var(--text-color);\r\n}\r\n:root {\r\n  --text-color: #f5f5f5;\r\n  --hover-color: #8af037b3;\r\n  --bar-color: #e54d26;\r\n  --neon-box-shadow-bar: 0 0 0.5rem #e54d26;\r\n  --secon-bg-color: linear-gradient(\r\n    160deg,\r\n    rgba(89, 134, 76, 0.7) 0%,\r\n    rgba(130, 170, 119, 0.62) 100%\r\n  );\r\n}\r\na {\r\n  text-decoration: none;\r\n}\r\nbody {\r\n  background: linear-gradient(181deg, #383838 0%, #555555b5 100%);\r\n  min-height: 100vh;\r\n  font-size: 16px;\r\n}\r\n.header {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  font-size: large;\r\n  margin: 2rem 2rem 0 2rem;\r\n  padding-bottom: 1rem;\r\n}\r\n#day,\r\n#date,\r\n#month,\r\n#year,\r\n#hrs,\r\n#min,\r\n#sec {\r\n  font-weight: bold;\r\n}\r\n.container-location {\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n.location-button {\r\n  width: 13rem;\r\n  height: 3rem;\r\n  border-radius: 25px;\r\n  box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940,\r\n    0px 4px 4px #fcf5f540;\r\n  background: var(--secon-bg-color);\r\n  margin: 0 10px 0 10px;\r\n  font-weight: bold;\r\n  display: flex;\r\n  justify-content: space-around;\r\n  align-items: center;\r\n}\r\n.location-button:hover {\r\n  cursor: pointer;\r\n  background-color: var(--hover-color);\r\n}\r\n.container-logo {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: flex-start;\r\n}\r\n#logo {\r\n  width: 20rem;\r\n}\r\n.container-search {\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n.search-box {\r\n  margin: 20px 0;\r\n  width: 600px;\r\n  border: 1px solid #f4f4f4;\r\n  border-radius: 25px;\r\n  font-size: 16px;\r\n  background-color: rgba(144, 234, 150, 0.836);\r\n}\r\n.row {\r\n  display: flex;\r\n  align-items: center;\r\n  padding: 10px 20px;\r\n}\r\ninput {\r\n  flex: 1;\r\n  height: 50px;\r\n  border: none;\r\n  outline: none;\r\n  font-size: 22px;\r\n  font-weight: bold;\r\n  color: #333;\r\n  background-color: transparent;\r\n}\r\nbutton {\r\n  background: transparent;\r\n  border: none;\r\n  outline: none;\r\n}\r\nbutton .fa-solid {\r\n  width: 40px;\r\n  color: #555;\r\n  font-size: 30px;\r\n  cursor: pointer;\r\n}\r\n::placeholder {\r\n  color: #555;\r\n}\r\n.city-details-container {\r\n  display: grid;\r\n  grid-template-columns: repeat(5, 1fr);\r\n  padding-block: 1.5rem;\r\n  gap: 1.5rem;\r\n  margin: 0 1.5rem;\r\n  color: var(--text-color);\r\n  font-size: 2rem;\r\n}\r\n.city-temp {\r\n  min-height: 325px;\r\n  background: var(--secon-bg-color);\r\n  border-radius: 32px;\r\n  box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940,\r\n    0px 4px 4px #fcf5f540;\r\n  grid-column: span 4;\r\n}\r\n.city-details {\r\n  display: flex;\r\n  flex-direction: column;\r\n  font-size: 1.5rem;\r\n}\r\n.icon-location {\r\n  width: 50px;\r\n  height: 50px;\r\n  color: var(--text-color);\r\n}\r\n.row-top {\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: space-between;\r\n  font-size: 1.5em;\r\n}\r\n.location,\r\n.temp-weather {\r\n  display: flex;\r\n  align-items: center;\r\n  margin: 1.2rem;\r\n}\r\n.temp-weather {\r\n  justify-content: flex-end;\r\n}\r\n#weather-icon {\r\n  width: 4em;\r\n}\r\n#temperature {\r\n  margin-right: 1.5rem;\r\n  font-size: 1.5em;\r\n}\r\n#city-description {\r\n  line-height: 1.2;\r\n  margin: 20px;\r\n}\r\n.weather-details {\r\n  display: grid;\r\n  grid-template-columns: repeat(auto-fit, minmax(min(30rem), 1fr));\r\n  gap: 1rem;\r\n  padding: 1.5rem;\r\n  padding-block: 1.5rem;\r\n  justify-items: center;\r\n  border-radius: 32px;\r\n  box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940,\r\n    0px 4px 4px #fcf5f540;\r\n  background: var(--secon-bg-color);\r\n  grid-column: span 5;\r\n  margin-bottom: auto;\r\n}\r\n.svgs {\r\n  width: 4rem;\r\n}\r\n.city-score {\r\n  background: var(--secon-bg-color);\r\n  border-radius: 32px;\r\n  box-shadow: 0px 4px 4px #00000040, 0px 4px 4px #fff9f940,\r\n    0px 4px 4px #fcf5f540;\r\n  display: flex;\r\n  justify-items: center;\r\n  flex-direction: column;\r\n  align-items: center;\r\n}\r\n#city-score-name {\r\n  font-size: 1em;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n  margin-top: 1rem;\r\n  font-weight: bold;\r\n}\r\n#score {\r\n  font-size: 1.2em;\r\n}\r\n.expand-result-button {\r\n  width: 10rem;\r\n  height: 2.5rem;\r\n  border-radius: 25px;\r\n  margin-top: 1rem;\r\n  border: 2px solid #e54d26;\r\n  outline: unset;\r\n  color: var(--text-color);\r\n  font-weight: bold;\r\n  font-size: 1.3rem;\r\n  background: chocolate;\r\n}\r\n.expand-result-button:hover {\r\n  background: #e54d26;\r\n  cursor: pointer;\r\n}\r\n.humidity-container,\r\n.air-quality-container,\r\n.wind-speed-container,\r\n.air-pressure-container,\r\n.pollutant-container,\r\n.wind-direction-container {\r\n  display: flex;\r\n  flex-direction: row;\r\n  margin-top: 0.5rem;\r\n  border: 3px solid #cdcdcd;\r\n  border-radius: 25px;\r\n  width: -webkit-fill-available;\r\n  height: 4em;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  padding: 2rem;\r\n}\r\n#humidity-data,\r\n#visibility-data,\r\n#air-quality-data,\r\n#wind-speed-data,\r\n#air-pressure-data,\r\n#pollen-data,\r\n#pollutant-data,\r\n#wind-direction-data {\r\n  font-size: 1.7rem;\r\n}\r\n.category-title {\r\n  display: flex;\r\n  justify-content: flex-start;\r\n  font-weight: bold;\r\n}\r\n#category-city {\r\n  display: flex;\r\n  justify-content: flex-end;\r\n  font-weight: bold;\r\n  margin-right: inherit;\r\n}\r\n.category-main {\r\n  width: 100%;\r\n  display: grid;\r\n  grid-template-columns: repeat(2, 1fr);\r\n  background: var(--secon-bg-color);\r\n  grid-column: span 5;\r\n  gap: 1.5rem;\r\n  border-radius: 32px;\r\n}\r\n.category-left,\r\n.category-right {\r\n  padding: 1.5rem;\r\n}\r\n.category-left {\r\n  margin: 1rem 0 1rem 1.5rem;\r\n}\r\n.category-right {\r\n  margin: 1rem 1.5rem 1rem 0;\r\n}\r\n.category-bar {\r\n  margin-bottom: 2.3rem;\r\n}\r\n.category-title,\r\n#category-city {\r\n  margin-bottom: 2rem;\r\n  font-size: 2rem;\r\n  text-align: center;\r\n}\r\n.category-left .category-bar-left .info {\r\n  display: flex;\r\n  align-items: center;\r\n  padding: 10px;\r\n  gap: 2em;\r\n}\r\n.category-left .category-bar-left .info p {\r\n  font-weight: bold;\r\n}\r\n.category-left .category-bar-left .bar {\r\n  width: 100%;\r\n  height: 15px;\r\n  border: 3px solid chocolate;\r\n  border-radius: 25px;\r\n  margin-top: 10px;\r\n  position: relative;\r\n}\r\n.category-bar-left .bar span {\r\n  width: 50%;\r\n  height: 100%;\r\n  position: absolute;\r\n  left: 0;\r\n  border-radius: 25px;\r\n}\r\n.category-bar-left .bar .housing-bar {\r\n  width: 80%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: housing 2.5s;\r\n}\r\n.category-bar-left .bar .safety-bar {\r\n  width: 70%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: safety 2s;\r\n}\r\n.category-bar-left .bar .healthcare-bar {\r\n  width: 60%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: healthcare 2s;\r\n}\r\n.category-bar-left .bar .environmental-quality-bar {\r\n  width: 70%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: environmental-quality 3.5s;\r\n}\r\n.category-bar-left .bar .taxation-bar {\r\n  width: 80%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: taxation 4s;\r\n}\r\n.category-bar-left .bar .leisure-and-culture-bar {\r\n  width: 80%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: leisure-and-culture 4s;\r\n}\r\n.category-bar-left .bar .startups-bar {\r\n  width: 80%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: startups 4s;\r\n}\r\n.category-bar-right,\r\n.category-bar-left {\r\n  margin-bottom: 2.3rem;\r\n}\r\n.category-right .category-bar-right .info {\r\n  display: flex;\r\n  align-items: center;\r\n  padding: 10px;\r\n  gap: 2em;\r\n}\r\n.category-right .category-bar-right .info p {\r\n  font-weight: bold;\r\n}\r\n.category-right .category-bar-right .bar {\r\n  width: 100%;\r\n  height: 15px;\r\n  border: 3px solid chocolate;\r\n  border-radius: 25px;\r\n  margin-top: 10px;\r\n  position: relative;\r\n}\r\n.category-bar-right .bar span {\r\n  width: 50%;\r\n  height: 100%;\r\n  position: absolute;\r\n  left: 0;\r\n  border-radius: 25px;\r\n}\r\n.category-bar-right .bar .cost-of-living-bar {\r\n  width: 80%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: cost-of-living 2.5s;\r\n}\r\n.category-bar-right .bar .travel-connectivity-bar {\r\n  width: 75%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: travel-connectivity 3s;\r\n}\r\n.category-bar-right .bar .education-bar {\r\n  width: 85%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: education 3.5s;\r\n}\r\n.category-bar-right .bar .economy-bar {\r\n  width: 80%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: economy 3s;\r\n}\r\n.category-bar-right .bar .internet-access-bar {\r\n  width: 75%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: internet-access 3s;\r\n}\r\n.category-bar-right .bar .outdoors-bar {\r\n  width: 75%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: outdoors 3s;\r\n}\r\n.category-bar-right .bar .business-freedom-bar {\r\n  width: 75%;\r\n  background: var(--bar-color);\r\n  box-shadow: var(--neon-box-shadow-bar);\r\n  animation: business-freedom 3s;\r\n}\r\n::-webkit-scrollbar {\r\n  height: 0;\r\n  width: 0.5rem;\r\n}\r\n::-webkit-scrollbar-track {\r\n  background: #252222;\r\n}\r\n\r\n::-webkit-scrollbar-thumb {\r\n  background: #4d7542;\r\n  border-radius: 5rem;\r\n}\r\n.circular-score-bar {\r\n  width: 200px;\r\n  height: 200px;\r\n  position: relative;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n.outer {\r\n  height: 190px;\r\n  width: 190px;\r\n  padding: 20px;\r\n  box-shadow: 6px 6px 10px -1px rgba(54, 54, 54, 0.25),\r\n    -6px -6px 10px -1px rgba(54, 54, 54, 0.25);\r\n  border-radius: 50%;\r\n}\r\n.inner {\r\n  height: 150px;\r\n  width: 150px;\r\n  box-shadow: inset 4px 4px 6px -1px rgba(47, 46, 46, 0.2),\r\n    inset -4px -4px 6px -1px rgba(67, 67, 67, 0.25),\r\n    -0.5px -0.5px 0px rgba(59, 59, 59, 0.29),\r\n    0.5px 0.5px 0px rgba(0, 0, 0, 0.15),\r\n    0px 12px 10px -10px rgba(121, 121, 121, 0.05);\r\n  border-radius: 50%;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\ncircle {\r\n  fill: none;\r\n  stroke: url(#GradientColor);\r\n  stroke-width: 21px;\r\n  stroke-dasharray: 550;\r\n  stroke-dashoffset: 550;\r\n  animation: score 2s linear forwards;\r\n}\r\nsvg {\r\n  position: absolute;\r\n  width: 200px;\r\n  height: 200px;\r\n}\r\nfooter p {\r\n  text-align: end;\r\n}\r\n/* Animation Keyframes-------------*/\r\n@keyframes score {\r\n  100% {\r\n    stroke-dashoffset: var(--dash-offset);\r\n  }\r\n}\r\n@keyframes housing {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n  100% {\r\n    width: 80%;\r\n  }\r\n}\r\n@keyframes safety {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n  100% {\r\n    width: 70%;\r\n  }\r\n}\r\n@keyframes healthcare {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n  100% {\r\n    width: 60%;\r\n  }\r\n}\r\n@keyframes environmental-quality {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n  100% {\r\n    width: 70%;\r\n  }\r\n}\r\n@keyframes taxation {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n  100% {\r\n    width: 80%;\r\n  }\r\n}\r\n@keyframes leisure-and-culture {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n  100% {\r\n    width: 80%;\r\n  }\r\n}\r\n@keyframes startups {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n  100% {\r\n    width: 75%;\r\n  }\r\n}\r\n@keyframes cost-of-living {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n  100% {\r\n    width: 85%;\r\n  }\r\n}\r\n@keyframes travel-connectivity {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n  100% {\r\n    width: 80%;\r\n  }\r\n}\r\n@keyframes education {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n  100% {\r\n    width: 75%;\r\n  }\r\n}\r\n@keyframes economy {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n  100% {\r\n    width: 80%;\r\n  }\r\n}\r\n@keyframes internet-access {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n  100% {\r\n    width: 75%;\r\n  }\r\n}\r\n@keyframes outdoors {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n  100% {\r\n    width: 75%;\r\n  }\r\n}\r\n@keyframes business-freedom {\r\n  0% {\r\n    width: 0%;\r\n  }\r\n  100% {\r\n    width: 75%;\r\n  }\r\n}\r\n\r\n/* Tablet styles */\r\n@media only screen and (max-width: 768px) {\r\n  body {\r\n  }\r\n  .city-temp {\r\n    grid-column: span 5;\r\n  }\r\n}\r\n\r\n/* Mobile styles */\r\n@media only screen and (max-width: 480px) {\r\n  body {\r\n  }\r\n  .city-temp {\r\n    grid-column: span 5;\r\n  }\r\n  .container-location,\r\n  .date-time {\r\n    display: none;\r\n  }\r\n\r\n  .temp-weather {\r\n    flex-direction: column-reverse;\r\n  }\r\n  .row-top {\r\n    font-size: 1rem;\r\n  }\r\n\r\n  #city-description {\r\n    font-size: large;\r\n  }\r\n\r\n  /* Adjust other styles for better mobile experience */\r\n  .container-logo {\r\n    margin-top: 1rem;\r\n  }\r\n\r\n  .header {\r\n    font-size: medium;\r\n  }\r\n\r\n  .search-box {\r\n    width: 100%;\r\n  }\r\n\r\n  /* Add any other mobile-specific styles here */\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -23075,4 +23045,4 @@ expandResultButton.addEventListener("click", () => {
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle4450ab530eac741c0b90.js.map
+//# sourceMappingURL=bundle54731dea375302947199.js.map

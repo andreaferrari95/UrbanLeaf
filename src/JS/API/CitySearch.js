@@ -63,7 +63,6 @@ function getCity(city) {
       const cityName = _.get(cityData, "name");
       const cityNameForCalling = cityName.toLowerCase();
 
-      // Update UI with location information
       defcity.innerHTML = fullName;
       defCityName.innerHTML = "CITY: " + cityName;
       console.log(lat, lon);
@@ -82,7 +81,6 @@ function getCityScores({ lat, lon, cityNameForCalling }) {
       const scores = _.get(descriptionData, "teleport_city_score");
       const categories = _.get(descriptionData, "categories");
 
-      // Update UI with city scores information
       defSummary.innerHTML = summary;
       updateScoreCircleAnimation(Math.round(scores));
 
@@ -91,7 +89,6 @@ function getCityScores({ lat, lon, cityNameForCalling }) {
 }
 
 function updateCityInfo({ categories, lat, lon }) {
-  // Update UI with city scores information
   const idMapping = {
     housing: "housing",
     education: "education",
@@ -147,18 +144,16 @@ function updateCityInfo({ categories, lat, lon }) {
 
     if (categoryClass) {
       const categoryElement = document.querySelector(`.${categoryClass}`);
-      const categoryScore = Math.floor(item.score_out_of_10 * 10); // Multiply by 10
+      const categoryScore = Math.floor(item.score_out_of_10 * 10);
 
       if (categoryElement) {
-        categoryElement.style.width = `${categoryScore}%`; // Update bar width
+        categoryElement.style.width = `${categoryScore}%`;
 
-        // Update keyframes dynamically
         const keyframeName = categoryClass;
-        const keyframeDuration = categoryScore / 25; // Adjust duration based on the new score
+        const keyframeDuration = categoryScore / 25;
         const keyframesStyle = document.styleSheets[0];
         let keyframeExists = false;
 
-        // Check if the keyframes rule already exists
         for (let i = 0; i < keyframesStyle.cssRules.length; i++) {
           if (keyframesStyle.cssRules[i].name === keyframeName) {
             keyframeExists = true;
@@ -166,7 +161,6 @@ function updateCityInfo({ categories, lat, lon }) {
           }
         }
 
-        // If not, add it
         if (!keyframeExists) {
           keyframesStyle.insertRule(
             `@keyframes ${keyframeName} {
@@ -181,7 +175,6 @@ function updateCityInfo({ categories, lat, lon }) {
           );
         }
 
-        // Apply the updated keyframe duration to the animation
         categoryElement.style.animation = `${keyframeName} ${keyframeDuration}s`;
       } else {
         console.warn(
@@ -203,9 +196,6 @@ function getWeatherData({ lat, lon }) {
 }
 
 function updateWeatherInfo(weatherData) {
-  // Update UI with weather information
-  console.log(weatherData);
-
   const temperature = _.get(weatherData, "data.current.weather.tp");
   const pressure = _.get(weatherData, "data.current.weather.pr");
   const humidity = _.get(weatherData, "data.current.weather.hu");
@@ -224,7 +214,7 @@ function updateWeatherInfo(weatherData) {
   defAirQuality.innerHTML = airQuality + " AQI";
   defPollutant.innerHTML = mainPollutant;
 
-  return Promise.resolve(); // Resolving with no data as it's the final step
+  return Promise.resolve();
 }
 
 function handleError(error) {
@@ -236,9 +226,7 @@ function handleError(error) {
     console.error("Error:", error);
   }
 }
-
 function showErrorMessage(message) {
-  // Display error message to the user
   const errorMessageContainer = document.createElement("div");
   errorMessageContainer.className = "error-message";
   errorMessageContainer.innerHTML = `
@@ -246,7 +234,6 @@ function showErrorMessage(message) {
       <button id="okButton">OK</button>
     `;
 
-  // Customize your error message style with CSS
   errorMessageContainer.style.backgroundColor = "#ff6666";
   errorMessageContainer.style.color = "#ffffff";
   errorMessageContainer.style.padding = "10px";
@@ -262,18 +249,16 @@ function showErrorMessage(message) {
   const okButton = document.getElementById("okButton");
 
   if (okButton) {
-    okButton.style.padding = "8px 16px"; // Add padding to make the button bigger
-    okButton.style.fontWeight = "bold"; // Make the button text bold
+    okButton.style.padding = "8px 16px";
+    okButton.style.fontWeight = "bold";
     okButton.style.marginTop = "10px";
-    okButton.style.fontSize = "2rem"; // Add margin to the top for more space
+    okButton.style.fontSize = "2rem";
 
-    // Add event listener for the OK button
     okButton.addEventListener("click", () => {
       errorMessageContainer.remove();
     });
   }
 
-  // Remove the error message when Enter key is pressed
   document.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
       errorMessageContainer.remove();
@@ -282,19 +267,18 @@ function showErrorMessage(message) {
 }
 
 function updateScoreCircleAnimation(roundedScores) {
-  // Update UI with the animated score circle
   const svgCircle = document.querySelector("circle");
   const svgCircleRadius = 85;
   const svgCircleCircumference = 2 * Math.PI * svgCircleRadius;
   const percentage = (roundedScores / 100) * svgCircleCircumference;
   const strokeDashoffset = svgCircleCircumference - percentage;
-  const animationDuration = 2000; // Specify the animation duration in milliseconds
+  const animationDuration = 2000;
 
   svgCircle.style.setProperty("--dash-offset", strokeDashoffset);
   svgCircle.style.animationDuration = `${animationDuration}ms`;
 
   let counter = 0;
-  const intervalDuration = animationDuration / roundedScores; // Calculate interval duration based on animation duration and rounded scores
+  const intervalDuration = animationDuration / roundedScores;
 
   const intervalId = setInterval(() => {
     if (counter >= roundedScores) {
