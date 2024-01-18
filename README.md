@@ -1,5 +1,5 @@
 <h1 align="center">
-    <a href="https://urbanleaf.netlify.app/">UrbanLeaf
+    <a target="_blank" href="https://urbanleaf.netlify.app/">UrbanLeaf
     </a>
 </h1>
 
@@ -7,7 +7,7 @@
   <i align="center">Your guide to sustainable city living. Explore eco-conscious amenities, vibrant green spaces, and the balance between city life and environmental harmony. Elevate your urban experience with a breath of fresh air.</i>
 </p>
 
-# Visit the website <a href="https://urbanleaf.netlify.app/">UrbanLeaf </a>
+# Visit the website <a target="_blank" href="https://urbanleaf.netlify.app/">UrbanLeaf </a>
 
 # Functionality disclosure
 
