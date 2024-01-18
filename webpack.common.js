@@ -3,10 +3,9 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
 
 module.exports = {
-  mode: "production",
   entry: {
     bundle: path.resolve(__dirname, "src/JS/index.js"),
-    teleport: path.resolve(__dirname, "src/JS/API/CitySearch.js"),
+    CitySearch: path.resolve(__dirname, "src/JS/API/CitySearch.js"),
     defaultCity: path.resolve(__dirname, "src/JS/API/defaultCity.js"),
     geolocation: path.resolve(__dirname, "src/JS/API/geolocation.js"),
   },
@@ -33,20 +32,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "UrbanLeaf",
       filename: "index.html",
-      template: "./index.html",
+      template: "src/index.html",
     }),
     new Dotenv(),
   ],
-
-  devtool: "source-map",
-  devServer: {
-    static: {
-      directory: path.resolve(__dirname, "dist"),
-    },
-    port: 3000,
-    open: true,
-    hot: true,
-    compress: true,
-    historyApiFallback: true,
-  },
 };
